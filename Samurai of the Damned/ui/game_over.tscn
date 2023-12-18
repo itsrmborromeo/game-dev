@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://cib1vo7os03dp"]
+
+[ext_resource type="Script" path="res://ui/game_over.gd" id="1_1e0kk"]
+[ext_resource type="FontFile" uid="uid://0gmwwfxv5ois" path="res://ui/font/Serpentine-yw3n3.ttf" id="1_6ei4b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrgnu"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y05e"]
+content_margin_left = 25.0
+content_margin_top = 10.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
+bg_color = Color(0.423529, 0.0980392, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duq04"]
+content_margin_left = 25.0
+content_margin_top = 10.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
+bg_color = Color(0.423529, 0.0980392, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1e0kk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+offset_right = 1150.0
+offset_bottom = 650.0
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 72.0
+offset_right = 847.0
+offset_bottom = 559.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qrgnu")
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 78.0
+offset_right = 560.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_6ei4b")
+theme_override_font_sizes/font_size = 65
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Question" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 167.0
+offset_right = 536.0
+offset_bottom = 226.0
+theme_override_fonts/font = ExtResource("1_6ei4b")
+theme_override_font_sizes/font_size = 27
+text = "Play again?"
+horizontal_alignment = 1
+
+[node name="Yes" type="Button" parent="Panel"]
+layout_mode = 1
+offset_left = 152.0
+offset_top = 268.0
+offset_right = 265.0
+offset_bottom = 319.0
+theme_override_fonts/font = ExtResource("1_6ei4b")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_6y05e")
+text = "Yes"
+
+[node name="No" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 268.0
+offset_right = 415.0
+offset_bottom = 319.0
+theme_override_fonts/font = ExtResource("1_6ei4b")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_duq04")
+text = "No"
+
+[connection signal="pressed" from="Panel/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Panel/No" to="." method="_on_no_pressed"]
