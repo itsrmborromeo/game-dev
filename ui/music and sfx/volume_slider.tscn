@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://buhyssj66x7ju"]
-
-[ext_resource type="Script" path="res://ui/music and sfx/volume_slider.gd" id="1_p7dyc"]
-
-[node name="VolumeSlider" type="HSlider"]
-offset_right = 8.0
-offset_bottom = 16.0
-script = ExtResource("1_p7dyc")

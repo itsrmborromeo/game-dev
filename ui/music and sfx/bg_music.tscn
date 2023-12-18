@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv6k3i6t3kfn3"]
-
-[ext_resource type="AudioStream" uid="uid://drc85htlqgbj" path="res://ui/music and sfx/RSXVABL-samurai.mp3" id="1_ho1ml"]
-
-[node name="bg_music" type="AudioStreamPlayer"]
-stream = ExtResource("1_ho1ml")
-autoplay = true
