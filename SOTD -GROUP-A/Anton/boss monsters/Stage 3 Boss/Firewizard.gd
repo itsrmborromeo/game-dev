@@ -88,7 +88,7 @@ func _on_clear_up_timeout():
 	print ("dead")
 
 func _on_hurtbox_area_entered(area):
-	if area.is_in_group("Player"):
+	if area.is_in_group("Player_strike"):
 		received_damage=(area.damage_amount)
 	if HP != 0:
 		HP = HP - received_damage

@@ -50,16 +50,16 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_gt4wa"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("2_x3lvu")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("3_hscwv")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("4_pbdvk")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("5_jj14g")
 }],
 "loop": false,
@@ -67,19 +67,19 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("11_t3l3d")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("12_50ijd")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("13_8vqen")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("14_s607f")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("15_vnv0h")
 }],
 "loop": false,
@@ -87,16 +87,16 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("16_rem0x")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("17_5roxo")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("18_2kfqx")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("19_bw2k8")
 }],
 "loop": false,
@@ -215,9 +215,12 @@ sword = NodePath("Sword")
 texture_filter = 1
 position = Vector2(3, -25)
 sprite_frames = SubResource("SpriteFrames_gt4wa")
-animation = &"jump"
+animation = &"attack_3"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_35be4")
 
 [node name="hurtbox" type="Area2D" parent="."]
@@ -228,7 +231,8 @@ collision_mask = 96
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 shape = SubResource("CapsuleShape2D_p4rx2")
 
-[node name="Sword" type="Area2D" parent="." groups=["Player"]]
+[node name="Sword" type="Area2D" parent="." groups=["Player_strike"]]
+visible = false
 collision_layer = 64
 collision_mask = 32
 monitorable = false
