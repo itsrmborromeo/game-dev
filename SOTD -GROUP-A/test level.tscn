@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6rrybvcsikap"]
+
+[ext_resource type="PackedScene" uid="uid://bfaa81dn8ige" path="res://Anton/boss monsters/Stage 3 Boss/FireWizard.tscn" id="2_8deba"]
+[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/main character/jinbei.tscn" id="2_214a4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx8yo"]
+size = Vector2(1161, 20)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(574, 428)
+shape = SubResource("RectangleShape2D_fx8yo")
+
+[node name="Jinbei" parent="." instance=ExtResource("2_214a4")]
+position = Vector2(137, 363)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Jinbei"]
+
+[node name="Fire Wizard" parent="." instance=ExtResource("2_8deba")]
