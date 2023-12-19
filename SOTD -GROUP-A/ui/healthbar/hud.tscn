@@ -25,6 +25,6 @@ size_flags_horizontal = 8
 texture_normal = ExtResource("2_nhbi4")
 
 [node name="Healthbar" parent="." instance=ExtResource("3_15mrg")]
-position = Vector2(20, 20)
+position = Vector2(10, 10)
 
 [connection signal="pressed" from="MarginContainer/PauseTextureButton" to="." method="_on_pause_texture_button_pressed"]

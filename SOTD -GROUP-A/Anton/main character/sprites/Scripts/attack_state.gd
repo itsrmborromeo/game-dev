@@ -40,4 +40,4 @@ func animation_handler():
 	if counter == 3:
 		animated_sprite_2d.play("attack_3")
 func mover():
-	hit_box.move_local_x(1*swing_direction)
+	hit_box.move_local_x(.8*swing_direction)

@@ -1,7 +1,7 @@
 extends Node
 
 var main_menu_screen = preload("res://ui/main_menu.tscn")
-var startlvl = preload("res://stage_1/Stage1/level_1.tscn")
+var startlvl = preload("res://stage_1/Stage1/level1.tscn")
 var pause_menu =  preload("res://ui/pause_menu.tscn")
 
 func _ready():

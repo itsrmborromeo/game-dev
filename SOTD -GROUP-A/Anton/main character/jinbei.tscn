@@ -202,7 +202,7 @@ radius = 19.0
 height = 78.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5csln"]
-size = Vector2(38, 74)
+size = Vector2(28.5, 67.5)
 
 [node name="Jinbei" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "sword") groups=["Player"]]
 collision_layer = 2
@@ -221,6 +221,7 @@ animation = &"jump"
 shape = SubResource("CapsuleShape2D_35be4")
 
 [node name="hurtbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 96
 collision_mask = 96
 
@@ -235,6 +236,7 @@ script = ExtResource("25_fd785")
 damage_amount = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
+position = Vector2(-0.25, -1.75)
 shape = SubResource("RectangleShape2D_5csln")
 
 [node name="Range" type="Marker2D" parent="."]

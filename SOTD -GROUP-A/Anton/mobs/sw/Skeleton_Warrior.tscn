@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://b22j0sg6vmlb8"]
+[gd_scene load_steps=55 format=3 uid="uid://b22j0sg6vmlb8"]
 
 [ext_resource type="Script" path="res://Anton/mobs/sw/Skeleton_Warrior.gd" id="1_dg1ui"]
 [ext_resource type="Texture2D" uid="uid://wjnhedfc1dgl" path="res://assets/art/mobs/skeleton_warrior/Attack_1.png" id="1_w0rp3"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Anton/statesAndBehaviors/melee_attack_state.gd" id="7_ojip7"]
 [ext_resource type="Script" path="res://Anton/statesAndBehaviors/Strikezone.gd" id="8_biq31"]
 [ext_resource type="Script" path="res://Anton/statesAndBehaviors/dead_state.gd" id="14_85ggf"]
+[ext_resource type="Script" path="res://Anton/statesAndBehaviors/patrol.gd" id="15_raorn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gfou8"]
 atlas = ExtResource("1_w0rp3")
@@ -392,6 +393,11 @@ script = ExtResource("14_85ggf")
 [node name="Clear up" type="Timer" parent="Statemachine/dead"]
 wait_time = 2.0
 one_shot = true
+
+[node name="patrol" type="Node" parent="Statemachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("15_raorn")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../Skeleton Warrior")
 
 [node name="Attack cooldown" type="Timer" parent="."]
 wait_time = 2.0

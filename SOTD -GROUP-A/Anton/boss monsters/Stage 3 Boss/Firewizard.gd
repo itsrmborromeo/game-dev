@@ -35,7 +35,7 @@ func _physics_process(delta):
 						if can_attack:
 							node_finite_state_machine.transition_to("attack")
 							attacking = true
-							attack_cooldown.start(4)
+							attack_cooldown.start()
 							can_attack = false
 						else:
 							node_finite_state_machine.transition_to("idle")

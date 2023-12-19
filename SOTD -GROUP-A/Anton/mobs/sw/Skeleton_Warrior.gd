@@ -37,7 +37,7 @@ func _physics_process(delta):
 				else:
 						node_finite_state_machine.transition_to("idle")
 			else:
-					node_finite_state_machine.transition_to("idle")
+					node_finite_state_machine.transition_to("patrol")
 		else:
 			pass
 	else:

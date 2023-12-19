@@ -57,7 +57,7 @@ func _on_hurtbox_body_entered(body : Node2D):
 		print("Enemy entered")
 		
 func _on_fallzone_body_entered(body):
-	get_tree().change_scene_to_file("res://stage_1/Stage1/level_1.tscn")
+	get_tree().change_scene_to_file("res://stage_1/Stage1/level1.tscn")
 	
 
 

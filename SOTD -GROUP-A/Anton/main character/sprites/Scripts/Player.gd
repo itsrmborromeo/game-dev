@@ -56,7 +56,9 @@ func transitioner():
 				pass
 		elif jump and can_double_jump:
 			can_double_jump = false
-			state_machine.transition_to("double_jump")
+			$AnimatedSprite2D.play("charge_jump")
+			if $AnimatedSprite2D.animation_finished:
+				state_machine.transition_to("double_jump")
 	else:
 		state_machine.transition_to("dead")
 func _on_animated_sprite_2d_animation_finished():

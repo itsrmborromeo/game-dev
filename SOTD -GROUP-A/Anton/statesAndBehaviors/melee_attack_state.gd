@@ -49,4 +49,4 @@ func animation_handler():
 		animated_sprite_2d.play("attack_3")
 		counter = 1
 func mover():
-	strike.move_local_x(2*strike_direction)
+	strike.move_local_x(1*strike_direction)
