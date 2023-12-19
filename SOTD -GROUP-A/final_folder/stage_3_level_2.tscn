@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ty3c3utfw0hi"]
+
+[ext_resource type="PackedScene" uid="uid://cyej1kirqnk35" path="res://assets/art/Jeralyn Files/Stage3_level2.tscn" id="1_xyf5d"]
+[ext_resource type="PackedScene" uid="uid://drthh3kcyt0hd" path="res://ui/healthbar/hud.tscn" id="2_dgcc8"]
+
+[node name="stage_3_level_2" type="Node2D"]
+
+[node name="Stage3_level2" parent="." instance=ExtResource("1_xyf5d")]
+
+[node name="HUD" parent="." instance=ExtResource("2_dgcc8")]

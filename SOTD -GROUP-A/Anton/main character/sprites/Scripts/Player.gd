@@ -64,3 +64,7 @@ func transitioner():
 func _on_animated_sprite_2d_animation_finished():
 	attacking = false
 	can_transition = true
+
+
+func _on_fallzone_body_entered(body):
+	get_tree().change_scene_to_file("res://stage_1/Stage1/level_1.tscn")

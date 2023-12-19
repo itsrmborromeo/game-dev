@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb00n0drc2leb"]
+
+[ext_resource type="PackedScene" uid="uid://celx2t2m8pt1c" path="res://stage_1/Stage1/bosslevel.tscn" id="1_t1pb5"]
+[ext_resource type="PackedScene" uid="uid://drthh3kcyt0hd" path="res://ui/healthbar/hud.tscn" id="2_xonq3"]
+
+[node name="Stage_1_boss_level" type="Node2D"]
+
+[node name="bosslevel" parent="." instance=ExtResource("1_t1pb5")]
+
+[node name="HUD" parent="." instance=ExtResource("2_xonq3")]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://da1j8t7hmieij"]
+
+[ext_resource type="PackedScene" uid="uid://dcg5l2p2en81m" path="res://assets/art/Jeralyn Files/ROOMS/room_4.tscn" id="1_ikcjy"]
+[ext_resource type="PackedScene" uid="uid://drthh3kcyt0hd" path="res://ui/healthbar/hud.tscn" id="2_is0my"]
+
+[node name="stage_4_boss_level" type="Node2D"]
+
+[node name="Room4" parent="." instance=ExtResource("1_ikcjy")]
+
+[node name="HUD" parent="." instance=ExtResource("2_is0my")]

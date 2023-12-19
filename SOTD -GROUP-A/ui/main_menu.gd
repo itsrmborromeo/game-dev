@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-@onready var button_clicked = $buttonclicked
-
 func _on_play_button_pressed():
 	GameManager.start_game()
 	queue_free()
