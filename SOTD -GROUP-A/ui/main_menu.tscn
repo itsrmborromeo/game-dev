@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c2p2rll0yg83b" path="res://ui/background/mainmenu_bg.jpg" id="2_84i1h"]
 [ext_resource type="Theme" uid="uid://xosqxufqki7p" path="res://ui/theme/game_theme.tres" id="3_n1684"]
 [ext_resource type="FontFile" uid="uid://0gmwwfxv5ois" path="res://ui/font/Serpentine-yw3n3.ttf" id="4_0i54i"]
-[ext_resource type="PackedScene" uid="uid://bv6k3i6t3kfn3" path="res://ui/music and sfx/bg_music.tscn" id="5_ite26"]
-[ext_resource type="AudioStream" uid="uid://828dfsro1euh" path="res://ui/music and sfx/Menumusic.ogg" id="7_127ti"]
+[ext_resource type="PackedScene" path="res://ui/music and sfx/bg_music.tscn" id="5_ite26"]
+[ext_resource type="AudioStream" uid="uid://bai1md21y54jx" path="res://ui/music and sfx/menu_bg.mp3" id="6_56kfj"]
 
 [node name="MainMenu" type="CanvasLayer"]
 process_mode = 3
@@ -71,7 +71,7 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="bg_music" parent="." instance=ExtResource("5_ite26")]
-stream = ExtResource("7_127ti")
+stream = ExtResource("6_56kfj")
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

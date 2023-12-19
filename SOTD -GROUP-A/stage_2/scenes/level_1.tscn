@@ -10,11 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://bx037tbvu6swd" path="res://assets/art/_PNG/_PNG/SET1_bakcground_day1.png" id="8_b5r20"]
 [ext_resource type="Texture2D" uid="uid://b182co7kje3r7" path="res://assets/art/_PNG/_PNG/SET1_bakcground_day2.png" id="9_y481p"]
 [ext_resource type="Texture2D" uid="uid://dtydhph2ji66k" path="res://assets/art/_PNG/_PNG/SET1_bakcground_day3.png" id="10_18ihu"]
-[ext_resource type="PackedScene" path="res://scenes/skeletonwarrior.tscn" id="11_4uqrm"]
-[ext_resource type="PackedScene" path="res://scenes/red_wolf.tscn" id="12_3fooh"]
-[ext_resource type="PackedScene" uid="uid://ui73k5hyfhl6" path="res://scenes/skeleton_spearman.tscn" id="13_nr3gj"]
-[ext_resource type="PackedScene" uid="uid://cmiwg7ljwutmg" path="res://scenes/mobs/blackwolf.tscn" id="14_ac040"]
-[ext_resource type="PackedScene" path="res://scenes/princess.tscn" id="15_o5abn"]
+[ext_resource type="PackedScene" uid="uid://drxgn2kh5wa6l" path="res://scenes/skeletonwarrior.tscn" id="11_4uqrm"]
+[ext_resource type="PackedScene" uid="uid://baw6sikla82mf" path="res://scenes/red_wolf.tscn" id="12_3fooh"]
+[ext_resource type="PackedScene" uid="uid://cgj7sbh6xg7u1" path="res://scenes/skeleton_spearman.tscn" id="13_nr3gj"]
+[ext_resource type="PackedScene" uid="uid://cmiwg7ljwutmg" path="res://scenes/blackwolf.tscn" id="14_ac040"]
+[ext_resource type="PackedScene" uid="uid://d0rlprsomjmpl" path="res://scenes/princess.tscn" id="15_o5abn"]
 [ext_resource type="PackedScene" uid="uid://bpqsglrekvp0y" path="res://scenes/fallzone.tscn" id="16_ua0vx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3w8qd"]
@@ -5454,6 +5454,7 @@ offset = Vector2(0, 100)
 transform = Transform2D(1, 0, 0, 1, 0, 100)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-3, 73)
 motion_scale = Vector2(0.9, 1)
 motion_mirroring = Vector2(1280, 0)
 
@@ -5470,6 +5471,7 @@ texture = ExtResource("8_b5r20")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 75)
 motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
@@ -5485,6 +5487,7 @@ texture = ExtResource("9_y481p")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-1, 71)
 motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]

@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Samurai of the Damned"
+run/main_scene="res://ui/main_menu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -47,6 +48,7 @@ jump={
 2d_physics/layer_1="ground"
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemy"
+2d_physics/layer_4="fallzone"
 2d_physics/layer_6="hurt box"
 2d_physics/layer_7="strikes"
 

@@ -70,10 +70,10 @@ horizontal_alignment = 1
 
 [node name="Question" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 167.0
-offset_right = 536.0
-offset_bottom = 226.0
+offset_left = 14.0
+offset_top = 164.0
+offset_right = 534.0
+offset_bottom = 223.0
 theme_override_fonts/font = ExtResource("1_6ei4b")
 theme_override_font_sizes/font_size = 27
 text = "Play again?"
@@ -81,10 +81,10 @@ horizontal_alignment = 1
 
 [node name="Yes" type="Button" parent="Panel"]
 layout_mode = 1
-offset_left = 152.0
-offset_top = 268.0
-offset_right = 265.0
-offset_bottom = 319.0
+offset_left = 140.0
+offset_top = 266.0
+offset_right = 253.0
+offset_bottom = 317.0
 theme_override_fonts/font = ExtResource("1_6ei4b")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_6y05e")
@@ -92,10 +92,10 @@ text = "Yes"
 
 [node name="No" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 302.0
-offset_top = 268.0
-offset_right = 415.0
-offset_bottom = 319.0
+offset_left = 299.0
+offset_top = 265.0
+offset_right = 412.0
+offset_bottom = 316.0
 theme_override_fonts/font = ExtResource("1_6ei4b")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_duq04")
