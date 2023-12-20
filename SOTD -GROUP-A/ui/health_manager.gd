@@ -9,7 +9,7 @@ func _ready():
 	currentHP = maxHP
 	
 func decrease_HP(health_amt : int):
-	currentHP -+ health_amt
+	currentHP -= health_amt
 	
 	if currentHP < 0:
 		currentHP = 0

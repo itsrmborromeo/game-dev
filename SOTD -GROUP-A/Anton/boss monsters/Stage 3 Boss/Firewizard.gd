@@ -92,7 +92,7 @@ func _on_hurtbox_area_entered(area):
 		received_damage=(area.damage_amount)
 	if HP != 0:
 		HP = HP - received_damage
-		print(HP)
+		#print(HP)
 	else:
 		alive = false
 func _on_shoot_summon_timeout():
