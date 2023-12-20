@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dq8uh7vhsw3ib"]
+[gd_scene load_steps=57 format=3 uid="uid://dq8uh7vhsw3ib"]
 
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/Player.gd" id="1_q8dkk"]
 [ext_resource type="Texture2D" uid="uid://c5h636nq7madp" path="res://assets/art/maincharacter/attack_1/attack1.png" id="2_r3uo2"]
@@ -18,10 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://bspcgc655g5p0" path="res://assets/art/maincharacter/jump/jump2.png" id="16_joxmd"]
 [ext_resource type="Texture2D" uid="uid://bv8bktfv6i8uy" path="res://assets/art/maincharacter/jump/jump3.png" id="17_vqa1l"]
 [ext_resource type="Texture2D" uid="uid://b3vrcx7axogup" path="res://assets/art/maincharacter/idle/idle1.png" id="18_chio0"]
+[ext_resource type="Texture2D" uid="uid://dwik7a26qfofo" path="res://assets/art/maincharacter/dead/dead1.png" id="18_d7xu1"]
+[ext_resource type="Texture2D" uid="uid://nsixnrjcscye" path="res://assets/art/maincharacter/dead/dead2.png" id="19_dnava"]
 [ext_resource type="Texture2D" uid="uid://cnytp7ftryduo" path="res://assets/art/maincharacter/idle/idle2.png" id="19_orpjq"]
 [ext_resource type="Texture2D" uid="uid://cnh03cx7k0lyv" path="res://assets/art/maincharacter/idle/idle3.png" id="20_djji2"]
+[ext_resource type="Texture2D" uid="uid://dny2oypo2gc7o" path="res://assets/art/maincharacter/dead/dead3.png" id="20_g083d"]
+[ext_resource type="Texture2D" uid="uid://dko4apqljcl6t" path="res://assets/art/maincharacter/dead/dead4.png" id="21_075ib"]
 [ext_resource type="Texture2D" uid="uid://dqpg2457akgdp" path="res://assets/art/maincharacter/idle/idle4.png" id="21_k7bhu"]
 [ext_resource type="Texture2D" uid="uid://jcmqbnwhh4ta" path="res://assets/art/maincharacter/idle/idle5.png" id="22_1mh8j"]
+[ext_resource type="Texture2D" uid="uid://bowe6ilakyv6w" path="res://assets/art/maincharacter/dead/dead5.png" id="22_if2jr"]
+[ext_resource type="Texture2D" uid="uid://b2texpbqkihpi" path="res://assets/art/maincharacter/dead/dead6.png" id="23_2ldhp"]
 [ext_resource type="Texture2D" uid="uid://dodqi7jd642nf" path="res://assets/art/maincharacter/jump/jump4.png" id="23_tkp3n"]
 [ext_resource type="Texture2D" uid="uid://mxhx3tfho41a" path="res://assets/art/maincharacter/jump/jump5.png" id="24_xebhn"]
 [ext_resource type="Texture2D" uid="uid://dqq6nno1a7c4r" path="res://assets/art/maincharacter/jump/jump6.png" id="25_0sq3d"]
@@ -115,6 +121,29 @@ animations = [{
 }],
 "loop": false,
 "name": &"charge_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_d7xu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_dnava")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_g083d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_075ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_if2jr")
+}, {
+"duration": 20.0,
+"texture": ExtResource("23_2ldhp")
+}],
+"loop": false,
+"name": &"dead",
 "speed": 5.0
 }, {
 "frames": [{
@@ -215,9 +244,7 @@ sword = NodePath("Sword")
 texture_filter = 1
 position = Vector2(3, -31)
 sprite_frames = SubResource("SpriteFrames_gt4wa")
-animation = &"attack_3"
-frame = 3
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_35be4")
@@ -265,8 +292,9 @@ character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 jump_force = 500
 
-[node name="dead" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("animated_sprite_2d")]
+[node name="dead" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("43_63p2y")
+character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="walk" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]

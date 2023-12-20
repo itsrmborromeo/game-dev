@@ -4,7 +4,7 @@ extends NodeState
 @export var Muzzle : Marker2D
 var player : CharacterBody2D
 var direction: int
-var fireball = preload("res://Anton/projectiles/fire ball/fireball.tscn")
+var fireball = preload("res://Anton/final mobs and scripts/mobs and resources/projectiles/fire ball/fireball.tscn")
 func on_process(delta:float):
 	pass
 func on_physics_process(delta:float):

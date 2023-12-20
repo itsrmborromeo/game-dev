@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/MeleeAI.gd" id="1_eme8q"]
 [ext_resource type="Texture2D" uid="uid://c2x3g86dhn3uk" path="res://Anton/final mobs and scripts/mobs and resources/Night born/NightBorne.png" id="2_cqejs"]
-[ext_resource type="Texture2D" uid="uid://dfbr4hxs76vlr" path="res://assets/art/mobs/Black_Werewolf/Attack_3.png" id="3_kj52q"]
+[ext_resource type="Texture2D" uid="uid://dfbr4hxs76vlr" path="res://Anton/final mobs and scripts/mobs and resources/Black_Werewolf/Attack_3.png" id="3_kj52q"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attacks.gd" id="4_d6n5c"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/gravity.gd" id="5_xdd1d"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/state machines/node_finite_state_machine.gd" id="6_wrtlo"]

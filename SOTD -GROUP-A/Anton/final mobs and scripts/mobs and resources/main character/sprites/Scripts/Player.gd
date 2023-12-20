@@ -10,8 +10,10 @@ var jump = false
 var animation_done = true
 var alive = true
 var attacking = false
+var need_to_clear = false
 func _ready():
-	HpManager.on_hp_change.connect(updater)
+	HealthManager.set_health(100)
+	HealthManager.on_health_change.connect(updater)
 func _process(delta):
 	if is_on_floor():
 		grounded = true
@@ -63,29 +65,25 @@ func transitioner():
 				state_machine.transition_to("double_jump")
 	else:
 		state_machine.transition_to("dead")
+		need_to_clear = true
 func _on_animated_sprite_2d_animation_finished():
 	attacking = false
 	can_transition = true
-
-
-func _on_fallzone_body_entered(body):
-	get_tree().change_scene_to_file("res://stage_1/Stage1/level_1.tscn")
+	if need_to_clear:
+		LifeManager.decrease_Life(1)
+		get_tree().reload_current_scene()
 
 func updater(health):
 	if health == 0:
 		alive = false
-		$"Dead reset".start(2)
-		HealthManager.decrease_HP(1)
 	else:
 		$Regen.start(5)
 func _on_hurtbox_area_entered(area):
 	if area.is_in_group("Enemy"):
-		HpManager.took_damage(area.damage_amount)
+		HealthManager.took_damage(area.damage_amount)
 		$Regen.start(5)
 		
 func _on_regen_timeout():
-	HpManager.regen(10)
+	HealthManager.regain_hp(10)
 
 
-func _on_dead_reset_timeout():
-	get_tree().reload_current_scene()

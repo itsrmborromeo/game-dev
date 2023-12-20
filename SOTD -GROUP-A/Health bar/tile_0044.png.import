@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtj18xila74fn"
-path="res://.godot/imported/bar-over.png-e8cbacdcabce573d0412584ee62b7b47.ctex"
+uid="uid://bys8olem17c2x"
+path="res://.godot/imported/tile_0044.png-06aa2932e0d4a917fa0fa0c033225411.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Anton/final mobs and scripts/Player health manager/bar-over.png"
-dest_files=["res://.godot/imported/bar-over.png-e8cbacdcabce573d0412584ee62b7b47.ctex"]
+source_file="res://Health bar/tile_0044.png"
+dest_files=["res://.godot/imported/tile_0044.png-06aa2932e0d4a917fa0fa0c033225411.ctex"]
 
 [params]
 
