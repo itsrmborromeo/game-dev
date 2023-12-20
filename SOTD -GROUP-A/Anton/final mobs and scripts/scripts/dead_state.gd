@@ -6,6 +6,7 @@ func on_process(_delta:float):
 func on_physics_process(_delta:float):
 	pass
 func enter():
+	character_body_2d.set_collision_layer_value(3 , false)
 	animated_body_2d.play("dead")
 	character_body_2d.velocity.x = 0
 	character_body_2d.move_and_slide()
