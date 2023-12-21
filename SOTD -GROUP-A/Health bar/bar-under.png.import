@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy7xuhtfofg8j"
-path="res://.godot/imported/bar-progress.png-2b92b9271047d5c29334f56788e9a6f9.ctex"
+uid="uid://di5r6jgo77j8s"
+path="res://.godot/imported/bar-under.png-23cd06b35c586f451e718a69aff42f0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Anton/final mobs and scripts/Player health manager/bar-progress.png"
-dest_files=["res://.godot/imported/bar-progress.png-2b92b9271047d5c29334f56788e9a6f9.ctex"]
+source_file="res://Health bar/bar-under.png"
+dest_files=["res://.godot/imported/bar-under.png-23cd06b35c586f451e718a69aff42f0d.ctex"]
 
 [params]
 

@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://o8afkcucsej"]
+
+[ext_resource type="Script" path="res://Health bar/hud.gd" id="1_6n28x"]
+[ext_resource type="Texture2D" uid="uid://bys8olem17c2x" path="res://Health bar/tile_0044.png" id="1_yebji"]
+[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="2_p0rv3"]
+[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="3_k8nsk"]
+[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="4_c6078"]
+[ext_resource type="FontFile" uid="uid://d1dj56543jr3o" path="res://Health bar/njnaruto.ttf" id="5_7vd8f"]
+[ext_resource type="Texture2D" uid="uid://e1pgphd1f7l1" path="res://Health bar/pause_icon.png" id="7_e5fcc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jas1e"]
+bg_color = Color(0.6, 0.494118, 1, 0.172549)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_6n28x")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 462.0
+offset_bottom = 65.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jas1e")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 14.0
+offset_top = -12.0
+offset_right = 95.0
+offset_bottom = 76.0
+texture = ExtResource("1_yebji")
+
+[node name="UnderHealthBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_left = 123.0
+offset_top = 16.0
+offset_right = 446.0
+offset_bottom = 44.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("2_p0rv3")
+texture_over = ExtResource("3_k8nsk")
+texture_progress = ExtResource("4_c6078")
+
+[node name="OverHealthBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_left = 123.0
+offset_top = 15.0
+offset_right = 447.0
+offset_bottom = 44.0
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("2_p0rv3")
+texture_over = ExtResource("3_k8nsk")
+texture_progress = ExtResource("4_c6078")
+tint_over = Color(0.360784, 0.0901961, 0, 1)
+tint_progress = Color(0, 1, 0, 1)
+
+[node name="Lives" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 96.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_7vd8f")
+theme_override_font_sizes/font_size = 34
+text = "**"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1078.0
+offset_top = 12.0
+offset_right = 1143.0
+offset_bottom = 66.0
+icon = ExtResource("7_e5fcc")
+icon_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

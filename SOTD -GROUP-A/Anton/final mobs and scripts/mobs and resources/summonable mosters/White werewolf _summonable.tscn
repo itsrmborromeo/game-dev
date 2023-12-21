@@ -1,12 +1,12 @@
 [gd_scene load_steps=58 format=3 uid="uid://ctu0qe2nsgrym"]
 
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/MeleeAI.gd" id="1_kkjsv"]
-[ext_resource type="Texture2D" uid="uid://dpyp6b6rq7aql" path="res://Anton/final mobs and scripts/mobs and resources/White_Werewolf/Attack_1.png" id="2_ctiq1"]
-[ext_resource type="Texture2D" uid="uid://qqpvahpv0jp5" path="res://Anton/final mobs and scripts/mobs and resources/White_Werewolf/Attack_2.png" id="3_2liny"]
-[ext_resource type="Texture2D" uid="uid://cfj70f4c8nh5t" path="res://Anton/final mobs and scripts/mobs and resources/White_Werewolf/Attack_3.png" id="4_qewgk"]
-[ext_resource type="Texture2D" uid="uid://dvrcgqyb2p5fq" path="res://Anton/final mobs and scripts/mobs and resources/White_Werewolf/Dead.png" id="5_i0hhu"]
-[ext_resource type="Texture2D" uid="uid://dimb24xymwel3" path="res://Anton/final mobs and scripts/mobs and resources/White_Werewolf/Idle.png" id="6_uewga"]
-[ext_resource type="Texture2D" uid="uid://d2nn5k142es8w" path="res://Anton/final mobs and scripts/mobs and resources/White_Werewolf/Run.png" id="7_lnolm"]
+[ext_resource type="Texture2D" uid="uid://dpyp6b6rq7aql" path="res://assets/art/mobs/White_Werewolf/Attack_1.png" id="2_ctiq1"]
+[ext_resource type="Texture2D" uid="uid://qqpvahpv0jp5" path="res://assets/art/mobs/White_Werewolf/Attack_2.png" id="3_2liny"]
+[ext_resource type="Texture2D" uid="uid://cfj70f4c8nh5t" path="res://assets/art/mobs/White_Werewolf/Attack_3.png" id="4_qewgk"]
+[ext_resource type="Texture2D" uid="uid://dvrcgqyb2p5fq" path="res://assets/art/mobs/White_Werewolf/Dead.png" id="5_i0hhu"]
+[ext_resource type="Texture2D" uid="uid://dimb24xymwel3" path="res://assets/art/mobs/White_Werewolf/Idle.png" id="6_uewga"]
+[ext_resource type="Texture2D" uid="uid://d2nn5k142es8w" path="res://Anton/final mobs and scripts/mobs and resources/White_Werewolf/Run.png" id="7_cf30f"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attacks.gd" id="8_5f7c8"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/gravity.gd" id="9_lnf3e"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/state machines/node_finite_state_machine.gd" id="10_wdyup"]
@@ -14,9 +14,9 @@
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/chasestate.gd" id="12_qwggd"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attack_state.gd" id="13_5x7ww"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/dead_state.gd" id="14_ew06a"]
-[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Anton/final mobs and scripts/Player health manager/bar-under.png" id="15_km2kt"]
-[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Anton/final mobs and scripts/Player health manager/bar-over.png" id="16_tlyuu"]
-[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Anton/final mobs and scripts/Player health manager/bar-progress.png" id="17_n0eju"]
+[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="15_km2kt"]
+[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="16_tlyuu"]
+[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="17_n0eju"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hx086"]
 atlas = ExtResource("2_ctiq1")
@@ -118,40 +118,40 @@ region = Rect2(768, 0, 128, 128)
 atlas = ExtResource("6_uewga")
 region = Rect2(896, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_01we4"]
-atlas = ExtResource("7_lnolm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hndx3"]
+atlas = ExtResource("7_cf30f")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ura7c"]
-atlas = ExtResource("7_lnolm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4swbp"]
+atlas = ExtResource("7_cf30f")
 region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bs8sq"]
-atlas = ExtResource("7_lnolm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xor40"]
+atlas = ExtResource("7_cf30f")
 region = Rect2(256, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sysdj"]
-atlas = ExtResource("7_lnolm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ypih"]
+atlas = ExtResource("7_cf30f")
 region = Rect2(384, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jkgcn"]
-atlas = ExtResource("7_lnolm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xngne"]
+atlas = ExtResource("7_cf30f")
 region = Rect2(512, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mwrgg"]
-atlas = ExtResource("7_lnolm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqs82"]
+atlas = ExtResource("7_cf30f")
 region = Rect2(640, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5y1lo"]
-atlas = ExtResource("7_lnolm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_866xg"]
+atlas = ExtResource("7_cf30f")
 region = Rect2(768, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0yt5y"]
-atlas = ExtResource("7_lnolm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yprq1"]
+atlas = ExtResource("7_cf30f")
 region = Rect2(896, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8vio6"]
-atlas = ExtResource("7_lnolm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j5im"]
+atlas = ExtResource("7_cf30f")
 region = Rect2(1024, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1fe54"]
@@ -258,31 +258,31 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_01we4")
+"texture": SubResource("AtlasTexture_hndx3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ura7c")
+"texture": SubResource("AtlasTexture_4swbp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bs8sq")
+"texture": SubResource("AtlasTexture_xor40")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sysdj")
+"texture": SubResource("AtlasTexture_2ypih")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jkgcn")
+"texture": SubResource("AtlasTexture_xngne")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mwrgg")
+"texture": SubResource("AtlasTexture_eqs82")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5y1lo")
+"texture": SubResource("AtlasTexture_866xg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0yt5y")
+"texture": SubResource("AtlasTexture_yprq1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8vio6")
+"texture": SubResource("AtlasTexture_4j5im")
 }],
 "loop": true,
 "name": &"walk",
