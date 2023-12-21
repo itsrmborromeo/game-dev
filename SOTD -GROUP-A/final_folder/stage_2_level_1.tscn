@@ -1,4 +1,4 @@
-[gd_scene load_steps=383 format=3 uid="uid://c8tuj8pomyc54"]
+[gd_scene load_steps=380 format=3 uid="uid://c8tuj8pomyc54"]
 
 [ext_resource type="PackedScene" uid="uid://dv81lionnsfuo" path="res://stage_2/scenes/level_1.tscn" id="1_grone"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_1ktv2"]
@@ -31,9 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://bwwnt5amy15i1" path="res://assets/art/mobs/Black_Werewolf/Dead.png" id="29_d205l"]
 [ext_resource type="Texture2D" uid="uid://lelxuk0hdmtl" path="res://assets/art/mobs/Black_Werewolf/Idle.png" id="30_xqhw8"]
 [ext_resource type="Texture2D" uid="uid://b5ci1ufy3u6u" path="res://assets/art/mobs/Black_Werewolf/Run.png" id="31_nucrf"]
-[ext_resource type="PackedScene" uid="uid://sc36m5rox1t1" path="res://portal.tscn" id="32_2c7bu"]
-[ext_resource type="PackedScene" uid="uid://bi7oghhaludxw" path="res://fallzone.tscn" id="33_v612q"]
-[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="34_ligad"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6v6g"]
 atlas = ExtResource("4_v88g3")
@@ -3734,17 +3731,6 @@ position = Vector2(6158, 623)
 
 [node name="Marker2D2" type="Marker2D" parent="Black werewolf3/10"]
 position = Vector2(6521, 619)
-
-[node name="Fallzone" parent="." instance=ExtResource("33_v612q")]
-position = Vector2(2933, 1043)
-
-[node name="portal" parent="." instance=ExtResource("32_2c7bu")]
-position = Vector2(7119, 580)
-
-[node name="Jinbei" parent="." instance=ExtResource("34_ligad")]
-position = Vector2(33, 536)
-
-[node name="Camera2D" type="Camera2D" parent="Jinbei"]
 
 [connection signal="animation_finished" from="Skeleton Warrior/AnimatedSprite2D" to="Skeleton Warrior" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skeleton Warrior/hurt box" to="Skeleton Warrior" method="_on_hurt_box_area_entered" flags=18]

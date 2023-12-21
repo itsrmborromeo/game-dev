@@ -1,4 +1,4 @@
-[gd_scene load_steps=509 format=3 uid="uid://ty3c3utfw0hi"]
+[gd_scene load_steps=508 format=3 uid="uid://ty3c3utfw0hi"]
 
 [ext_resource type="PackedScene" uid="uid://cyej1kirqnk35" path="res://assets/art/Jeralyn Files/Stage3_level2.tscn" id="1_xyf5d"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_dgcc8"]
@@ -37,7 +37,6 @@
 [ext_resource type="Texture2D" uid="uid://b0f3kc0161m3a" path="res://assets/art/mobs/Red_Werewolf/Dead.png" id="35_efmnl"]
 [ext_resource type="Texture2D" uid="uid://2rd7q5o51ikr" path="res://assets/art/mobs/Red_Werewolf/Idle.png" id="36_q7d47"]
 [ext_resource type="Texture2D" uid="uid://c60v35arlxkag" path="res://assets/art/mobs/Red_Werewolf/Walk.png" id="37_0lmyr"]
-[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="38_v8yva"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6v6g"]
 atlas = ExtResource("4_v6cfb")
@@ -5272,11 +5271,6 @@ position = Vector2(8347, 567)
 
 [node name="Marker2D2" type="Marker2D" parent="Skeleton Warrior5/15"]
 position = Vector2(8658, 566)
-
-[node name="Jinbei" parent="." instance=ExtResource("38_v8yva")]
-position = Vector2(60, 536)
-
-[node name="Camera2D" type="Camera2D" parent="Jinbei"]
 
 [connection signal="animation_finished" from="Skeleton Warrior/AnimatedSprite2D" to="Skeleton Warrior" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skeleton Warrior/hurt box" to="Skeleton Warrior" method="_on_hurt_box_area_entered" flags=18]
