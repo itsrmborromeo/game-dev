@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://buhovgkbto3nu"]
 
 [ext_resource type="PackedScene" uid="uid://ba818o2hgrd1w" path="res://stage_2/scenes/level_2.tscn" id="1_mr2wp"]
-[ext_resource type="PackedScene" uid="uid://drthh3kcyt0hd" path="res://ui/healthbar/hud.tscn" id="2_fiw3e"]
+[ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_fiw3e"]
 
 [node name="stage_2_level_2" type="Node2D"]
 
