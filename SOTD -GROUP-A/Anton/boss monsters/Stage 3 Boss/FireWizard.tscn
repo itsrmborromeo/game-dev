@@ -457,11 +457,10 @@ script = ExtResource("13_y8stl")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../Animated Sprite 2D")
 
-[node name="dead" type="Node" parent="Statemachine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d", "Death_timer")]
+[node name="dead" type="Node" parent="Statemachine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
 script = ExtResource("14_ltybd")
 character_body_2d = NodePath("../..")
 animated_body_2d = NodePath("../../Animated Sprite 2D")
-Death_timer = NodePath("Clear up")
 
 [node name="Clear up" type="Timer" parent="Statemachine/dead"]
 wait_time = 1.1

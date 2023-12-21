@@ -290,7 +290,8 @@ hit_space = NodePath("../../Sword")
 script = ExtResource("42_qltdg")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
-jump_force = 500
+jump_force = 300
+SPEED = 100
 
 [node name="dead" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("43_63p2y")
@@ -306,8 +307,8 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("45_a2atc")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
-jump_force = 300
-SPEED = 30
+jump_force = 200
+SPEED = 100
 
 [node name="idle" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("46_p2kkt")

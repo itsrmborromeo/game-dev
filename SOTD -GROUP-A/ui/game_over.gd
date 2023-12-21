@@ -2,7 +2,8 @@ extends Control
 
 
 func _on_yes_pressed():
-	LifeManager.reset_health(3)
+	LifeManager.increase_life(3)
+	KillManager.killrst(0)
 	GameManager.start_game()
 
 

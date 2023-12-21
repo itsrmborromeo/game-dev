@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://sc36m5rox1t1"]
+
+[ext_resource type="Script" path="res://portal.gd" id="1_0h6w3"]
+[ext_resource type="Texture2D" uid="uid://ckqreu20ffwfp" path="res://Health bar/Purple Portal Sprite Sheet.png" id="2_vxtf4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8dwh"]
+atlas = ExtResource("2_vxtf4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54r6v"]
+atlas = ExtResource("2_vxtf4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls30k"]
+atlas = ExtResource("2_vxtf4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwp20"]
+atlas = ExtResource("2_vxtf4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pm44"]
+atlas = ExtResource("2_vxtf4")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp7lk"]
+atlas = ExtResource("2_vxtf4")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky5cd"]
+atlas = ExtResource("2_vxtf4")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glqwh"]
+atlas = ExtResource("2_vxtf4")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fs2v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8dwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54r6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls30k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwp20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pm44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp7lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky5cd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glqwh")
+}],
+"loop": true,
+"name": &"portal",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28n3h"]
+radius = 31.0
+height = 114.0
+
+[node name="portal" type="Node2D"]
+script = ExtResource("1_0h6w3")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+texture_filter = 1
+position = Vector2(0, -9)
+scale = Vector2(4.875, 2.67188)
+sprite_frames = SubResource("SpriteFrames_4fs2v")
+animation = &"portal"
+autoplay = "portal"
+frame_progress = 0.595986
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_28n3h")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

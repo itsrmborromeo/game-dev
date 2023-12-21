@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bn02a1dji605j"]
+[gd_scene load_steps=32 format=3 uid="uid://d0152isvb6kce"]
 
 [ext_resource type="Texture2D" uid="uid://c3bgd0nr3dv3j" path="res://assets/art/Jeralyn Files/Stage4_art/Pixel2DCastle1.1/ground.png" id="1_x83ed"]
 [ext_resource type="Texture2D" uid="uid://qr7j13ab8hen" path="res://assets/art/Jeralyn Files/Stage4_art/Pixel2DCastle1.1/walls_far.png" id="2_uudfd"]

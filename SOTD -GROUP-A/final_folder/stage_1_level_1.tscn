@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://br3yrn7yieunt"]
+[gd_scene load_steps=103 format=3 uid="uid://br3yrn7yieunt"]
 
 [ext_resource type="PackedScene" uid="uid://brp2pqlpwk0ml" path="res://stage_1/Stage1/level_1.tscn" id="1_1pvjg"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="3_64st3"]
@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="18_ow7du"]
 [ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="19_s4dkb"]
 [ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="20_v05cf"]
+[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="21_0tkqo"]
+[ext_resource type="Script" path="res://fallzone.gd" id="22_wfvw1"]
+[ext_resource type="PackedScene" uid="uid://sc36m5rox1t1" path="res://portal.tscn" id="23_x5n4v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6v6g"]
 atlas = ExtResource("4_2iawh")
@@ -582,6 +585,9 @@ radius = 116.211
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e010v"]
 size = Vector2(60, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu1vf"]
+size = Vector2(7385, 20)
 
 [node name="Stage1_level1" type="Node2D"]
 
@@ -1909,6 +1915,26 @@ position = Vector2(8184, 56)
 [node name="Marker2D2" type="Marker2D" parent="Skeleton Warrior10/10"]
 position = Vector2(8567, 59)
 
+[node name="Jinbei" parent="." instance=ExtResource("21_0tkqo")]
+position = Vector2(46, 328)
+
+[node name="Camera2D" type="Camera2D" parent="Jinbei"]
+
+[node name="Fallzone" type="Node2D" parent="."]
+position = Vector2(1440, 664)
+script = ExtResource("22_wfvw1")
+
+[node name="Area2D" type="Area2D" parent="Fallzone"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fallzone/Area2D"]
+position = Vector2(3682.5, 0)
+shape = SubResource("RectangleShape2D_lu1vf")
+
+[node name="portal" parent="." instance=ExtResource("23_x5n4v")]
+position = Vector2(8761, -5)
+
 [connection signal="animation_finished" from="Skeleton Warrior/AnimatedSprite2D" to="Skeleton Warrior" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skeleton Warrior/hurt box" to="Skeleton Warrior" method="_on_hurt_box_area_entered" flags=18]
 [connection signal="body_entered" from="Skeleton Warrior/sight" to="Skeleton Warrior" method="_on_sight_body_entered" flags=18]
@@ -1979,3 +2005,4 @@ position = Vector2(8567, 59)
 [connection signal="body_entered" from="Skeleton Warrior10/attack range" to="Skeleton Warrior10" method="_on_attack_range_body_entered" flags=18]
 [connection signal="body_exited" from="Skeleton Warrior10/attack range" to="Skeleton Warrior10" method="_on_attack_range_body_exited" flags=18]
 [connection signal="timeout" from="Skeleton Warrior10/Timer" to="Skeleton Warrior10" method="_on_timer_timeout" flags=18]
+[connection signal="body_entered" from="Fallzone/Area2D" to="Fallzone" method="_on_area_2d_body_entered" flags=18]

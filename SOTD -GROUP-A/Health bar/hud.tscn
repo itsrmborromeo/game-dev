@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://o8afkcucsej"]
+[gd_scene load_steps=11 format=3 uid="uid://o8afkcucsej"]
 
 [ext_resource type="Script" path="res://Health bar/hud.gd" id="1_6n28x"]
 [ext_resource type="Texture2D" uid="uid://bys8olem17c2x" path="res://Health bar/tile_0044.png" id="1_yebji"]
+[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="2_f5j81"]
 [ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="3_k8nsk"]
 [ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="4_c6078"]
 [ext_resource type="FontFile" uid="uid://d1dj56543jr3o" path="res://Health bar/njnaruto.ttf" id="5_7vd8f"]
@@ -25,13 +26,6 @@ offset_right = 406.0
 offset_bottom = 65.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jas1e")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
-offset_top = -10.0
-offset_right = 80.0
-offset_bottom = 76.0
-texture = ExtResource("1_yebji")
-
 [node name="OverHealthBar" type="TextureProgressBar" parent="."]
 texture_filter = 1
 offset_left = 78.0
@@ -44,10 +38,18 @@ stretch_margin_left = 3
 stretch_margin_top = 3
 stretch_margin_right = 3
 stretch_margin_bottom = 3
+texture_under = ExtResource("2_f5j81")
 texture_over = ExtResource("3_k8nsk")
 texture_progress = ExtResource("4_c6078")
 tint_over = Color(0.360784, 0.0901961, 0, 1)
 tint_progress = Color(0, 1, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_top = -10.0
+offset_right = 80.0
+offset_bottom = 76.0
+texture = ExtResource("1_yebji")
 
 [node name="Lives" type="Label" parent="."]
 offset_left = 22.0

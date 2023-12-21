@@ -8,3 +8,6 @@ func add_kill(value):
 	kills += value
 	
 	on_kill_counter.emit(kills)
+	
+func killrst(val):
+	kills=val

@@ -12,7 +12,7 @@ func start_game():
 	if get_tree().paused:
 		resume_game()
 		return
-	transition_to_scene(startlvl.resource_path)
+	ProgressManager.progress(1)
 	
 #pause function	
 func pause_game():

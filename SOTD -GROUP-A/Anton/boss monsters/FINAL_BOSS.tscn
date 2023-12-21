@@ -1,153 +1,153 @@
 [gd_scene load_steps=57 format=3 uid="uid://wpqs61pxbrf8"]
 
-[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/Range AI.gd" id="1_vdw1d"]
-[ext_resource type="Texture2D" uid="uid://b5yclkj5qodnc" path="res://Anton/boss monsters/Stage 3 Boss/sprites/Attack_1.png" id="2_ocu7m"]
-[ext_resource type="Texture2D" uid="uid://cqwe4eq8ogq41" path="res://Anton/boss monsters/Stage 3 Boss/sprites/Attack_2.png" id="3_3lcri"]
-[ext_resource type="Texture2D" uid="uid://kqeuhbe8w4eo" path="res://Anton/boss monsters/Stage 3 Boss/sprites/Dead.png" id="4_le25g"]
-[ext_resource type="Texture2D" uid="uid://doorys6e3gmwn" path="res://Anton/boss monsters/Stage 3 Boss/sprites/Idle.png" id="5_acpmm"]
-[ext_resource type="Texture2D" uid="uid://dedj23y83denc" path="res://Anton/boss monsters/Stage 3 Boss/sprites/Run.png" id="6_3deaw"]
-[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/behaviors/gravity.gd" id="8_3sy01"]
-[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attacks.gd" id="8_tp6kx"]
-[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/behaviors/idlestate.gd" id="10_1g250"]
-[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/state machines/node_finite_state_machine.gd" id="10_jfctu"]
-[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/behaviors/chasestate.gd" id="11_5ofxx"]
-[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/behaviors/melee_attack_state.gd" id="12_u8yog"]
-[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/shoot_state.gd" id="13_kljv5"]
-[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/behaviors/dead_state.gd" id="13_y6v8k"]
-[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="15_vrpcc"]
-[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="16_gymrh"]
-[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="17_ftxy2"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/Range AI.gd" id="1_dxiuj"]
+[ext_resource type="Texture2D" uid="uid://b5yclkj5qodnc" path="res://Anton/boss monsters/Stage 3 Boss/sprites/Attack_1.png" id="2_wq4wb"]
+[ext_resource type="Texture2D" uid="uid://cqwe4eq8ogq41" path="res://Anton/boss monsters/Stage 3 Boss/sprites/Attack_2.png" id="3_7iqwt"]
+[ext_resource type="Texture2D" uid="uid://kqeuhbe8w4eo" path="res://Anton/boss monsters/Stage 3 Boss/sprites/Dead.png" id="4_q1ois"]
+[ext_resource type="Texture2D" uid="uid://doorys6e3gmwn" path="res://Anton/boss monsters/Stage 3 Boss/sprites/Idle.png" id="5_amyyj"]
+[ext_resource type="Texture2D" uid="uid://dedj23y83denc" path="res://Anton/boss monsters/Stage 3 Boss/sprites/Run.png" id="6_dbnu6"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attacks.gd" id="7_im2fn"]
+[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/behaviors/gravity.gd" id="8_yl1rv"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/state machines/node_finite_state_machine.gd" id="9_ftv05"]
+[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/behaviors/idlestate.gd" id="10_eukjp"]
+[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/behaviors/chasestate.gd" id="11_bwv1g"]
+[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/behaviors/melee_attack_state.gd" id="12_lhqfq"]
+[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/shoot_state.gd" id="13_f5onk"]
+[ext_resource type="Script" path="res://Anton/boss monsters/Stage 3 Boss/behaviors/dead_state.gd" id="14_5l15j"]
+[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="15_q1f2c"]
+[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="16_4b0x4"]
+[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="17_6586x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhkw4"]
-atlas = ExtResource("2_ocu7m")
+atlas = ExtResource("2_wq4wb")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_006ho"]
-atlas = ExtResource("2_ocu7m")
+atlas = ExtResource("2_wq4wb")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b3i2u"]
-atlas = ExtResource("2_ocu7m")
+atlas = ExtResource("2_wq4wb")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ojxp2"]
-atlas = ExtResource("2_ocu7m")
+atlas = ExtResource("2_wq4wb")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84hre"]
-atlas = ExtResource("3_3lcri")
+atlas = ExtResource("3_7iqwt")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bf3o"]
-atlas = ExtResource("3_3lcri")
+atlas = ExtResource("3_7iqwt")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fye3r"]
-atlas = ExtResource("3_3lcri")
+atlas = ExtResource("3_7iqwt")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jv1uv"]
-atlas = ExtResource("3_3lcri")
+atlas = ExtResource("3_7iqwt")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e84gh"]
-atlas = ExtResource("2_ocu7m")
+atlas = ExtResource("2_wq4wb")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_trqi4"]
-atlas = ExtResource("2_ocu7m")
+atlas = ExtResource("2_wq4wb")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pd3nt"]
-atlas = ExtResource("2_ocu7m")
+atlas = ExtResource("2_wq4wb")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncteq"]
-atlas = ExtResource("2_ocu7m")
+atlas = ExtResource("2_wq4wb")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_llxda"]
-atlas = ExtResource("4_le25g")
+atlas = ExtResource("4_q1ois")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lja85"]
-atlas = ExtResource("4_le25g")
+atlas = ExtResource("4_q1ois")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f6ce4"]
-atlas = ExtResource("4_le25g")
+atlas = ExtResource("4_q1ois")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sfnkk"]
-atlas = ExtResource("4_le25g")
+atlas = ExtResource("4_q1ois")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0sqj"]
-atlas = ExtResource("4_le25g")
+atlas = ExtResource("4_q1ois")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yywg6"]
-atlas = ExtResource("4_le25g")
+atlas = ExtResource("4_q1ois")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q83wi"]
-atlas = ExtResource("5_acpmm")
+atlas = ExtResource("5_amyyj")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5rjaj"]
-atlas = ExtResource("5_acpmm")
+atlas = ExtResource("5_amyyj")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qyevk"]
-atlas = ExtResource("5_acpmm")
+atlas = ExtResource("5_amyyj")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8knjc"]
-atlas = ExtResource("5_acpmm")
+atlas = ExtResource("5_amyyj")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5got5"]
-atlas = ExtResource("5_acpmm")
+atlas = ExtResource("5_amyyj")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f6lku"]
-atlas = ExtResource("5_acpmm")
+atlas = ExtResource("5_amyyj")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vqtea"]
-atlas = ExtResource("5_acpmm")
+atlas = ExtResource("5_amyyj")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0gxy"]
-atlas = ExtResource("6_3deaw")
+atlas = ExtResource("6_dbnu6")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5amro"]
-atlas = ExtResource("6_3deaw")
+atlas = ExtResource("6_dbnu6")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oopr1"]
-atlas = ExtResource("6_3deaw")
+atlas = ExtResource("6_dbnu6")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7h4ao"]
-atlas = ExtResource("6_3deaw")
+atlas = ExtResource("6_dbnu6")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_atllp"]
-atlas = ExtResource("6_3deaw")
+atlas = ExtResource("6_dbnu6")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igp3p"]
-atlas = ExtResource("6_3deaw")
+atlas = ExtResource("6_dbnu6")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ksbhk"]
-atlas = ExtResource("6_3deaw")
+atlas = ExtResource("6_dbnu6")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2qhv"]
-atlas = ExtResource("6_3deaw")
+atlas = ExtResource("6_dbnu6")
 region = Rect2(896, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1fe54"]
@@ -301,7 +301,7 @@ size = Vector2(60, 66)
 
 [node name="Fire wizrd" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "attack_cooldown")]
 collision_layer = 4
-script = ExtResource("1_vdw1d")
+script = ExtResource("1_dxiuj")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
 Max_HP = 40
@@ -329,7 +329,7 @@ debug_color = Color(0.980392, 0, 0, 0.419608)
 [node name="strike" type="Area2D" parent="." groups=["Enemy"]]
 collision_layer = 96
 collision_mask = 96
-script = ExtResource("8_tp6kx")
+script = ExtResource("7_im2fn")
 damage_amount = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="strike"]
@@ -363,21 +363,21 @@ wait_time = 3.0
 one_shot = true
 
 [node name="gravity" type="Node" parent="." node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
-script = ExtResource("8_3sy01")
+script = ExtResource("8_yl1rv")
 character_body_2d = NodePath("..")
 animated_sprite_2d = NodePath("../AnimatedSprite2D")
 
 [node name="state machine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
-script = ExtResource("10_jfctu")
+script = ExtResource("9_ftv05")
 initial_node_state = NodePath("idle")
 
 [node name="idle" type="Node" parent="state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
-script = ExtResource("10_1g250")
+script = ExtResource("10_eukjp")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="chase" type="Node" parent="state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
-script = ExtResource("11_5ofxx")
+script = ExtResource("11_bwv1g")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 ray_cast_2d = NodePath("../../RayCast2D")
@@ -385,7 +385,7 @@ speed = 30
 size = 19
 
 [node name="attack" type="Node" parent="state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
-script = ExtResource("12_u8yog")
+script = ExtResource("12_lhqfq")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 strike_zone = NodePath("../../strike")
@@ -393,13 +393,13 @@ strike = NodePath("../../strike/CollisionShape2D")
 hit_zone = NodePath("../../strike loc")
 
 [node name="shoot" type="Node" parent="state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "Muzzle")]
-script = ExtResource("13_kljv5")
+script = ExtResource("13_f5onk")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 Muzzle = NodePath("../../spawn_point")
 
 [node name="dead" type="Node" parent="state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
-script = ExtResource("13_y6v8k")
+script = ExtResource("14_5l15j")
 character_body_2d = NodePath("../..")
 animated_body_2d = NodePath("../../AnimatedSprite2D")
 
@@ -418,9 +418,9 @@ stretch_margin_left = 3
 stretch_margin_top = 3
 stretch_margin_right = 3
 stretch_margin_bottom = 3
-texture_under = ExtResource("15_vrpcc")
-texture_over = ExtResource("16_gymrh")
-texture_progress = ExtResource("17_ftxy2")
+texture_under = ExtResource("15_q1f2c")
+texture_over = ExtResource("16_4b0x4")
+texture_progress = ExtResource("17_6586x")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="hurt box" to="." method="_on_hurt_box_area_entered"]
