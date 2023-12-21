@@ -401,8 +401,10 @@ strike_zone = NodePath("../../strike")
 strike = NodePath("../../strike/CollisionShape2D")
 hit_zone = NodePath("../../strike loc")
 
-[node name="patrol" type="Node" parent="state machine"]
+[node name="patrol" type="Node" parent="state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("14_1h87r")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="dead" type="Node" parent="state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
 script = ExtResource("14_78lpv")
