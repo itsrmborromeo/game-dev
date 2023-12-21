@@ -8,12 +8,8 @@
 [ext_resource type="FontFile" uid="uid://d1dj56543jr3o" path="res://Health bar/njnaruto.ttf" id="5_7vd8f"]
 [ext_resource type="Texture2D" uid="uid://e1pgphd1f7l1" path="res://Health bar/pause_icon.png" id="7_e5fcc"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jas1e"]
-bg_color = Color(0.6, 0.494118, 1, 0.172549)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ie0c5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_6n28x")
@@ -21,7 +17,7 @@ script = ExtResource("1_6n28x")
 [node name="Panel" type="Panel" parent="."]
 offset_right = 462.0
 offset_bottom = 65.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_jas1e")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ie0c5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1

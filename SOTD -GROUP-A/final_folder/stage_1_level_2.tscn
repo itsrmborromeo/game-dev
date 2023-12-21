@@ -1,7 +1,7 @@
-[gd_scene load_steps=183 format=3 uid="uid://bu80wyuigng6w"]
+[gd_scene load_steps=184 format=3 uid="uid://bu80wyuigng6w"]
 
 [ext_resource type="PackedScene" uid="uid://daccb2kxmxdji" path="res://stage_1/Stage1/level_2.tscn" id="1_q5p3n"]
-[ext_resource type="PackedScene" uid="uid://drthh3kcyt0hd" path="res://ui/healthbar/hud.tscn" id="2_jgksl"]
+[ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_jgksl"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/MeleeAI_world monsters.gd" id="3_x25ta"]
 [ext_resource type="Texture2D" uid="uid://cjtd5pirdxk3y" path="res://assets/art/mobs/skeleton_spearman/Attack_1.png" id="4_7hxlr"]
 [ext_resource type="Texture2D" uid="uid://c88r4cg38vmcw" path="res://assets/art/mobs/skeleton_spearman/Attack_2.png" id="5_hcfpx"]
@@ -16,9 +16,9 @@
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attack_state.gd" id="14_v3onb"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/patrol.gd" id="15_rke05"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/dead_state.gd" id="16_hhpye"]
-[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Anton/final mobs and scripts/Player health manager/bar-under.png" id="17_4grfi"]
-[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Anton/final mobs and scripts/Player health manager/bar-over.png" id="18_85cfn"]
-[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Anton/final mobs and scripts/Player health manager/bar-progress.png" id="19_2ielh"]
+[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="17_4grfi"]
+[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="18_85cfn"]
+[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="19_2ielh"]
 [ext_resource type="Texture2D" uid="uid://wjnhedfc1dgl" path="res://assets/art/mobs/skeleton_warrior/Attack_1.png" id="20_lhg2e"]
 [ext_resource type="Texture2D" uid="uid://bpmpk1eco2vpt" path="res://assets/art/mobs/skeleton_warrior/Attack_2.png" id="21_e1s3r"]
 [ext_resource type="Texture2D" uid="uid://c44x8licpb4r5" path="res://assets/art/mobs/skeleton_warrior/Attack_3.png" id="22_hdt6l"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bwwnt5amy15i1" path="res://assets/art/mobs/Black_Werewolf/Dead.png" id="29_q01oj"]
 [ext_resource type="Texture2D" uid="uid://lelxuk0hdmtl" path="res://assets/art/mobs/Black_Werewolf/Idle.png" id="30_nsmya"]
 [ext_resource type="Texture2D" uid="uid://b5ci1ufy3u6u" path="res://assets/art/mobs/Black_Werewolf/Run.png" id="31_u3lh4"]
+[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="32_dwb7x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2h6v"]
 atlas = ExtResource("4_7hxlr")
@@ -2446,6 +2447,12 @@ position = Vector2(5428, 167)
 
 [node name="Marker2D2" type="Marker2D" parent="guard/11"]
 position = Vector2(5859, 164)
+
+[node name="Jinbei" parent="." instance=ExtResource("32_dwb7x")]
+position = Vector2(149, 290)
+
+[node name="Camera2D" type="Camera2D" parent="Jinbei"]
+zoom = Vector2(1.4, 1.4)
 
 [connection signal="animation_finished" from="Skeleton Spear/AnimatedSprite2D" to="Skeleton Spear" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skeleton Spear/hurt box" to="Skeleton Spear" method="_on_hurt_box_area_entered" flags=18]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ty3c3utfw0hi"]
 
 [ext_resource type="PackedScene" uid="uid://cyej1kirqnk35" path="res://assets/art/Jeralyn Files/Stage3_level2.tscn" id="1_xyf5d"]
-[ext_resource type="PackedScene" uid="uid://drthh3kcyt0hd" path="res://ui/healthbar/hud.tscn" id="2_dgcc8"]
+[ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_dgcc8"]
 
 [node name="stage_3_level_2" type="Node2D"]
 
