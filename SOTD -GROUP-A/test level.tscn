@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6rrybvcsikap"]
+[gd_scene load_steps=7 format=3 uid="uid://c6rrybvcsikap"]
 
+[ext_resource type="PackedScene" uid="uid://dg4ausxpeywvk" path="res://Anton/final mobs and scripts/mobs and resources/summonable mosters/SkeletonWarrior_summonable.tscn" id="1_n5mde"]
 [ext_resource type="Texture2D" uid="uid://ybsotl4mwap7" path="res://icon.svg" id="1_uwo61"]
 [ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="2_214a4"]
-[ext_resource type="PackedScene" uid="uid://wpqs61pxbrf8" path="res://Anton/boss monsters/Fire wizard.tscn" id="4_pk12i"]
-[ext_resource type="PackedScene" uid="uid://drthh3kcyt0hd" path="res://ui/healthbar/hud.tscn" id="4_uq0da"]
+[ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="4_uq0da"]
+[ext_resource type="PackedScene" uid="uid://du524fg2rgmf6" path="res://Anton/final mobs and scripts/mobs and resources/summonable mosters/SkeletonSpear_summonable.tscn" id="5_6ufrv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fx8yo"]
 size = Vector2(1496.5, 12)
 
 [node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Skeleton Warrior" parent="." instance=ExtResource("1_n5mde")]
+position = Vector2(93, 390)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(406.25, 424)
@@ -27,5 +31,5 @@ metadata/_edit_group_ = true
 
 [node name="HUD" parent="." instance=ExtResource("4_uq0da")]
 
-[node name="Fire wizrd" parent="." instance=ExtResource("4_pk12i")]
-position = Vector2(162, 328)
+[node name="Skeleton Spear" parent="." instance=ExtResource("5_6ufrv")]
+position = Vector2(644, 377)

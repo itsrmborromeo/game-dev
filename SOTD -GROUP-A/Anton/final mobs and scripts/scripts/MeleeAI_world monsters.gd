@@ -77,6 +77,7 @@ func _on_attack_range_body_exited(body):
 func _on_animated_sprite_2d_animation_finished():
 	attacking = false
 	if need_to_clear:
+		KillManager.add_kill(1)
 		queue_free()
 #Attack#
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/MeleeAI_world monsters.gd" id="1_lkygb"]
 [ext_resource type="Texture2D" uid="uid://c2x3g86dhn3uk" path="res://Anton/final mobs and scripts/mobs and resources/Night born/NightBorne.png" id="2_nipig"]
-[ext_resource type="Texture2D" uid="uid://dfbr4hxs76vlr" path="res://Anton/final mobs and scripts/mobs and resources/Black_Werewolf/Attack_3.png" id="4_unbjq"]
+[ext_resource type="Texture2D" uid="uid://dfbr4hxs76vlr" path="res://assets/art/mobs/Black_Werewolf/Attack_3.png" id="4_unbjq"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attacks.gd" id="8_am1ye"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/gravity.gd" id="9_i523u"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/patrol.gd" id="10_iwnt8"]
@@ -11,9 +11,9 @@
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/chasestate.gd" id="12_idwud"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attack_state.gd" id="13_5ix48"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/dead_state.gd" id="14_jxl1s"]
-[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Anton/final mobs and scripts/Player health manager/bar-under.png" id="15_ksm4u"]
-[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Anton/final mobs and scripts/Player health manager/bar-over.png" id="16_e0vwo"]
-[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Anton/final mobs and scripts/Player health manager/bar-progress.png" id="17_dersc"]
+[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="15_ksm4u"]
+[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="16_e0vwo"]
+[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="17_dersc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_psxnf"]
 atlas = ExtResource("2_nipig")
