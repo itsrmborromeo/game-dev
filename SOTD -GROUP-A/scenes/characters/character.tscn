@@ -1,6 +1,6 @@
 [gd_scene load_steps=59 format=3 uid="uid://btbckux2gqeru"]
 
-[ext_resource type="Script" path="res://scripts/character.gd" id="1_t6mbp"]
+[ext_resource type="Script" path="res://scenes/characters/character.gd" id="1_t6mbp"]
 [ext_resource type="Texture2D" uid="uid://bc80x0a75s4nj" path="res://assets/art/maincharacter/Sprites/Idle.png" id="45_0yh3o"]
 [ext_resource type="Texture2D" uid="uid://lje1fs8l51ec" path="res://assets/art/maincharacter/Sprites/Death.png" id="45_7kcbn"]
 [ext_resource type="Texture2D" uid="uid://dftowodp1ja7k" path="res://assets/art/maincharacter/Sprites/Run.png" id="45_ww5au"]
