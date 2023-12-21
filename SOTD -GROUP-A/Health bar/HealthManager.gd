@@ -13,7 +13,7 @@ func took_damage(dmg):
 	on_health_change.emit(currentHP)
 	
 func regain_hp(rgn : int):
-	currentHP -=rgn
+	currentHP +=rgn
 	if currentHP > maxHP:
 		currentHP = maxHP
 	on_health_change.emit(currentHP)

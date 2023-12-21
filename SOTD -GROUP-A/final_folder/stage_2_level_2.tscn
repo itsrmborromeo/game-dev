@@ -1,10 +1,2535 @@
-[gd_scene load_steps=3 format=3 uid="uid://buhovgkbto3nu"]
+[gd_scene load_steps=147 format=3 uid="uid://buhovgkbto3nu"]
 
 [ext_resource type="PackedScene" uid="uid://ba818o2hgrd1w" path="res://stage_2/scenes/level_2.tscn" id="1_mr2wp"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_fiw3e"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/MeleeAI_world monsters.gd" id="4_uln7m"]
+[ext_resource type="Texture2D" uid="uid://wjnhedfc1dgl" path="res://assets/art/mobs/skeleton_warrior/Attack_1.png" id="5_etuad"]
+[ext_resource type="Texture2D" uid="uid://bpmpk1eco2vpt" path="res://assets/art/mobs/skeleton_warrior/Attack_2.png" id="6_5xoj4"]
+[ext_resource type="Texture2D" uid="uid://c44x8licpb4r5" path="res://assets/art/mobs/skeleton_warrior/Attack_3.png" id="7_cp6xj"]
+[ext_resource type="Texture2D" uid="uid://cg3ufjfuc0lm2" path="res://assets/art/mobs/skeleton_warrior/Dead.png" id="8_3tjn2"]
+[ext_resource type="Texture2D" uid="uid://b8dhq4582yoty" path="res://assets/art/mobs/skeleton_warrior/Idle.png" id="9_sphv6"]
+[ext_resource type="Texture2D" uid="uid://c66xbci7xp3nu" path="res://assets/art/mobs/skeleton_warrior/Walk.png" id="10_elj4b"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attacks.gd" id="11_hq52b"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/gravity.gd" id="12_ycfo5"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/state machines/node_finite_state_machine.gd" id="13_3smxr"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/idlestate.gd" id="14_3psmf"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/chasestate.gd" id="15_eb1kp"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attack_state.gd" id="16_o66yk"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/patrol.gd" id="17_rmpru"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/dead_state.gd" id="18_ogh1k"]
+[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="19_j58ad"]
+[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="20_o7v1i"]
+[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="21_deskn"]
+[ext_resource type="Texture2D" uid="uid://cjtd5pirdxk3y" path="res://assets/art/mobs/skeleton_spearman/Attack_1.png" id="22_pkul5"]
+[ext_resource type="Texture2D" uid="uid://c88r4cg38vmcw" path="res://assets/art/mobs/skeleton_spearman/Attack_2.png" id="23_8q05q"]
+[ext_resource type="Texture2D" uid="uid://dvtxv1u1bb7l6" path="res://assets/art/mobs/skeleton_spearman/Dead.png" id="24_5q8yd"]
+[ext_resource type="Texture2D" uid="uid://cr00i64r0bhjr" path="res://assets/art/mobs/skeleton_spearman/Idle.png" id="25_xr24d"]
+[ext_resource type="Texture2D" uid="uid://cfd3jsx5ga2u4" path="res://assets/art/mobs/skeleton_spearman/Run.png" id="26_a1pwn"]
+[ext_resource type="Texture2D" uid="uid://balveheqajhqb" path="res://assets/art/mobs/Black_Werewolf/Attack_1.png" id="27_bqroe"]
+[ext_resource type="Texture2D" uid="uid://dcqvdkuh701g" path="res://assets/art/mobs/Black_Werewolf/Attack_2.png" id="28_5m426"]
+[ext_resource type="Texture2D" uid="uid://dfbr4hxs76vlr" path="res://assets/art/mobs/Black_Werewolf/Attack_3.png" id="29_52v1c"]
+[ext_resource type="Texture2D" uid="uid://bwwnt5amy15i1" path="res://assets/art/mobs/Black_Werewolf/Dead.png" id="30_eb4gb"]
+[ext_resource type="Texture2D" uid="uid://lelxuk0hdmtl" path="res://assets/art/mobs/Black_Werewolf/Idle.png" id="31_04jir"]
+[ext_resource type="Texture2D" uid="uid://b5ci1ufy3u6u" path="res://assets/art/mobs/Black_Werewolf/Run.png" id="32_k3xqu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6v6g"]
+atlas = ExtResource("5_etuad")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp65n"]
+atlas = ExtResource("5_etuad")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arip0"]
+atlas = ExtResource("5_etuad")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sx5o"]
+atlas = ExtResource("5_etuad")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s04ap"]
+atlas = ExtResource("5_etuad")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1864"]
+atlas = ExtResource("6_5xoj4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4qdk"]
+atlas = ExtResource("6_5xoj4")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q73a"]
+atlas = ExtResource("6_5xoj4")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pilvf"]
+atlas = ExtResource("6_5xoj4")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwhcu"]
+atlas = ExtResource("6_5xoj4")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k01b3"]
+atlas = ExtResource("6_5xoj4")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v15wc"]
+atlas = ExtResource("7_cp6xj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2jo7"]
+atlas = ExtResource("7_cp6xj")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufty3"]
+atlas = ExtResource("7_cp6xj")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ak8h"]
+atlas = ExtResource("7_cp6xj")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eslwg"]
+atlas = ExtResource("8_3tjn2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3je4"]
+atlas = ExtResource("8_3tjn2")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj3gu"]
+atlas = ExtResource("8_3tjn2")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2ie4"]
+atlas = ExtResource("8_3tjn2")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my2gm"]
+atlas = ExtResource("9_sphv6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8036"]
+atlas = ExtResource("9_sphv6")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfm16"]
+atlas = ExtResource("9_sphv6")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itufh"]
+atlas = ExtResource("9_sphv6")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq02r"]
+atlas = ExtResource("9_sphv6")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfg5y"]
+atlas = ExtResource("9_sphv6")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hte1t"]
+atlas = ExtResource("9_sphv6")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe6ol"]
+atlas = ExtResource("10_elj4b")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qowug"]
+atlas = ExtResource("10_elj4b")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp0x1"]
+atlas = ExtResource("10_elj4b")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awgqs"]
+atlas = ExtResource("10_elj4b")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3tnn"]
+atlas = ExtResource("10_elj4b")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4thc"]
+atlas = ExtResource("10_elj4b")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oycl"]
+atlas = ExtResource("10_elj4b")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1fe54"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_c6v6g")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_qp65n")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_arip0")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_2sx5o")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_s04ap")
+}],
+"loop": false,
+"name": &"attack_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_k1864")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_c4qdk")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_1q73a")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_pilvf")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_cwhcu")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_k01b3")
+}],
+"loop": false,
+"name": &"attack_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_v15wc")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_w2jo7")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ufty3")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_0ak8h")
+}],
+"loop": false,
+"name": &"attack_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eslwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3je4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj3gu")
+}, {
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_y2ie4")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my2gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8036")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfm16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itufh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq02r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfg5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hte1t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_qe6ol")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_qowug")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_jp0x1")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_awgqs")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_c3tnn")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_s4thc")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_2oycl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qw0jk"]
+radius = 14.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kly01"]
+radius = 16.0
+height = 64.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5axr1"]
+size = Vector2(20, 59)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ydfv"]
+radius = 116.211
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jr1sc"]
+size = Vector2(60, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2h6v"]
+atlas = ExtResource("22_pkul5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unrui"]
+atlas = ExtResource("22_pkul5")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2orp"]
+atlas = ExtResource("22_pkul5")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eryt"]
+atlas = ExtResource("22_pkul5")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfkk0"]
+atlas = ExtResource("23_8q05q")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmmra"]
+atlas = ExtResource("23_8q05q")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4toj"]
+atlas = ExtResource("23_8q05q")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocj7i"]
+atlas = ExtResource("23_8q05q")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omyo0"]
+atlas = ExtResource("22_pkul5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5etqx"]
+atlas = ExtResource("22_pkul5")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46y20"]
+atlas = ExtResource("22_pkul5")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bevao"]
+atlas = ExtResource("22_pkul5")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3c0u"]
+atlas = ExtResource("24_5q8yd")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hepv4"]
+atlas = ExtResource("24_5q8yd")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycm34"]
+atlas = ExtResource("24_5q8yd")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8v8x"]
+atlas = ExtResource("24_5q8yd")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oiu3"]
+atlas = ExtResource("24_5q8yd")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shvbi"]
+atlas = ExtResource("25_xr24d")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov645"]
+atlas = ExtResource("25_xr24d")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko8w2"]
+atlas = ExtResource("25_xr24d")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn45q"]
+atlas = ExtResource("25_xr24d")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2qhx"]
+atlas = ExtResource("25_xr24d")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_728qv"]
+atlas = ExtResource("25_xr24d")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chgle"]
+atlas = ExtResource("25_xr24d")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmf13"]
+atlas = ExtResource("26_a1pwn")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbxnq"]
+atlas = ExtResource("26_a1pwn")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvvxs"]
+atlas = ExtResource("26_a1pwn")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8ncy"]
+atlas = ExtResource("26_a1pwn")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh402"]
+atlas = ExtResource("26_a1pwn")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbaor"]
+atlas = ExtResource("26_a1pwn")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70k2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2h6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unrui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2orp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eryt")
+}],
+"loop": false,
+"name": &"attack_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfkk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmmra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4toj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocj7i")
+}],
+"loop": false,
+"name": &"attack_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omyo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5etqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46y20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bevao")
+}],
+"loop": false,
+"name": &"attack_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3c0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hepv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycm34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8v8x")
+}, {
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_0oiu3")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shvbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov645")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko8w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn45q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2qhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_728qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chgle")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_nmf13")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_tbxnq")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_pvvxs")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_e8ncy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh402")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbaor")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nu32x"]
+radius = 14.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_reqbp"]
+radius = 16.0
+height = 64.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vybf"]
+size = Vector2(33, 59)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6buac"]
+radius = 116.211
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha61m"]
+size = Vector2(60, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a80qi"]
+atlas = ExtResource("27_bqroe")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3ird"]
+atlas = ExtResource("27_bqroe")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6qe6"]
+atlas = ExtResource("27_bqroe")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koo8w"]
+atlas = ExtResource("27_bqroe")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cclj0"]
+atlas = ExtResource("27_bqroe")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqqkh"]
+atlas = ExtResource("27_bqroe")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un44b"]
+atlas = ExtResource("28_5m426")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnq2m"]
+atlas = ExtResource("28_5m426")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftcyy"]
+atlas = ExtResource("28_5m426")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csw4f"]
+atlas = ExtResource("28_5m426")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gblf"]
+atlas = ExtResource("29_52v1c")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wioma"]
+atlas = ExtResource("29_52v1c")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37p0g"]
+atlas = ExtResource("29_52v1c")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w74r7"]
+atlas = ExtResource("29_52v1c")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26ktd"]
+atlas = ExtResource("29_52v1c")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2b6x"]
+atlas = ExtResource("30_eb4gb")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icvvi"]
+atlas = ExtResource("30_eb4gb")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcen1"]
+atlas = ExtResource("31_04jir")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qog43"]
+atlas = ExtResource("31_04jir")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_543fv"]
+atlas = ExtResource("31_04jir")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmoh8"]
+atlas = ExtResource("31_04jir")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e73sp"]
+atlas = ExtResource("31_04jir")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw5vm"]
+atlas = ExtResource("31_04jir")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_br43c"]
+atlas = ExtResource("31_04jir")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsw64"]
+atlas = ExtResource("31_04jir")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frfqr"]
+atlas = ExtResource("32_k3xqu")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggr7f"]
+atlas = ExtResource("32_k3xqu")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_681ep"]
+atlas = ExtResource("32_k3xqu")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n74wf"]
+atlas = ExtResource("32_k3xqu")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5ixi"]
+atlas = ExtResource("32_k3xqu")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_614d0"]
+atlas = ExtResource("32_k3xqu")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7bg8"]
+atlas = ExtResource("32_k3xqu")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f60ff"]
+atlas = ExtResource("32_k3xqu")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h41fd"]
+atlas = ExtResource("32_k3xqu")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qpxx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a80qi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3ird")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6qe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koo8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cclj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqqkh")
+}],
+"loop": false,
+"name": &"attack_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un44b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnq2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftcyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csw4f")
+}],
+"loop": false,
+"name": &"attack_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gblf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wioma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37p0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w74r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26ktd")
+}],
+"loop": false,
+"name": &"attack_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2b6x")
+}, {
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_icvvi")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcen1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qog43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_543fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmoh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e73sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw5vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br43c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsw64")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frfqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggr7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_681ep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n74wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5ixi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_614d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7bg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f60ff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h41fd")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgbfr"]
+radius = 14.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r6fwi"]
+radius = 16.0
+height = 64.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uw5x"]
+size = Vector2(20, 59)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dlp5l"]
+radius = 116.211
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7ame"]
+size = Vector2(60, 66)
 
 [node name="stage_2_level_2" type="Node2D"]
 
 [node name="level2" parent="." instance=ExtResource("1_mr2wp")]
 
 [node name="HUD" parent="." instance=ExtResource("2_fiw3e")]
+
+[node name="Skeleton Warrior" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(1858, 104)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton Warrior"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_1fe54")
+animation = &"walk"
+frame_progress = 0.873185
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior"]
+visible = false
+shape = SubResource("CapsuleShape2D_qw0jk")
+
+[node name="hurt box" type="Area2D" parent="Skeleton Warrior"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior/hurt box"]
+shape = SubResource("CapsuleShape2D_kly01")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Skeleton Warrior" groups=["Enemy"]]
+visible = false
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior/strike"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_5axr1")
+
+[node name="sight" type="Area2D" parent="Skeleton Warrior"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior/sight"]
+shape = SubResource("CircleShape2D_3ydfv")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Skeleton Warrior"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Skeleton Warrior"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior/attack range"]
+shape = SubResource("RectangleShape2D_jr1sc")
+
+[node name="Timer" type="Timer" parent="Skeleton Warrior"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Skeleton Warrior" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Skeleton Warrior" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Skeleton Warrior/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Skeleton Warrior/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Skeleton Warrior/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Skeleton Warrior/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../1")
+
+[node name="dead" type="Node" parent="Skeleton Warrior/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Skeleton Warrior"]
+
+[node name="health" type="TextureProgressBar" parent="Skeleton Warrior"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="1" type="Node" parent="Skeleton Warrior"]
+
+[node name="Marker2D" type="Marker2D" parent="Skeleton Warrior/1"]
+position = Vector2(1818, 130)
+
+[node name="Marker2D2" type="Marker2D" parent="Skeleton Warrior/1"]
+position = Vector2(1964, 127)
+
+[node name="Skeleton Warrior2" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(3171, 35)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton Warrior2"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_1fe54")
+animation = &"walk"
+frame_progress = 0.873185
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior2"]
+visible = false
+shape = SubResource("CapsuleShape2D_qw0jk")
+
+[node name="hurt box" type="Area2D" parent="Skeleton Warrior2"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior2/hurt box"]
+shape = SubResource("CapsuleShape2D_kly01")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Skeleton Warrior2" groups=["Enemy"]]
+visible = false
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior2/strike"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_5axr1")
+
+[node name="sight" type="Area2D" parent="Skeleton Warrior2"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior2/sight"]
+shape = SubResource("CircleShape2D_3ydfv")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Skeleton Warrior2"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Skeleton Warrior2"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior2/attack range"]
+shape = SubResource("RectangleShape2D_jr1sc")
+
+[node name="Timer" type="Timer" parent="Skeleton Warrior2"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Skeleton Warrior2" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Skeleton Warrior2" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Skeleton Warrior2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Skeleton Warrior2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Skeleton Warrior2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Skeleton Warrior2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../2")
+
+[node name="dead" type="Node" parent="Skeleton Warrior2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Skeleton Warrior2"]
+
+[node name="health" type="TextureProgressBar" parent="Skeleton Warrior2"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="2" type="Node" parent="Skeleton Warrior2"]
+
+[node name="Marker2D" type="Marker2D" parent="Skeleton Warrior2/2"]
+position = Vector2(3083, 63)
+
+[node name="Marker2D2" type="Marker2D" parent="Skeleton Warrior2/2"]
+position = Vector2(3237, 59)
+
+[node name="Skeleton Spear" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(3398, 34)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton Spear"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_70k2e")
+animation = &"idle"
+frame_progress = 0.386939
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear"]
+visible = false
+shape = SubResource("CapsuleShape2D_nu32x")
+
+[node name="hurt box" type="Area2D" parent="Skeleton Spear"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear/hurt box"]
+visible = false
+shape = SubResource("CapsuleShape2D_reqbp")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Skeleton Spear" groups=["Enemy"]]
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear/strike"]
+position = Vector2(6.5, 2.5)
+shape = SubResource("RectangleShape2D_8vybf")
+
+[node name="sight" type="Area2D" parent="Skeleton Spear"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear/sight"]
+shape = SubResource("CircleShape2D_6buac")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Skeleton Spear"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Skeleton Spear"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear/attack range"]
+shape = SubResource("RectangleShape2D_ha61m")
+
+[node name="Timer" type="Timer" parent="Skeleton Spear"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Skeleton Spear" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Skeleton Spear" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Skeleton Spear/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Skeleton Spear/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Skeleton Spear/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Skeleton Spear/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../3")
+
+[node name="dead" type="Node" parent="Skeleton Spear/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Skeleton Spear"]
+
+[node name="health" type="TextureProgressBar" parent="Skeleton Spear"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="3" type="Node" parent="Skeleton Spear"]
+
+[node name="Marker2D" type="Marker2D" parent="Skeleton Spear/3"]
+position = Vector2(3342, 61)
+
+[node name="Marker2D2" type="Marker2D" parent="Skeleton Spear/3"]
+position = Vector2(3461, 64)
+
+[node name="Black werewolf" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(3772, 6)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Black werewolf"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_0qpxx")
+animation = &"attack_3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black werewolf"]
+visible = false
+shape = SubResource("CapsuleShape2D_pgbfr")
+
+[node name="hurt box" type="Area2D" parent="Black werewolf"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black werewolf/hurt box"]
+visible = false
+shape = SubResource("CapsuleShape2D_r6fwi")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Black werewolf" groups=["Enemy"]]
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black werewolf/strike"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_0uw5x")
+
+[node name="sight" type="Area2D" parent="Black werewolf"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black werewolf/sight"]
+shape = SubResource("CircleShape2D_dlp5l")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Black werewolf"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Black werewolf"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black werewolf/attack range"]
+shape = SubResource("RectangleShape2D_u7ame")
+
+[node name="Timer" type="Timer" parent="Black werewolf"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Black werewolf" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Black werewolf" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Black werewolf/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Black werewolf/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Black werewolf/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Black werewolf/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../4")
+
+[node name="dead" type="Node" parent="Black werewolf/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Black werewolf"]
+
+[node name="health" type="TextureProgressBar" parent="Black werewolf"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="4" type="Node" parent="Black werewolf"]
+
+[node name="Marker2D" type="Marker2D" parent="Black werewolf/4"]
+position = Vector2(3676, 33)
+
+[node name="Marker2D2" type="Marker2D" parent="Black werewolf/4"]
+position = Vector2(3849, 32)
+
+[node name="Skeleton Warrior3" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(5072, 55)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton Warrior3"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_1fe54")
+animation = &"walk"
+frame_progress = 0.873185
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior3"]
+visible = false
+shape = SubResource("CapsuleShape2D_qw0jk")
+
+[node name="hurt box" type="Area2D" parent="Skeleton Warrior3"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior3/hurt box"]
+shape = SubResource("CapsuleShape2D_kly01")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Skeleton Warrior3" groups=["Enemy"]]
+visible = false
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior3/strike"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_5axr1")
+
+[node name="sight" type="Area2D" parent="Skeleton Warrior3"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior3/sight"]
+shape = SubResource("CircleShape2D_3ydfv")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Skeleton Warrior3"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Skeleton Warrior3"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior3/attack range"]
+shape = SubResource("RectangleShape2D_jr1sc")
+
+[node name="Timer" type="Timer" parent="Skeleton Warrior3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Skeleton Warrior3" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Skeleton Warrior3" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Skeleton Warrior3/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Skeleton Warrior3/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Skeleton Warrior3/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Skeleton Warrior3/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../5")
+
+[node name="dead" type="Node" parent="Skeleton Warrior3/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Skeleton Warrior3"]
+
+[node name="health" type="TextureProgressBar" parent="Skeleton Warrior3"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="5" type="Node" parent="Skeleton Warrior3"]
+
+[node name="Marker2D" type="Marker2D" parent="Skeleton Warrior3/5"]
+position = Vector2(4997, 84)
+
+[node name="Marker2D2" type="Marker2D" parent="Skeleton Warrior3/5"]
+position = Vector2(5161, 84)
+
+[node name="Skeleton Spear2" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(6209, 37)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton Spear2"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_70k2e")
+animation = &"idle"
+frame_progress = 0.386939
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear2"]
+visible = false
+shape = SubResource("CapsuleShape2D_nu32x")
+
+[node name="hurt box" type="Area2D" parent="Skeleton Spear2"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear2/hurt box"]
+visible = false
+shape = SubResource("CapsuleShape2D_reqbp")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Skeleton Spear2" groups=["Enemy"]]
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear2/strike"]
+position = Vector2(6.5, 2.5)
+shape = SubResource("RectangleShape2D_8vybf")
+
+[node name="sight" type="Area2D" parent="Skeleton Spear2"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear2/sight"]
+shape = SubResource("CircleShape2D_6buac")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Skeleton Spear2"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Skeleton Spear2"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear2/attack range"]
+shape = SubResource("RectangleShape2D_ha61m")
+
+[node name="Timer" type="Timer" parent="Skeleton Spear2"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Skeleton Spear2" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Skeleton Spear2" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Skeleton Spear2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Skeleton Spear2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Skeleton Spear2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Skeleton Spear2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../6")
+
+[node name="dead" type="Node" parent="Skeleton Spear2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Skeleton Spear2"]
+
+[node name="health" type="TextureProgressBar" parent="Skeleton Spear2"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="6" type="Node" parent="Skeleton Spear2"]
+
+[node name="Marker2D" type="Marker2D" parent="Skeleton Spear2/6"]
+position = Vector2(6134, 65)
+
+[node name="Marker2D2" type="Marker2D" parent="Skeleton Spear2/6"]
+position = Vector2(6260, 66)
+
+[node name="Skeleton Warrior4" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(6575, 38)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton Warrior4"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_1fe54")
+animation = &"walk"
+frame_progress = 0.873185
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior4"]
+visible = false
+shape = SubResource("CapsuleShape2D_qw0jk")
+
+[node name="hurt box" type="Area2D" parent="Skeleton Warrior4"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior4/hurt box"]
+shape = SubResource("CapsuleShape2D_kly01")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Skeleton Warrior4" groups=["Enemy"]]
+visible = false
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior4/strike"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_5axr1")
+
+[node name="sight" type="Area2D" parent="Skeleton Warrior4"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior4/sight"]
+shape = SubResource("CircleShape2D_3ydfv")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Skeleton Warrior4"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Skeleton Warrior4"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior4/attack range"]
+shape = SubResource("RectangleShape2D_jr1sc")
+
+[node name="Timer" type="Timer" parent="Skeleton Warrior4"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Skeleton Warrior4" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Skeleton Warrior4" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Skeleton Warrior4/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Skeleton Warrior4/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Skeleton Warrior4/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Skeleton Warrior4/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../7")
+
+[node name="dead" type="Node" parent="Skeleton Warrior4/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Skeleton Warrior4"]
+
+[node name="health" type="TextureProgressBar" parent="Skeleton Warrior4"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="7" type="Node" parent="Skeleton Warrior4"]
+
+[node name="Marker2D" type="Marker2D" parent="Skeleton Warrior4/7"]
+position = Vector2(6524, 64)
+
+[node name="Marker2D2" type="Marker2D" parent="Skeleton Warrior4/7"]
+position = Vector2(6625, 65)
+
+[node name="Skeleton Spear3" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(7024, -40)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton Spear3"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_70k2e")
+animation = &"idle"
+frame_progress = 0.386939
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear3"]
+visible = false
+shape = SubResource("CapsuleShape2D_nu32x")
+
+[node name="hurt box" type="Area2D" parent="Skeleton Spear3"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear3/hurt box"]
+visible = false
+shape = SubResource("CapsuleShape2D_reqbp")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Skeleton Spear3" groups=["Enemy"]]
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear3/strike"]
+position = Vector2(6.5, 2.5)
+shape = SubResource("RectangleShape2D_8vybf")
+
+[node name="sight" type="Area2D" parent="Skeleton Spear3"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear3/sight"]
+shape = SubResource("CircleShape2D_6buac")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Skeleton Spear3"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Skeleton Spear3"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear3/attack range"]
+shape = SubResource("RectangleShape2D_ha61m")
+
+[node name="Timer" type="Timer" parent="Skeleton Spear3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Skeleton Spear3" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Skeleton Spear3" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Skeleton Spear3/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Skeleton Spear3/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Skeleton Spear3/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Skeleton Spear3/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../8")
+
+[node name="dead" type="Node" parent="Skeleton Spear3/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Skeleton Spear3"]
+
+[node name="health" type="TextureProgressBar" parent="Skeleton Spear3"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="8" type="Node" parent="Skeleton Spear3"]
+
+[node name="Marker2D" type="Marker2D" parent="Skeleton Spear3/8"]
+position = Vector2(6960, -13)
+
+[node name="Marker2D2" type="Marker2D" parent="Skeleton Spear3/8"]
+position = Vector2(7120, -15)
+
+[node name="Skeleton Warrior5" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(8245, -27)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton Warrior5"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_1fe54")
+animation = &"walk"
+frame_progress = 0.873185
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior5"]
+visible = false
+shape = SubResource("CapsuleShape2D_qw0jk")
+
+[node name="hurt box" type="Area2D" parent="Skeleton Warrior5"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior5/hurt box"]
+shape = SubResource("CapsuleShape2D_kly01")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Skeleton Warrior5" groups=["Enemy"]]
+visible = false
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior5/strike"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_5axr1")
+
+[node name="sight" type="Area2D" parent="Skeleton Warrior5"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior5/sight"]
+shape = SubResource("CircleShape2D_3ydfv")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Skeleton Warrior5"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Skeleton Warrior5"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior5/attack range"]
+shape = SubResource("RectangleShape2D_jr1sc")
+
+[node name="Timer" type="Timer" parent="Skeleton Warrior5"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Skeleton Warrior5" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Skeleton Warrior5" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Skeleton Warrior5/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Skeleton Warrior5/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Skeleton Warrior5/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Skeleton Warrior5/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../9")
+
+[node name="dead" type="Node" parent="Skeleton Warrior5/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Skeleton Warrior5"]
+
+[node name="health" type="TextureProgressBar" parent="Skeleton Warrior5"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="9" type="Node" parent="Skeleton Warrior5"]
+
+[node name="Marker2D" type="Marker2D" parent="Skeleton Warrior5/9"]
+position = Vector2(8193, 6)
+
+[node name="Marker2D2" type="Marker2D" parent="Skeleton Warrior5/9"]
+position = Vector2(8283, 5)
+
+[node name="Skeleton Warrior6" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(9435, -41)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton Warrior6"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_1fe54")
+animation = &"walk"
+frame_progress = 0.873185
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior6"]
+visible = false
+shape = SubResource("CapsuleShape2D_qw0jk")
+
+[node name="hurt box" type="Area2D" parent="Skeleton Warrior6"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior6/hurt box"]
+shape = SubResource("CapsuleShape2D_kly01")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Skeleton Warrior6" groups=["Enemy"]]
+visible = false
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior6/strike"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_5axr1")
+
+[node name="sight" type="Area2D" parent="Skeleton Warrior6"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior6/sight"]
+shape = SubResource("CircleShape2D_3ydfv")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Skeleton Warrior6"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Skeleton Warrior6"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior6/attack range"]
+shape = SubResource("RectangleShape2D_jr1sc")
+
+[node name="Timer" type="Timer" parent="Skeleton Warrior6"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Skeleton Warrior6" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Skeleton Warrior6" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Skeleton Warrior6/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Skeleton Warrior6/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Skeleton Warrior6/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Skeleton Warrior6/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../10")
+
+[node name="dead" type="Node" parent="Skeleton Warrior6/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Skeleton Warrior6"]
+
+[node name="health" type="TextureProgressBar" parent="Skeleton Warrior6"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="10" type="Node" parent="Skeleton Warrior6"]
+
+[node name="Marker2D" type="Marker2D" parent="Skeleton Warrior6/10"]
+position = Vector2(9372, -17)
+
+[node name="Marker2D2" type="Marker2D" parent="Skeleton Warrior6/10"]
+position = Vector2(9504, -17)
+
+[node name="Skeleton Spear4" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(9922, -47)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skeleton Spear4"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_70k2e")
+animation = &"idle"
+frame_progress = 0.386939
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear4"]
+visible = false
+shape = SubResource("CapsuleShape2D_nu32x")
+
+[node name="hurt box" type="Area2D" parent="Skeleton Spear4"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear4/hurt box"]
+visible = false
+shape = SubResource("CapsuleShape2D_reqbp")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Skeleton Spear4" groups=["Enemy"]]
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear4/strike"]
+position = Vector2(6.5, 2.5)
+shape = SubResource("RectangleShape2D_8vybf")
+
+[node name="sight" type="Area2D" parent="Skeleton Spear4"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear4/sight"]
+shape = SubResource("CircleShape2D_6buac")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Skeleton Spear4"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Skeleton Spear4"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Spear4/attack range"]
+shape = SubResource("RectangleShape2D_ha61m")
+
+[node name="Timer" type="Timer" parent="Skeleton Spear4"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Skeleton Spear4" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Skeleton Spear4" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Skeleton Spear4/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Skeleton Spear4/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Skeleton Spear4/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Skeleton Spear4/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../11")
+
+[node name="dead" type="Node" parent="Skeleton Spear4/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Skeleton Spear4"]
+
+[node name="health" type="TextureProgressBar" parent="Skeleton Spear4"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="11" type="Node" parent="Skeleton Spear4"]
+
+[node name="Marker2D" type="Marker2D" parent="Skeleton Spear4/11"]
+position = Vector2(9860, -16)
+
+[node name="Marker2D2" type="Marker2D" parent="Skeleton Spear4/11"]
+position = Vector2(10003, -16)
+
+[node name="Black werewolf2" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+position = Vector2(11302, -107)
+collision_layer = 4
+script = ExtResource("4_uln7m")
+state_machine = NodePath("state machine")
+attack_cooldown = NodePath("Timer")
+Max_HP = 40
+DangerColor = Color(1, 0, 0, 1)
+CautionColor = Color(0.945098, 1, 0, 1)
+HealthyColor = Color(0, 1, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Black werewolf2"]
+texture_filter = 1
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_0qpxx")
+animation = &"attack_3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black werewolf2"]
+visible = false
+shape = SubResource("CapsuleShape2D_pgbfr")
+
+[node name="hurt box" type="Area2D" parent="Black werewolf2"]
+visible = false
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black werewolf2/hurt box"]
+visible = false
+shape = SubResource("CapsuleShape2D_r6fwi")
+debug_color = Color(0.980392, 0, 0, 0.419608)
+
+[node name="strike" type="Area2D" parent="Black werewolf2" groups=["Enemy"]]
+collision_layer = 96
+collision_mask = 96
+script = ExtResource("11_hq52b")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black werewolf2/strike"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_0uw5x")
+
+[node name="sight" type="Area2D" parent="Black werewolf2"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black werewolf2/sight"]
+shape = SubResource("CircleShape2D_dlp5l")
+debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="Black werewolf2"]
+target_position = Vector2(0, 38)
+
+[node name="attack range" type="Area2D" parent="Black werewolf2"]
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black werewolf2/attack range"]
+shape = SubResource("RectangleShape2D_u7ame")
+
+[node name="Timer" type="Timer" parent="Black werewolf2"]
+wait_time = 3.0
+one_shot = true
+
+[node name="gravity" type="Node" parent="Black werewolf2" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_ycfo5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="state machine" type="Node" parent="Black werewolf2" node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("13_3smxr")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="Black werewolf2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_3psmf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="chase" type="Node" parent="Black werewolf2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("15_eb1kp")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+ray_cast_2d = NodePath("../../RayCast2D")
+speed = 30
+size = 19
+
+[node name="attack" type="Node" parent="Black werewolf2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("16_o66yk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+strike_zone = NodePath("../../strike")
+strike = NodePath("../../strike/CollisionShape2D")
+hit_zone = NodePath("../../strike loc")
+
+[node name="patrol" type="Node" parent="Black werewolf2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "patrol_points")]
+script = ExtResource("17_rmpru")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+patrol_points = NodePath("../../12")
+
+[node name="dead" type="Node" parent="Black werewolf2/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("18_ogh1k")
+character_body_2d = NodePath("../..")
+animated_body_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="strike loc" type="Marker2D" parent="Black werewolf2"]
+
+[node name="health" type="TextureProgressBar" parent="Black werewolf2"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -68.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("19_j58ad")
+texture_over = ExtResource("20_o7v1i")
+texture_progress = ExtResource("21_deskn")
+
+[node name="12" type="Node" parent="Black werewolf2"]
+
+[node name="Marker2D" type="Marker2D" parent="Black werewolf2/12"]
+position = Vector2(11109, -78)
+
+[node name="Marker2D2" type="Marker2D" parent="Black werewolf2/12"]
+position = Vector2(11385, -77)
+
+[connection signal="animation_finished" from="Skeleton Warrior/AnimatedSprite2D" to="Skeleton Warrior" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Skeleton Warrior/hurt box" to="Skeleton Warrior" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior/sight" to="Skeleton Warrior" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior/sight" to="Skeleton Warrior" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior/attack range" to="Skeleton Warrior" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior/attack range" to="Skeleton Warrior" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Skeleton Warrior/Timer" to="Skeleton Warrior" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Skeleton Warrior2/AnimatedSprite2D" to="Skeleton Warrior2" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Skeleton Warrior2/hurt box" to="Skeleton Warrior2" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior2/sight" to="Skeleton Warrior2" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior2/sight" to="Skeleton Warrior2" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior2/attack range" to="Skeleton Warrior2" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior2/attack range" to="Skeleton Warrior2" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Skeleton Warrior2/Timer" to="Skeleton Warrior2" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Skeleton Spear/AnimatedSprite2D" to="Skeleton Spear" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Skeleton Spear/hurt box" to="Skeleton Spear" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Skeleton Spear/sight" to="Skeleton Spear" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Spear/sight" to="Skeleton Spear" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Skeleton Spear/attack range" to="Skeleton Spear" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Spear/attack range" to="Skeleton Spear" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Skeleton Spear/Timer" to="Skeleton Spear" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Black werewolf/AnimatedSprite2D" to="Black werewolf" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Black werewolf/hurt box" to="Black werewolf" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Black werewolf/sight" to="Black werewolf" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Black werewolf/sight" to="Black werewolf" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Black werewolf/attack range" to="Black werewolf" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Black werewolf/attack range" to="Black werewolf" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Black werewolf/Timer" to="Black werewolf" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Skeleton Warrior3/AnimatedSprite2D" to="Skeleton Warrior3" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Skeleton Warrior3/hurt box" to="Skeleton Warrior3" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior3/sight" to="Skeleton Warrior3" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior3/sight" to="Skeleton Warrior3" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior3/attack range" to="Skeleton Warrior3" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior3/attack range" to="Skeleton Warrior3" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Skeleton Warrior3/Timer" to="Skeleton Warrior3" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Skeleton Spear2/AnimatedSprite2D" to="Skeleton Spear2" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Skeleton Spear2/hurt box" to="Skeleton Spear2" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Skeleton Spear2/sight" to="Skeleton Spear2" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Spear2/sight" to="Skeleton Spear2" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Skeleton Spear2/attack range" to="Skeleton Spear2" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Spear2/attack range" to="Skeleton Spear2" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Skeleton Spear2/Timer" to="Skeleton Spear2" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Skeleton Warrior4/AnimatedSprite2D" to="Skeleton Warrior4" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Skeleton Warrior4/hurt box" to="Skeleton Warrior4" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior4/sight" to="Skeleton Warrior4" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior4/sight" to="Skeleton Warrior4" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior4/attack range" to="Skeleton Warrior4" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior4/attack range" to="Skeleton Warrior4" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Skeleton Warrior4/Timer" to="Skeleton Warrior4" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Skeleton Spear3/AnimatedSprite2D" to="Skeleton Spear3" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Skeleton Spear3/hurt box" to="Skeleton Spear3" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Skeleton Spear3/sight" to="Skeleton Spear3" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Spear3/sight" to="Skeleton Spear3" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Skeleton Spear3/attack range" to="Skeleton Spear3" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Spear3/attack range" to="Skeleton Spear3" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Skeleton Spear3/Timer" to="Skeleton Spear3" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Skeleton Warrior5/AnimatedSprite2D" to="Skeleton Warrior5" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Skeleton Warrior5/hurt box" to="Skeleton Warrior5" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior5/sight" to="Skeleton Warrior5" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior5/sight" to="Skeleton Warrior5" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior5/attack range" to="Skeleton Warrior5" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior5/attack range" to="Skeleton Warrior5" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Skeleton Warrior5/Timer" to="Skeleton Warrior5" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Skeleton Warrior6/AnimatedSprite2D" to="Skeleton Warrior6" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Skeleton Warrior6/hurt box" to="Skeleton Warrior6" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior6/sight" to="Skeleton Warrior6" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior6/sight" to="Skeleton Warrior6" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Skeleton Warrior6/attack range" to="Skeleton Warrior6" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Warrior6/attack range" to="Skeleton Warrior6" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Skeleton Warrior6/Timer" to="Skeleton Warrior6" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Skeleton Spear4/AnimatedSprite2D" to="Skeleton Spear4" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Skeleton Spear4/hurt box" to="Skeleton Spear4" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Skeleton Spear4/sight" to="Skeleton Spear4" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Spear4/sight" to="Skeleton Spear4" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Skeleton Spear4/attack range" to="Skeleton Spear4" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Skeleton Spear4/attack range" to="Skeleton Spear4" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Skeleton Spear4/Timer" to="Skeleton Spear4" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Black werewolf2/AnimatedSprite2D" to="Black werewolf2" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Black werewolf2/hurt box" to="Black werewolf2" method="_on_hurt_box_area_entered" flags=18]
+[connection signal="body_entered" from="Black werewolf2/sight" to="Black werewolf2" method="_on_sight_body_entered" flags=18]
+[connection signal="body_exited" from="Black werewolf2/sight" to="Black werewolf2" method="_on_sight_body_exited" flags=18]
+[connection signal="body_entered" from="Black werewolf2/attack range" to="Black werewolf2" method="_on_attack_range_body_entered" flags=18]
+[connection signal="body_exited" from="Black werewolf2/attack range" to="Black werewolf2" method="_on_attack_range_body_exited" flags=18]
+[connection signal="timeout" from="Black werewolf2/Timer" to="Black werewolf2" method="_on_timer_timeout" flags=18]

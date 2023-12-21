@@ -1,7 +1,7 @@
 [gd_scene load_steps=99 format=3 uid="uid://br3yrn7yieunt"]
 
 [ext_resource type="PackedScene" uid="uid://brp2pqlpwk0ml" path="res://stage_1/Stage1/level_1.tscn" id="1_1pvjg"]
-[ext_resource type="PackedScene" uid="uid://drthh3kcyt0hd" path="res://ui/healthbar/hud.tscn" id="3_64st3"]
+[ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="3_64st3"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/MeleeAI_world monsters.gd" id="3_d3xgf"]
 [ext_resource type="Texture2D" uid="uid://wjnhedfc1dgl" path="res://assets/art/mobs/skeleton_warrior/Attack_1.png" id="4_2iawh"]
 [ext_resource type="Texture2D" uid="uid://bpmpk1eco2vpt" path="res://assets/art/mobs/skeleton_warrior/Attack_2.png" id="5_ccp5v"]
@@ -17,9 +17,9 @@
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attack_state.gd" id="15_acpsh"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/patrol.gd" id="16_u88ve"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/dead_state.gd" id="17_fcigm"]
-[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Anton/final mobs and scripts/Player health manager/bar-under.png" id="18_ow7du"]
-[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Anton/final mobs and scripts/Player health manager/bar-over.png" id="19_s4dkb"]
-[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Anton/final mobs and scripts/Player health manager/bar-progress.png" id="20_v05cf"]
+[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="18_ow7du"]
+[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="19_s4dkb"]
+[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="20_v05cf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6v6g"]
 atlas = ExtResource("4_2iawh")
