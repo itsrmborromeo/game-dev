@@ -18,7 +18,6 @@ func _ready():
 	$health.set_max(Max_HP)
 	$health.value = Max_HP
 func _physics_process(_delta):
-	print(can_attack)
 	if alive:
 		if !attacking:
 			_on_animated_sprite_2d_animation_finished()

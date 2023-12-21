@@ -1,4 +1,4 @@
-[gd_scene load_steps=351 format=3 uid="uid://fxa6w3x35x87"]
+[gd_scene load_steps=355 format=3 uid="uid://fxa6w3x35x87"]
 
 [ext_resource type="PackedScene" uid="uid://ilf3u5xni603" path="res://assets/art/Jeralyn Files/Stage3_level1.tscn" id="1_6swmx"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_bjqf7"]
@@ -36,7 +36,9 @@
 [ext_resource type="Texture2D" uid="uid://dfbr4hxs76vlr" path="res://assets/art/mobs/Black_Werewolf/Attack_3.png" id="35_ilskl"]
 [ext_resource type="Texture2D" uid="uid://bwwnt5amy15i1" path="res://assets/art/mobs/Black_Werewolf/Dead.png" id="36_afcll"]
 [ext_resource type="Texture2D" uid="uid://lelxuk0hdmtl" path="res://assets/art/mobs/Black_Werewolf/Idle.png" id="37_0wlne"]
+[ext_resource type="PackedScene" uid="uid://sc36m5rox1t1" path="res://portal.tscn" id="38_gola8"]
 [ext_resource type="Texture2D" uid="uid://b5ci1ufy3u6u" path="res://assets/art/mobs/Black_Werewolf/Run.png" id="38_qbnju"]
+[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="39_ir81u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6v6g"]
 atlas = ExtResource("5_0eqc2")
@@ -2293,18 +2295,22 @@ radius = 116.211
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhb3n"]
 size = Vector2(60, 66)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdbqg"]
+size = Vector2(67, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afgjb"]
+size = Vector2(49, 659)
+
 [node name="stage_3_level_1" type="Node2D"]
 
 [node name="level_2" parent="." instance=ExtResource("1_6swmx")]
 
 [node name="HUD" parent="." instance=ExtResource("2_bjqf7")]
 
-[node name="Skeleton Warrior2" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+[node name="Skeleton Warrior2" type="CharacterBody2D" parent="."]
 position = Vector2(1149, 609)
 collision_layer = 4
 script = ExtResource("4_biayi")
-state_machine = NodePath("")
-attack_cooldown = NodePath("")
 Max_HP = 40
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
@@ -2563,12 +2569,10 @@ position = Vector2(1408, 634)
 [node name="Marker2D2" type="Marker2D" parent="Skeleton Spear/3"]
 position = Vector2(1636, 632)
 
-[node name="Skeleton Warrior3" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
+[node name="Skeleton Warrior3" type="CharacterBody2D" parent="."]
 position = Vector2(1856, 606)
 collision_layer = 4
 script = ExtResource("4_biayi")
-state_machine = NodePath("")
-attack_cooldown = NodePath("")
 Max_HP = 40
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
@@ -4273,6 +4277,24 @@ position = Vector2(707, 627)
 
 [node name="Marker2D2" type="Marker2D" parent="Skeleton Warrior/21"]
 position = Vector2(882, 624)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-8, 322)
+shape = SubResource("RectangleShape2D_mdbqg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(15186, 340)
+shape = SubResource("RectangleShape2D_afgjb")
+
+[node name="portal" parent="." instance=ExtResource("38_gola8")]
+position = Vector2(15105, 580)
+
+[node name="Jinbei" parent="." instance=ExtResource("39_ir81u")]
+position = Vector2(101, 601)
+
+[node name="Camera2D" type="Camera2D" parent="Jinbei"]
 
 [connection signal="animation_finished" from="Skeleton Warrior2/AnimatedSprite2D" to="Skeleton Warrior2" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skeleton Warrior2/hurt box" to="Skeleton Warrior2" method="_on_hurt_box_area_entered" flags=18]

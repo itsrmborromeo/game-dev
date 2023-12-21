@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://buhovgkbto3nu"]
+[gd_scene load_steps=150 format=3 uid="uid://buhovgkbto3nu"]
 
 [ext_resource type="PackedScene" uid="uid://ba818o2hgrd1w" path="res://stage_2/scenes/level_2.tscn" id="1_mr2wp"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_fiw3e"]
@@ -30,7 +30,10 @@
 [ext_resource type="Texture2D" uid="uid://dfbr4hxs76vlr" path="res://assets/art/mobs/Black_Werewolf/Attack_3.png" id="29_52v1c"]
 [ext_resource type="Texture2D" uid="uid://bwwnt5amy15i1" path="res://assets/art/mobs/Black_Werewolf/Dead.png" id="30_eb4gb"]
 [ext_resource type="Texture2D" uid="uid://lelxuk0hdmtl" path="res://assets/art/mobs/Black_Werewolf/Idle.png" id="31_04jir"]
+[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="32_028h3"]
 [ext_resource type="Texture2D" uid="uid://b5ci1ufy3u6u" path="res://assets/art/mobs/Black_Werewolf/Run.png" id="32_k3xqu"]
+[ext_resource type="PackedScene" uid="uid://sc36m5rox1t1" path="res://portal.tscn" id="33_fa88j"]
+[ext_resource type="PackedScene" uid="uid://bi7oghhaludxw" path="res://fallzone.tscn" id="34_wqwjf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6v6g"]
 atlas = ExtResource("5_etuad")
@@ -2448,6 +2451,15 @@ position = Vector2(11109, -78)
 
 [node name="Marker2D2" type="Marker2D" parent="Black werewolf2/12"]
 position = Vector2(11385, -77)
+
+[node name="Jinbei" parent="." instance=ExtResource("32_028h3")]
+position = Vector2(498, 88)
+
+[node name="portal" parent="." instance=ExtResource("33_fa88j")]
+position = Vector2(11811, -92)
+
+[node name="Fallzone" parent="." instance=ExtResource("34_wqwjf")]
+position = Vector2(8295, 327)
 
 [connection signal="animation_finished" from="Skeleton Warrior/AnimatedSprite2D" to="Skeleton Warrior" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skeleton Warrior/hurt box" to="Skeleton Warrior" method="_on_hurt_box_area_entered" flags=18]

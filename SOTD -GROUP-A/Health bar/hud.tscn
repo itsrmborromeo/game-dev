@@ -1,74 +1,65 @@
-[gd_scene load_steps=9 format=3 uid="uid://o8afkcucsej"]
+[gd_scene load_steps=11 format=3 uid="uid://o8afkcucsej"]
 
 [ext_resource type="Script" path="res://Health bar/hud.gd" id="1_6n28x"]
 [ext_resource type="Texture2D" uid="uid://bys8olem17c2x" path="res://Health bar/tile_0044.png" id="1_yebji"]
-[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="2_p0rv3"]
+[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="2_f5j81"]
 [ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="3_k8nsk"]
 [ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="4_c6078"]
 [ext_resource type="FontFile" uid="uid://d1dj56543jr3o" path="res://Health bar/njnaruto.ttf" id="5_7vd8f"]
 [ext_resource type="Texture2D" uid="uid://e1pgphd1f7l1" path="res://Health bar/pause_icon.png" id="7_e5fcc"]
+[ext_resource type="Texture2D" uid="uid://da4hmfx54smv5" path="res://Health bar/skull2.png" id="7_w5efc"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ie0c5"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jas1e"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ml5aq"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_6n28x")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 462.0
+offset_right = 406.0
 offset_bottom = 65.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ie0c5")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
-offset_left = 14.0
-offset_top = -12.0
-offset_right = 95.0
-offset_bottom = 76.0
-texture = ExtResource("1_yebji")
-
-[node name="UnderHealthBar" type="TextureProgressBar" parent="."]
-texture_filter = 1
-offset_left = 123.0
-offset_top = 16.0
-offset_right = 446.0
-offset_bottom = 44.0
-nine_patch_stretch = true
-stretch_margin_left = 3
-stretch_margin_top = 3
-stretch_margin_right = 3
-stretch_margin_bottom = 3
-texture_under = ExtResource("2_p0rv3")
-texture_over = ExtResource("3_k8nsk")
-texture_progress = ExtResource("4_c6078")
+theme_override_styles/panel = SubResource("StyleBoxFlat_jas1e")
 
 [node name="OverHealthBar" type="TextureProgressBar" parent="."]
 texture_filter = 1
-offset_left = 123.0
-offset_top = 15.0
-offset_right = 447.0
-offset_bottom = 44.0
+offset_left = 78.0
+offset_top = 13.0
+offset_right = 402.0
+offset_bottom = 42.0
 value = 100.0
 nine_patch_stretch = true
 stretch_margin_left = 3
 stretch_margin_top = 3
 stretch_margin_right = 3
 stretch_margin_bottom = 3
-texture_under = ExtResource("2_p0rv3")
+texture_under = ExtResource("2_f5j81")
 texture_over = ExtResource("3_k8nsk")
 texture_progress = ExtResource("4_c6078")
 tint_over = Color(0.360784, 0.0901961, 0, 1)
 tint_progress = Color(0, 1, 0, 1)
 
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_top = -10.0
+offset_right = 80.0
+offset_bottom = 76.0
+texture = ExtResource("1_yebji")
+
 [node name="Lives" type="Label" parent="."]
-offset_left = 16.0
-offset_top = 1.0
-offset_right = 96.0
-offset_bottom = 77.0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 64.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_7vd8f")
 theme_override_font_sizes/font_size = 34
-text = "**"
+text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -79,5 +70,67 @@ offset_right = 1143.0
 offset_bottom = 66.0
 icon = ExtResource("7_e5fcc")
 icon_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 76.0
+offset_top = 96.0
+offset_right = 116.0
+offset_bottom = 119.0
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 9.0
+offset_top = 65.0
+offset_right = 192.0
+offset_bottom = 124.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ml5aq")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 15.0
+offset_top = 75.0
+offset_right = 57.0
+offset_bottom = 120.0
+texture = ExtResource("7_w5efc")
+flip_h = true
+
+[node name="Label" type="Label" parent="TextureRect2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 44.0
+offset_top = -8.0
+offset_right = 172.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("5_7vd8f")
+theme_override_font_sizes/font_size = 18
+text = "Kill Counter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Kills" type="Label" parent="TextureRect2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 87.0
+offset_top = 16.0
+offset_right = 155.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_7vd8f")
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 18.0
+offset_right = 97.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_7vd8f")
+theme_override_font_sizes/font_size = 30
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

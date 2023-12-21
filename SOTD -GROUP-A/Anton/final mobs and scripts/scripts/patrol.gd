@@ -48,4 +48,4 @@ func mover():
 		current_point_position += 1
 	current_point = point_positions[current_point_position]
 	#print("Point position")
-	#print(currenta_point_position)
+	#print(current_point_position)
