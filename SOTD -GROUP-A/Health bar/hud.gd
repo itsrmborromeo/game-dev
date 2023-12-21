@@ -15,9 +15,10 @@ func _ready():
 	LifeManager.on_lives_changed.connect(life_updater)
 	HealthManager.on_health_change.connect(health_updater)
 	KillManager.on_kill_counter.connect(kill_update)
-func _process(delta):
+func _process(_delta):
 	pass
 func health_updater(current_hp):
+	hp = current_hp
 	if hp < maxHP * .2:
 		$OverHealthBar.tint_progress = danger_color
 	elif hp < maxHP *.5:

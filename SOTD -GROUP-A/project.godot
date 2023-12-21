@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 
 GameManager="*res://ui/game_manager.gd"
 HealthManager="*res://Health bar/HealthManager.gd"
-KillManager="*res://Health bar/KillManager.gd"
 LifeManager="*res://Health bar/LifeManager.gd"
+KillManager="*res://Health bar/KillManager.gd"
 
 [input]
 
