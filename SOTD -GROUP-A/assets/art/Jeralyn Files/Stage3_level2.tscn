@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://cyej1kirqnk35"]
+[gd_scene load_steps=22 format=3 uid="uid://cyej1kirqnk35"]
 
-[ext_resource type="Texture2D" uid="uid://ckamuvl0ip7nk" path="res://assets/art/Stage3_level2_art/tileset.png" id="1_b1srt"]
-[ext_resource type="Texture2D" uid="uid://chuq2ycxrb3r6" path="res://assets/art/Stage3_level2_art/props/houses.png" id="1_dohav"]
-[ext_resource type="Texture2D" uid="uid://bmbu66ps2crsp" path="res://assets/art/Stage3_level2_art/props/props.png" id="2_ifx8y"]
+[ext_resource type="Texture2D" uid="uid://ckamuvl0ip7nk" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/tileset.png" id="1_b1srt"]
+[ext_resource type="Texture2D" uid="uid://chuq2ycxrb3r6" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/props/houses.png" id="1_dohav"]
+[ext_resource type="Texture2D" uid="uid://bmbu66ps2crsp" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/props/props.png" id="2_ifx8y"]
 [ext_resource type="PackedScene" uid="uid://b3xtwfqngjbxk" path="res://assets/art/Jeralyn Files/Stage4_art/Parallax.tscn" id="5_s3yc2"]
+[ext_resource type="PackedScene" uid="uid://btbckux2gqeru" path="res://scenes/characters/character.tscn" id="27_oc4iv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kuj7n"]
 texture = ExtResource("1_b1srt")
@@ -3956,8 +3957,6 @@ size = Vector2(12.8, 0.949997)
 
 [node name="Stage3_level2" type="Node2D"]
 
-[node name="parralax" parent="." instance=ExtResource("5_s3yc2")]
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_q0u8p")
 format = 2
@@ -4001,3 +4000,15 @@ position = Vector2(2272, 422.25)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_nkjgn")
 one_way_collision = true
+
+[node name="Jinbei" parent="." instance=ExtResource("27_oc4iv")]
+top_level = true
+position = Vector2(488, 423)
+scale = Vector2(2, 2)
+disable_mode = 2
+platform_wall_layers = 1
+
+[node name="Camera2D2" type="Camera2D" parent="Jinbei"]
+position = Vector2(224, -64)
+
+[node name="parralax" parent="." instance=ExtResource("5_s3yc2")]
