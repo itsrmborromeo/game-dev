@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dunvjo887g402"
+path="res://.godot/imported/1-11 162-B - Boss Battle (Loop).mp3-db8bc165b7416296de8db548f8193111.mp3str"
+
+[deps]
+
+source_file="res://bg_music/1-11 162-B - Boss Battle (Loop).mp3"
+dest_files=["res://.godot/imported/1-11 162-B - Boss Battle (Loop).mp3-db8bc165b7416296de8db548f8193111.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

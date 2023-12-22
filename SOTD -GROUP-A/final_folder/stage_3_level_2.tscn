@@ -1,4 +1,4 @@
-[gd_scene load_steps=509 format=3 uid="uid://ty3c3utfw0hi"]
+[gd_scene load_steps=565 format=3 uid="uid://ty3c3utfw0hi"]
 
 [ext_resource type="PackedScene" uid="uid://cyej1kirqnk35" path="res://assets/art/Jeralyn Files/Stage3_level2.tscn" id="1_xyf5d"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_dgcc8"]
@@ -37,7 +37,59 @@
 [ext_resource type="Texture2D" uid="uid://b0f3kc0161m3a" path="res://assets/art/mobs/Red_Werewolf/Dead.png" id="35_efmnl"]
 [ext_resource type="Texture2D" uid="uid://2rd7q5o51ikr" path="res://assets/art/mobs/Red_Werewolf/Idle.png" id="36_q7d47"]
 [ext_resource type="Texture2D" uid="uid://c60v35arlxkag" path="res://assets/art/mobs/Red_Werewolf/Walk.png" id="37_0lmyr"]
-[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="38_v8yva"]
+[ext_resource type="AudioStream" uid="uid://2nhc5hj2ww7e" path="res://bg_music/1-16 195-B -Wintry Town (Loop).mp3" id="38_5dns6"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/Player.gd" id="39_rhrvu"]
+[ext_resource type="Texture2D" uid="uid://c5h636nq7madp" path="res://assets/art/maincharacter/attack_1/attack1.png" id="40_vb56m"]
+[ext_resource type="Texture2D" uid="uid://cgnro828wnjrt" path="res://assets/art/maincharacter/attack_1/attack2.png" id="41_lib42"]
+[ext_resource type="Texture2D" uid="uid://cooahrk48o84v" path="res://assets/art/maincharacter/attack_1/attack3.png" id="42_iuoog"]
+[ext_resource type="Texture2D" uid="uid://biu0oie2maaj5" path="res://assets/art/maincharacter/attack_1/attack4.png" id="43_xgmd8"]
+[ext_resource type="Texture2D" uid="uid://cnc2mixi3w65b" path="res://assets/art/maincharacter/attack_2/attack1.png" id="44_nfqsu"]
+[ext_resource type="Texture2D" uid="uid://deljj126f8ps" path="res://assets/art/maincharacter/attack_2/attack2.png" id="45_fib71"]
+[ext_resource type="Texture2D" uid="uid://c8fdgk632x408" path="res://assets/art/maincharacter/attack_2/attack3.png" id="46_ype48"]
+[ext_resource type="Texture2D" uid="uid://cmnons2qf7x5a" path="res://assets/art/maincharacter/attack_2/attack4.png" id="47_41agf"]
+[ext_resource type="Texture2D" uid="uid://dva61jau8ro0e" path="res://assets/art/maincharacter/attack_2/attack5.png" id="48_2vys0"]
+[ext_resource type="Texture2D" uid="uid://dg6bts7o3daae" path="res://assets/art/maincharacter/attack3/attack1.png" id="49_wcaxy"]
+[ext_resource type="Texture2D" uid="uid://clly0uw5udakp" path="res://assets/art/maincharacter/attack3/attack2.png" id="50_1rfco"]
+[ext_resource type="Texture2D" uid="uid://chwh6nl65n7m6" path="res://assets/art/maincharacter/attack3/attack3.png" id="51_limw5"]
+[ext_resource type="Texture2D" uid="uid://bi2w1kvouthtb" path="res://assets/art/maincharacter/attack3/attack4.png" id="52_liyn6"]
+[ext_resource type="Texture2D" uid="uid://o3qysrnuqxm4" path="res://assets/art/maincharacter/jump/jump1.png" id="53_ljjo0"]
+[ext_resource type="Texture2D" uid="uid://bspcgc655g5p0" path="res://assets/art/maincharacter/jump/jump2.png" id="54_t8kti"]
+[ext_resource type="Texture2D" uid="uid://bv8bktfv6i8uy" path="res://assets/art/maincharacter/jump/jump3.png" id="55_u332k"]
+[ext_resource type="Texture2D" uid="uid://dwik7a26qfofo" path="res://assets/art/maincharacter/dead/dead1.png" id="56_mo5h7"]
+[ext_resource type="Texture2D" uid="uid://nsixnrjcscye" path="res://assets/art/maincharacter/dead/dead2.png" id="57_n5bwv"]
+[ext_resource type="Texture2D" uid="uid://dny2oypo2gc7o" path="res://assets/art/maincharacter/dead/dead3.png" id="58_h6oro"]
+[ext_resource type="Texture2D" uid="uid://dko4apqljcl6t" path="res://assets/art/maincharacter/dead/dead4.png" id="59_8s554"]
+[ext_resource type="Texture2D" uid="uid://bowe6ilakyv6w" path="res://assets/art/maincharacter/dead/dead5.png" id="60_mh0c8"]
+[ext_resource type="Texture2D" uid="uid://b2texpbqkihpi" path="res://assets/art/maincharacter/dead/dead6.png" id="61_yqeq4"]
+[ext_resource type="Texture2D" uid="uid://b3vrcx7axogup" path="res://assets/art/maincharacter/idle/idle1.png" id="62_vb6xa"]
+[ext_resource type="Texture2D" uid="uid://cnytp7ftryduo" path="res://assets/art/maincharacter/idle/idle2.png" id="63_craus"]
+[ext_resource type="Texture2D" uid="uid://cnh03cx7k0lyv" path="res://assets/art/maincharacter/idle/idle3.png" id="64_tkajh"]
+[ext_resource type="Texture2D" uid="uid://dqpg2457akgdp" path="res://assets/art/maincharacter/idle/idle4.png" id="65_tkxwi"]
+[ext_resource type="Texture2D" uid="uid://jcmqbnwhh4ta" path="res://assets/art/maincharacter/idle/idle5.png" id="66_mgc6r"]
+[ext_resource type="Texture2D" uid="uid://dodqi7jd642nf" path="res://assets/art/maincharacter/jump/jump4.png" id="67_gkeo2"]
+[ext_resource type="Texture2D" uid="uid://mxhx3tfho41a" path="res://assets/art/maincharacter/jump/jump5.png" id="68_76pme"]
+[ext_resource type="Texture2D" uid="uid://dqq6nno1a7c4r" path="res://assets/art/maincharacter/jump/jump6.png" id="69_g8m3t"]
+[ext_resource type="Texture2D" uid="uid://cf1ans6nmau7c" path="res://assets/art/maincharacter/jump/jump7.png" id="70_wy14r"]
+[ext_resource type="Texture2D" uid="uid://d16qnnqd1v1i0" path="res://assets/art/maincharacter/jump/jump8.png" id="71_wadob"]
+[ext_resource type="Texture2D" uid="uid://c42nf17akqjpq" path="res://assets/art/maincharacter/jump/jump9.png" id="72_ehfiy"]
+[ext_resource type="Texture2D" uid="uid://bkqc0lionaglb" path="res://assets/art/maincharacter/walk/walk1.png" id="73_ry5tv"]
+[ext_resource type="Texture2D" uid="uid://bk8ecdyxyay0d" path="res://assets/art/maincharacter/walk/walk2.png" id="74_c8poa"]
+[ext_resource type="Texture2D" uid="uid://d3co22qhe8078" path="res://assets/art/maincharacter/walk/walk3.png" id="75_6kbck"]
+[ext_resource type="Texture2D" uid="uid://c6l64wyavbh48" path="res://assets/art/maincharacter/walk/walk4.png" id="76_pstib"]
+[ext_resource type="Texture2D" uid="uid://ddp7u8x4vet7q" path="res://assets/art/maincharacter/walk/walk5.png" id="77_0w2j8"]
+[ext_resource type="Texture2D" uid="uid://bxggewynna8dy" path="res://assets/art/maincharacter/walk/walk6.png" id="78_a31ac"]
+[ext_resource type="Texture2D" uid="uid://2ser6xakuaa4" path="res://assets/art/maincharacter/walk/walk7.png" id="79_oqao2"]
+[ext_resource type="Texture2D" uid="uid://cuxx8y67sibxh" path="res://assets/art/maincharacter/walk/walk8.png" id="80_05fan"]
+[ext_resource type="Texture2D" uid="uid://d4mkt2d67ygpa" path="res://assets/art/maincharacter/walk/walk9.png" id="81_6m0xs"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/Sword.gd" id="82_puxya"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/gravity.gd" id="83_ok741"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/player_state_machine.gd" id="84_jbg00"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/attack_state.gd" id="85_4yhtt"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/jump_state.gd" id="86_f1vfu"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/dead_state.gd" id="87_ti8dl"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/walk_state.gd" id="88_t5563"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/double_jump.gd" id="89_8iahh"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/idle_state.gd" id="90_igq0k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6v6g"]
 atlas = ExtResource("4_v6cfb")
@@ -3425,6 +3477,186 @@ radius = 116.211
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhb3n"]
 size = Vector2(60, 66)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_gt4wa"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("40_vb56m")
+}, {
+"duration": 0.7,
+"texture": ExtResource("41_lib42")
+}, {
+"duration": 0.7,
+"texture": ExtResource("42_iuoog")
+}, {
+"duration": 0.7,
+"texture": ExtResource("43_xgmd8")
+}],
+"loop": false,
+"name": &"attack_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("44_nfqsu")
+}, {
+"duration": 0.5,
+"texture": ExtResource("45_fib71")
+}, {
+"duration": 0.5,
+"texture": ExtResource("46_ype48")
+}, {
+"duration": 0.5,
+"texture": ExtResource("47_41agf")
+}, {
+"duration": 0.5,
+"texture": ExtResource("48_2vys0")
+}],
+"loop": false,
+"name": &"attack_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("49_wcaxy")
+}, {
+"duration": 0.7,
+"texture": ExtResource("50_1rfco")
+}, {
+"duration": 0.7,
+"texture": ExtResource("51_limw5")
+}, {
+"duration": 0.7,
+"texture": ExtResource("52_liyn6")
+}],
+"loop": false,
+"name": &"attack_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("53_ljjo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_t8kti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_u332k")
+}],
+"loop": false,
+"name": &"charge_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_mo5h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_n5bwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_h6oro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_8s554")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_mh0c8")
+}, {
+"duration": 20.0,
+"texture": ExtResource("61_yqeq4")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_vb6xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_craus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_tkajh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_tkxwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_mgc6r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("67_gkeo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_76pme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_g8m3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_wy14r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_wadob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_ehfiy")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_ry5tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_c8poa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_6kbck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_pstib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_0w2j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_a31ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_oqao2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_05fan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_6m0xs")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35be4"]
+radius = 18.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p4rx2"]
+radius = 19.0
+height = 78.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5csln"]
+size = Vector2(19.5, 67.5)
+
 [node name="stage_3_level_2" type="Node2D"]
 
 [node name="Stage3_level2" parent="." instance=ExtResource("1_xyf5d")]
@@ -3437,7 +3669,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -3569,7 +3801,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -3701,7 +3933,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -3832,7 +4064,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -3964,7 +4196,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -4096,7 +4328,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -4227,7 +4459,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -4359,7 +4591,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -4490,7 +4722,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -4622,7 +4854,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -4753,7 +4985,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -4884,7 +5116,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -5015,7 +5247,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -5147,7 +5379,7 @@ collision_layer = 4
 script = ExtResource("3_tpnis")
 state_machine = NodePath("../Skeleton Warrior4/state machine")
 attack_cooldown = NodePath("../Skeleton Warrior4/Timer")
-Max_HP = 40
+Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(0.945098, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
@@ -5273,10 +5505,103 @@ position = Vector2(8347, 567)
 [node name="Marker2D2" type="Marker2D" parent="Skeleton Warrior5/15"]
 position = Vector2(8658, 566)
 
-[node name="Jinbei" parent="." instance=ExtResource("38_v8yva")]
-position = Vector2(60, 536)
+[node name="Jinbei" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "sword") groups=["Player"]]
+position = Vector2(303, 430)
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("39_rhrvu")
+state_machine = NodePath("StateMachine")
+sword = NodePath("Sword")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Jinbei"]
+texture_filter = 1
+position = Vector2(3, -31)
+sprite_frames = SubResource("SpriteFrames_gt4wa")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jinbei"]
+shape = SubResource("CapsuleShape2D_35be4")
+
+[node name="hurtbox" type="Area2D" parent="Jinbei"]
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jinbei/hurtbox"]
+shape = SubResource("CapsuleShape2D_p4rx2")
+
+[node name="Sword" type="Area2D" parent="Jinbei" groups=["Player_strike"]]
+collision_layer = 96
+collision_mask = 96
+monitorable = false
+script = ExtResource("82_puxya")
+damage_amount = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jinbei/Sword"]
+position = Vector2(-4.75, -1.75)
+shape = SubResource("RectangleShape2D_5csln")
+
+[node name="Range" type="Marker2D" parent="Jinbei"]
+
+[node name="Gravity" type="Node2D" parent="Jinbei" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("83_ok741")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="StateMachine" type="Node2D" parent="Jinbei" node_paths=PackedStringArray("initial_player_node_state")]
+script = ExtResource("84_jbg00")
+initial_player_node_state = NodePath("idle")
+
+[node name="attack" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "attack_range", "hit_box", "hit_space")]
+script = ExtResource("85_4yhtt")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+attack_range = NodePath("../../Range")
+hit_box = NodePath("../../Sword/CollisionShape2D")
+hit_space = NodePath("../../Sword")
+
+[node name="jump" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("86_f1vfu")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+jump_force = 300
+SPEED = 100
+
+[node name="dead" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("87_ti8dl")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="walk" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("88_t5563")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="double_jump" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("89_8iahh")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+jump_force = 200
+SPEED = 100
+
+[node name="idle" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("90_igq0k")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Regen" type="Timer" parent="Jinbei"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Dead reset" type="Timer" parent="Jinbei"]
 
 [node name="Camera2D" type="Camera2D" parent="Jinbei"]
+zoom = Vector2(1.3, 1.3)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-140, -11)
+stream = ExtResource("38_5dns6")
+autoplay = true
+max_distance = 14000.0
 
 [connection signal="animation_finished" from="Skeleton Warrior/AnimatedSprite2D" to="Skeleton Warrior" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skeleton Warrior/hurt box" to="Skeleton Warrior" method="_on_hurt_box_area_entered" flags=18]
@@ -5376,3 +5701,7 @@ position = Vector2(60, 536)
 [connection signal="body_entered" from="Skeleton Warrior5/attack range" to="Skeleton Warrior5" method="_on_attack_range_body_entered" flags=18]
 [connection signal="body_exited" from="Skeleton Warrior5/attack range" to="Skeleton Warrior5" method="_on_attack_range_body_exited" flags=18]
 [connection signal="timeout" from="Skeleton Warrior5/Timer" to="Skeleton Warrior5" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Jinbei/AnimatedSprite2D" to="Jinbei" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Jinbei/hurtbox" to="Jinbei" method="_on_hurtbox_area_entered" flags=18]
+[connection signal="timeout" from="Jinbei/Regen" to="Jinbei" method="_on_regen_timeout" flags=18]
+[connection signal="timeout" from="Jinbei/Dead reset" to="Jinbei" method="_on_dead_reset_timeout" flags=18]

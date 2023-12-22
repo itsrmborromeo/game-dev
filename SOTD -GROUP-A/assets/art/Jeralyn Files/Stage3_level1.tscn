@@ -1,31 +1,31 @@
-[gd_scene load_steps=56 format=3 uid="uid://ilf3u5xni603"]
+[gd_scene load_steps=58 format=3 uid="uid://ilf3u5xni603"]
 
-[ext_resource type="Texture2D" uid="uid://icg3664pcm81" path="res://assets/art/tilemaps/Village/TILEMAP2-removebg-preview (1).png" id="6_5pl5s"]
-[ext_resource type="Texture2D" uid="uid://cc7d5sjofrol4" path="res://assets/art/tilemaps/Village/TILEMAP3-removebg-preview.png" id="7_h21s5"]
-[ext_resource type="Texture2D" uid="uid://bnhfas61fw6f3" path="res://assets/art/tilemaps/Village/TILEMAP4-removebg-preview.png" id="8_1thxj"]
-[ext_resource type="Texture2D" uid="uid://dkjdq6fmqwpdb" path="res://assets/art/tilemaps/Village/TILEMAP1-removebg-preview.png" id="9_yufm6"]
-[ext_resource type="Texture2D" uid="uid://cbyjv5iewvfgp" path="res://assets/art/tilemaps/Village/TILEMAP5-removebg-preview.png" id="10_ki4rv"]
-[ext_resource type="Texture2D" uid="uid://dh6cvpaali21d" path="res://assets/art/tilemaps/Village/TILEMAP6-removebg-preview.png" id="11_5epdm"]
-[ext_resource type="Texture2D" uid="uid://durciy7dod8qx" path="res://assets/art/tilemaps/Village/TILEMAP7-removebg-preview.png" id="12_oitjc"]
-[ext_resource type="Texture2D" uid="uid://6iqaqi5x3gx6" path="res://assets/art/tilemaps/Platformer/Ground_01.png" id="14_852ga"]
-[ext_resource type="Texture2D" uid="uid://bkijblmope80e" path="res://assets/art/tilemaps/Village/TILEMAP8-removebg-preview.png" id="14_a4l2o"]
-[ext_resource type="Texture2D" uid="uid://dymj3xvolyotb" path="res://assets/art/tilemaps/Village/TILEMAP9-removebg-preview.png" id="15_47sa7"]
-[ext_resource type="Texture2D" uid="uid://dvo4v38p4f77h" path="res://assets/art/tilemaps/Platformer/Ground_02.png" id="15_boruj"]
-[ext_resource type="Texture2D" uid="uid://ba1xcuci7m3xj" path="res://assets/art/tilemaps/Platformer/Ground_03.png" id="16_fk8st"]
-[ext_resource type="Texture2D" uid="uid://k7lp8230v5ch" path="res://assets/art/tilemaps/Village/TILEMAP10-removebg-preview.png" id="16_s0u32"]
-[ext_resource type="Texture2D" uid="uid://c72grksomnvau" path="res://assets/art/tilemaps/Village/TILEMAP11-removebg-preview.png" id="17_5ss41"]
-[ext_resource type="Texture2D" uid="uid://1ftyltlsbagc" path="res://assets/art/tilemaps/Platformer/Ground_04.png" id="17_b5aul"]
-[ext_resource type="Texture2D" uid="uid://cnrj0uu73bg4d" path="res://assets/art/tilemaps/Village/TILEMAP12-removebg-preview.png" id="18_nf4cw"]
-[ext_resource type="Texture2D" uid="uid://ix6ustsm15pl" path="res://assets/art/tilemaps/Platformer/Ground_05.png" id="18_p1hk3"]
-[ext_resource type="Texture2D" uid="uid://b818g688es0rk" path="res://assets/art/tilemaps/Village/TILEMAP14-removebg-preview.png" id="19_b5hrv"]
-[ext_resource type="Texture2D" uid="uid://binhjh8ccf4to" path="res://assets/art/tilemaps/Platformer/Ground_06.png" id="19_qc2sr"]
-[ext_resource type="Texture2D" uid="uid://cv52gve7p52r2" path="res://assets/art/tilemaps/Platformer/Ground_07.png" id="20_l35m3"]
-[ext_resource type="Texture2D" uid="uid://c6koudn60t7ts" path="res://assets/art/tilemaps/Platformer/Ground_08.png" id="21_mg0sd"]
-[ext_resource type="Texture2D" uid="uid://ipfulav8tatq" path="res://assets/art/tilemaps/Platformer/Ground_09.png" id="22_l4pqx"]
-[ext_resource type="Texture2D" uid="uid://chyovwmgvwmxk" path="res://assets/art/tilemaps/Platformer/Ground_10.png" id="23_imwy7"]
-[ext_resource type="Texture2D" uid="uid://c2gkt5y73svxu" path="res://assets/art/tilemaps/Platformer/Ground_11.png" id="24_2jymv"]
-[ext_resource type="Texture2D" uid="uid://or4iognwdbiy" path="res://assets/art/tilemaps/Platformer/Ground_12.png" id="25_kq4fw"]
-[ext_resource type="Texture2D" uid="uid://c54c4pqegkvp" path="res://assets/art/tilemaps/Platformer/Ground_13.png" id="26_bhprc"]
+[ext_resource type="Texture2D" uid="uid://icg3664pcm81" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP2-removebg-preview (1).png" id="6_5pl5s"]
+[ext_resource type="Texture2D" uid="uid://cc7d5sjofrol4" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP3-removebg-preview.png" id="7_h21s5"]
+[ext_resource type="Texture2D" uid="uid://bnhfas61fw6f3" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP4-removebg-preview.png" id="8_1thxj"]
+[ext_resource type="Texture2D" uid="uid://dkjdq6fmqwpdb" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP1-removebg-preview.png" id="9_yufm6"]
+[ext_resource type="Texture2D" uid="uid://cbyjv5iewvfgp" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP5-removebg-preview.png" id="10_ki4rv"]
+[ext_resource type="Texture2D" uid="uid://dh6cvpaali21d" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP6-removebg-preview.png" id="11_5epdm"]
+[ext_resource type="Texture2D" uid="uid://durciy7dod8qx" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP7-removebg-preview.png" id="12_oitjc"]
+[ext_resource type="Texture2D" uid="uid://6iqaqi5x3gx6" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_01.png" id="14_852ga"]
+[ext_resource type="Texture2D" uid="uid://bkijblmope80e" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP8-removebg-preview.png" id="14_a4l2o"]
+[ext_resource type="Texture2D" uid="uid://dymj3xvolyotb" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP9-removebg-preview.png" id="15_47sa7"]
+[ext_resource type="Texture2D" uid="uid://dvo4v38p4f77h" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_02.png" id="15_boruj"]
+[ext_resource type="Texture2D" uid="uid://ba1xcuci7m3xj" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_03.png" id="16_fk8st"]
+[ext_resource type="Texture2D" uid="uid://k7lp8230v5ch" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP10-removebg-preview.png" id="16_s0u32"]
+[ext_resource type="Texture2D" uid="uid://c72grksomnvau" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP11-removebg-preview.png" id="17_5ss41"]
+[ext_resource type="Texture2D" uid="uid://1ftyltlsbagc" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_04.png" id="17_b5aul"]
+[ext_resource type="Texture2D" uid="uid://cnrj0uu73bg4d" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP12-removebg-preview.png" id="18_nf4cw"]
+[ext_resource type="Texture2D" uid="uid://ix6ustsm15pl" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_05.png" id="18_p1hk3"]
+[ext_resource type="Texture2D" uid="uid://b818g688es0rk" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Village/TILEMAP14-removebg-preview.png" id="19_b5hrv"]
+[ext_resource type="Texture2D" uid="uid://binhjh8ccf4to" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_06.png" id="19_qc2sr"]
+[ext_resource type="Texture2D" uid="uid://cv52gve7p52r2" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_07.png" id="20_l35m3"]
+[ext_resource type="Texture2D" uid="uid://c6koudn60t7ts" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_08.png" id="21_mg0sd"]
+[ext_resource type="Texture2D" uid="uid://ipfulav8tatq" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_09.png" id="22_l4pqx"]
+[ext_resource type="Texture2D" uid="uid://chyovwmgvwmxk" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_10.png" id="23_imwy7"]
+[ext_resource type="Texture2D" uid="uid://c2gkt5y73svxu" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_11.png" id="24_2jymv"]
+[ext_resource type="Texture2D" uid="uid://or4iognwdbiy" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_12.png" id="25_kq4fw"]
+[ext_resource type="Texture2D" uid="uid://c54c4pqegkvp" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Platformer/Ground_13.png" id="26_bhprc"]
 [ext_resource type="Texture2D" uid="uid://byo8u1wigw8j6" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Background/SKY DESIGN LEVEL 2.png" id="28_l6nxe"]
 [ext_resource type="Texture2D" uid="uid://qgf6yidv7mba" path="res://assets/art/Jeralyn Files/Stage3_level1&2_art/Background/Background_02.png" id="29_ie6w2"]
 
@@ -19933,6 +19933,11 @@ sources/36 = SubResource("TileSetAtlasSource_eaf5m")
 sources/37 = SubResource("TileSetAtlasSource_hpno3")
 sources/38 = SubResource("TileSetAtlasSource_j4dvr")
 
+[sub_resource type="Gradient" id="Gradient_bfpnj"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xpay3"]
+gradient = SubResource("Gradient_bfpnj")
+
 [node name="level_2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -19984,3 +19989,15 @@ motion_mirroring = Vector2(1280, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("29_ie6w2")
 centered = false
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1067, 417)
+texture = SubResource("GradientTexture2D_xpay3")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(6087, 274)
+texture = SubResource("GradientTexture2D_xpay3")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(8290, 418)
+texture = SubResource("GradientTexture2D_xpay3")

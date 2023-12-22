@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://br3yrn7yieunt"]
+[gd_scene load_steps=159 format=3 uid="uid://br3yrn7yieunt"]
 
 [ext_resource type="PackedScene" uid="uid://brp2pqlpwk0ml" path="res://stage_1/Stage1/level_1.tscn" id="1_1pvjg"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="3_64st3"]
@@ -20,9 +20,61 @@
 [ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="18_ow7du"]
 [ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="19_s4dkb"]
 [ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="20_v05cf"]
-[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="21_0tkqo"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/Player.gd" id="21_iht5h"]
+[ext_resource type="Texture2D" uid="uid://c5h636nq7madp" path="res://assets/art/maincharacter/attack_1/attack1.png" id="22_bl4yt"]
 [ext_resource type="Script" path="res://fallzone.gd" id="22_wfvw1"]
+[ext_resource type="Texture2D" uid="uid://cgnro828wnjrt" path="res://assets/art/maincharacter/attack_1/attack2.png" id="23_lmws0"]
 [ext_resource type="PackedScene" uid="uid://sc36m5rox1t1" path="res://portal.tscn" id="23_x5n4v"]
+[ext_resource type="Texture2D" uid="uid://cooahrk48o84v" path="res://assets/art/maincharacter/attack_1/attack3.png" id="24_s1sn6"]
+[ext_resource type="Texture2D" uid="uid://biu0oie2maaj5" path="res://assets/art/maincharacter/attack_1/attack4.png" id="25_h38jc"]
+[ext_resource type="Texture2D" uid="uid://cnc2mixi3w65b" path="res://assets/art/maincharacter/attack_2/attack1.png" id="26_q7mqb"]
+[ext_resource type="Texture2D" uid="uid://deljj126f8ps" path="res://assets/art/maincharacter/attack_2/attack2.png" id="27_48q44"]
+[ext_resource type="Texture2D" uid="uid://c8fdgk632x408" path="res://assets/art/maincharacter/attack_2/attack3.png" id="28_r507s"]
+[ext_resource type="Texture2D" uid="uid://cmnons2qf7x5a" path="res://assets/art/maincharacter/attack_2/attack4.png" id="29_ps3n8"]
+[ext_resource type="Texture2D" uid="uid://dva61jau8ro0e" path="res://assets/art/maincharacter/attack_2/attack5.png" id="30_beyhu"]
+[ext_resource type="Texture2D" uid="uid://dg6bts7o3daae" path="res://assets/art/maincharacter/attack3/attack1.png" id="31_lklhy"]
+[ext_resource type="Texture2D" uid="uid://clly0uw5udakp" path="res://assets/art/maincharacter/attack3/attack2.png" id="32_k3ta0"]
+[ext_resource type="Texture2D" uid="uid://chwh6nl65n7m6" path="res://assets/art/maincharacter/attack3/attack3.png" id="33_frpv6"]
+[ext_resource type="Texture2D" uid="uid://bi2w1kvouthtb" path="res://assets/art/maincharacter/attack3/attack4.png" id="34_4avg2"]
+[ext_resource type="Texture2D" uid="uid://o3qysrnuqxm4" path="res://assets/art/maincharacter/jump/jump1.png" id="35_433xl"]
+[ext_resource type="Texture2D" uid="uid://bspcgc655g5p0" path="res://assets/art/maincharacter/jump/jump2.png" id="36_g2uvt"]
+[ext_resource type="Texture2D" uid="uid://bv8bktfv6i8uy" path="res://assets/art/maincharacter/jump/jump3.png" id="37_ni4ed"]
+[ext_resource type="Texture2D" uid="uid://dwik7a26qfofo" path="res://assets/art/maincharacter/dead/dead1.png" id="38_wyv4q"]
+[ext_resource type="Texture2D" uid="uid://nsixnrjcscye" path="res://assets/art/maincharacter/dead/dead2.png" id="39_bmt1w"]
+[ext_resource type="Texture2D" uid="uid://dny2oypo2gc7o" path="res://assets/art/maincharacter/dead/dead3.png" id="40_yc6n5"]
+[ext_resource type="Texture2D" uid="uid://dko4apqljcl6t" path="res://assets/art/maincharacter/dead/dead4.png" id="41_ghw68"]
+[ext_resource type="Texture2D" uid="uid://bowe6ilakyv6w" path="res://assets/art/maincharacter/dead/dead5.png" id="42_ka8sc"]
+[ext_resource type="Texture2D" uid="uid://b2texpbqkihpi" path="res://assets/art/maincharacter/dead/dead6.png" id="43_y4f1i"]
+[ext_resource type="Texture2D" uid="uid://b3vrcx7axogup" path="res://assets/art/maincharacter/idle/idle1.png" id="44_28n7j"]
+[ext_resource type="Texture2D" uid="uid://cnytp7ftryduo" path="res://assets/art/maincharacter/idle/idle2.png" id="45_qteay"]
+[ext_resource type="Texture2D" uid="uid://cnh03cx7k0lyv" path="res://assets/art/maincharacter/idle/idle3.png" id="46_5io53"]
+[ext_resource type="Texture2D" uid="uid://dqpg2457akgdp" path="res://assets/art/maincharacter/idle/idle4.png" id="47_c8sc6"]
+[ext_resource type="Texture2D" uid="uid://jcmqbnwhh4ta" path="res://assets/art/maincharacter/idle/idle5.png" id="48_tj0n6"]
+[ext_resource type="Texture2D" uid="uid://dodqi7jd642nf" path="res://assets/art/maincharacter/jump/jump4.png" id="49_o1u4r"]
+[ext_resource type="Texture2D" uid="uid://mxhx3tfho41a" path="res://assets/art/maincharacter/jump/jump5.png" id="50_mmjn8"]
+[ext_resource type="Texture2D" uid="uid://dqq6nno1a7c4r" path="res://assets/art/maincharacter/jump/jump6.png" id="51_loxvs"]
+[ext_resource type="Texture2D" uid="uid://cf1ans6nmau7c" path="res://assets/art/maincharacter/jump/jump7.png" id="52_buwth"]
+[ext_resource type="Texture2D" uid="uid://d16qnnqd1v1i0" path="res://assets/art/maincharacter/jump/jump8.png" id="53_n5xns"]
+[ext_resource type="Texture2D" uid="uid://c42nf17akqjpq" path="res://assets/art/maincharacter/jump/jump9.png" id="54_2l4si"]
+[ext_resource type="Texture2D" uid="uid://bkqc0lionaglb" path="res://assets/art/maincharacter/walk/walk1.png" id="55_gopiv"]
+[ext_resource type="Texture2D" uid="uid://bk8ecdyxyay0d" path="res://assets/art/maincharacter/walk/walk2.png" id="56_6st67"]
+[ext_resource type="Texture2D" uid="uid://d3co22qhe8078" path="res://assets/art/maincharacter/walk/walk3.png" id="57_hfjh0"]
+[ext_resource type="Texture2D" uid="uid://c6l64wyavbh48" path="res://assets/art/maincharacter/walk/walk4.png" id="58_vcfxu"]
+[ext_resource type="Texture2D" uid="uid://ddp7u8x4vet7q" path="res://assets/art/maincharacter/walk/walk5.png" id="59_catlc"]
+[ext_resource type="Texture2D" uid="uid://bxggewynna8dy" path="res://assets/art/maincharacter/walk/walk6.png" id="60_vce5l"]
+[ext_resource type="Texture2D" uid="uid://2ser6xakuaa4" path="res://assets/art/maincharacter/walk/walk7.png" id="61_e5eiv"]
+[ext_resource type="Texture2D" uid="uid://cuxx8y67sibxh" path="res://assets/art/maincharacter/walk/walk8.png" id="62_yb62c"]
+[ext_resource type="Texture2D" uid="uid://d4mkt2d67ygpa" path="res://assets/art/maincharacter/walk/walk9.png" id="63_dx2vo"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/Sword.gd" id="64_jmq77"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/gravity.gd" id="65_asst4"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/player_state_machine.gd" id="66_3n3ao"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/attack_state.gd" id="67_6gajo"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/jump_state.gd" id="68_rxbpv"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/dead_state.gd" id="69_hhji4"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/walk_state.gd" id="70_osaid"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/double_jump.gd" id="71_fuue7"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/idle_state.gd" id="72_bhhlr"]
+[ext_resource type="AudioStream" uid="uid://t46mcjcckqqf" path="res://bg_music/1-01 110-A - Malevolent Spirit in the Tree (Scene).mp3" id="75_dpsgh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6v6g"]
 atlas = ExtResource("4_2iawh")
@@ -586,6 +638,186 @@ radius = 116.211
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e010v"]
 size = Vector2(60, 66)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_gt4wa"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("22_bl4yt")
+}, {
+"duration": 0.7,
+"texture": ExtResource("23_lmws0")
+}, {
+"duration": 0.7,
+"texture": ExtResource("24_s1sn6")
+}, {
+"duration": 0.7,
+"texture": ExtResource("25_h38jc")
+}],
+"loop": false,
+"name": &"attack_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("26_q7mqb")
+}, {
+"duration": 0.5,
+"texture": ExtResource("27_48q44")
+}, {
+"duration": 0.5,
+"texture": ExtResource("28_r507s")
+}, {
+"duration": 0.5,
+"texture": ExtResource("29_ps3n8")
+}, {
+"duration": 0.5,
+"texture": ExtResource("30_beyhu")
+}],
+"loop": false,
+"name": &"attack_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("31_lklhy")
+}, {
+"duration": 0.7,
+"texture": ExtResource("32_k3ta0")
+}, {
+"duration": 0.7,
+"texture": ExtResource("33_frpv6")
+}, {
+"duration": 0.7,
+"texture": ExtResource("34_4avg2")
+}],
+"loop": false,
+"name": &"attack_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_433xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_g2uvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ni4ed")
+}],
+"loop": false,
+"name": &"charge_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_wyv4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_bmt1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_yc6n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_ghw68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ka8sc")
+}, {
+"duration": 20.0,
+"texture": ExtResource("43_y4f1i")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_28n7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_qteay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_5io53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_c8sc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_tj0n6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_o1u4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_mmjn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_loxvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_buwth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_n5xns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_2l4si")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_gopiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_6st67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_hfjh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_vcfxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_catlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_vce5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_e5eiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_yb62c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_dx2vo")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35be4"]
+radius = 18.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p4rx2"]
+radius = 19.0
+height = 78.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5csln"]
+size = Vector2(19.5, 67.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu1vf"]
 size = Vector2(7385, 20)
 
@@ -631,7 +863,7 @@ visible = false
 collision_layer = 96
 collision_mask = 96
 script = ExtResource("10_887d7")
-damage_amount = 20
+damage_amount = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior/strike"]
 position = Vector2(0, 2.5)
@@ -763,7 +995,7 @@ visible = false
 collision_layer = 96
 collision_mask = 96
 script = ExtResource("10_887d7")
-damage_amount = 20
+damage_amount = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior2/strike"]
 position = Vector2(0, 2.5)
@@ -895,7 +1127,7 @@ visible = false
 collision_layer = 96
 collision_mask = 96
 script = ExtResource("10_887d7")
-damage_amount = 20
+damage_amount = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior3/strike"]
 position = Vector2(0, 2.5)
@@ -1027,7 +1259,7 @@ visible = false
 collision_layer = 96
 collision_mask = 96
 script = ExtResource("10_887d7")
-damage_amount = 20
+damage_amount = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior4/strike"]
 position = Vector2(0, 2.5)
@@ -1159,7 +1391,7 @@ visible = false
 collision_layer = 96
 collision_mask = 96
 script = ExtResource("10_887d7")
-damage_amount = 20
+damage_amount = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior5/strike"]
 position = Vector2(0, 2.5)
@@ -1291,7 +1523,7 @@ visible = false
 collision_layer = 96
 collision_mask = 96
 script = ExtResource("10_887d7")
-damage_amount = 20
+damage_amount = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior6/strike"]
 position = Vector2(0, 2.5)
@@ -1423,7 +1655,7 @@ visible = false
 collision_layer = 96
 collision_mask = 96
 script = ExtResource("10_887d7")
-damage_amount = 20
+damage_amount = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior7/strike"]
 position = Vector2(0, 2.5)
@@ -1555,7 +1787,7 @@ visible = false
 collision_layer = 96
 collision_mask = 96
 script = ExtResource("10_887d7")
-damage_amount = 20
+damage_amount = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior8/strike"]
 position = Vector2(0, 2.5)
@@ -1687,7 +1919,7 @@ visible = false
 collision_layer = 96
 collision_mask = 96
 script = ExtResource("10_887d7")
-damage_amount = 20
+damage_amount = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior9/strike"]
 position = Vector2(0, 2.5)
@@ -1819,7 +2051,7 @@ visible = false
 collision_layer = 96
 collision_mask = 96
 script = ExtResource("10_887d7")
-damage_amount = 20
+damage_amount = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton Warrior10/strike"]
 position = Vector2(0, 2.5)
@@ -1915,10 +2147,97 @@ position = Vector2(8184, 56)
 [node name="Marker2D2" type="Marker2D" parent="Skeleton Warrior10/10"]
 position = Vector2(8567, 59)
 
-[node name="Jinbei" parent="." instance=ExtResource("21_0tkqo")]
+[node name="Jinbei" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "sword") groups=["Player"]]
 position = Vector2(46, 328)
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("21_iht5h")
+state_machine = NodePath("StateMachine")
+sword = NodePath("Sword")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Jinbei"]
+texture_filter = 1
+position = Vector2(3, -31)
+sprite_frames = SubResource("SpriteFrames_gt4wa")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jinbei"]
+shape = SubResource("CapsuleShape2D_35be4")
+
+[node name="hurtbox" type="Area2D" parent="Jinbei"]
+collision_layer = 96
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jinbei/hurtbox"]
+shape = SubResource("CapsuleShape2D_p4rx2")
+
+[node name="Sword" type="Area2D" parent="Jinbei" groups=["Player_strike"]]
+collision_layer = 96
+collision_mask = 96
+monitorable = false
+script = ExtResource("64_jmq77")
+damage_amount = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jinbei/Sword"]
+position = Vector2(-4.75, -1.75)
+shape = SubResource("RectangleShape2D_5csln")
+
+[node name="Range" type="Marker2D" parent="Jinbei"]
+
+[node name="Gravity" type="Node2D" parent="Jinbei" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("65_asst4")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="StateMachine" type="Node2D" parent="Jinbei" node_paths=PackedStringArray("initial_player_node_state")]
+script = ExtResource("66_3n3ao")
+initial_player_node_state = NodePath("idle")
+
+[node name="attack" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "attack_range", "hit_box", "hit_space")]
+script = ExtResource("67_6gajo")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+attack_range = NodePath("../../Range")
+hit_box = NodePath("../../Sword/CollisionShape2D")
+hit_space = NodePath("../../Sword")
+
+[node name="jump" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("68_rxbpv")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+jump_force = 300
+SPEED = 100
+
+[node name="dead" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("69_hhji4")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="walk" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("70_osaid")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="double_jump" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("71_fuue7")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+jump_force = 200
+SPEED = 100
+
+[node name="idle" type="Node2D" parent="Jinbei/StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("72_bhhlr")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Regen" type="Timer" parent="Jinbei"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Dead reset" type="Timer" parent="Jinbei"]
 
 [node name="Camera2D" type="Camera2D" parent="Jinbei"]
+zoom = Vector2(1.3, 1.3)
 
 [node name="Fallzone" type="Node2D" parent="."]
 position = Vector2(1440, 664)
@@ -1934,6 +2253,11 @@ shape = SubResource("RectangleShape2D_lu1vf")
 
 [node name="portal" parent="." instance=ExtResource("23_x5n4v")]
 position = Vector2(8761, -5)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("75_dpsgh")
+autoplay = true
+max_distance = 9500.0
 
 [connection signal="animation_finished" from="Skeleton Warrior/AnimatedSprite2D" to="Skeleton Warrior" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skeleton Warrior/hurt box" to="Skeleton Warrior" method="_on_hurt_box_area_entered" flags=18]
@@ -2005,4 +2329,8 @@ position = Vector2(8761, -5)
 [connection signal="body_entered" from="Skeleton Warrior10/attack range" to="Skeleton Warrior10" method="_on_attack_range_body_entered" flags=18]
 [connection signal="body_exited" from="Skeleton Warrior10/attack range" to="Skeleton Warrior10" method="_on_attack_range_body_exited" flags=18]
 [connection signal="timeout" from="Skeleton Warrior10/Timer" to="Skeleton Warrior10" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="Jinbei/AnimatedSprite2D" to="Jinbei" method="_on_animated_sprite_2d_animation_finished" flags=18]
+[connection signal="area_entered" from="Jinbei/hurtbox" to="Jinbei" method="_on_hurtbox_area_entered" flags=18]
+[connection signal="timeout" from="Jinbei/Regen" to="Jinbei" method="_on_regen_timeout" flags=18]
+[connection signal="timeout" from="Jinbei/Dead reset" to="Jinbei" method="_on_dead_reset_timeout" flags=18]
 [connection signal="body_entered" from="Fallzone/Area2D" to="Fallzone" method="_on_area_2d_body_entered" flags=18]

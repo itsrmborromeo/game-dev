@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://t46mcjcckqqf"
+path="res://.godot/imported/1-01 110-A - Malevolent Spirit in the Tree (Scene).mp3-3e99860e463b7c30f47eb7678b27fd02.mp3str"
+
+[deps]
+
+source_file="res://bg_music/1-01 110-A - Malevolent Spirit in the Tree (Scene).mp3"
+dest_files=["res://.godot/imported/1-01 110-A - Malevolent Spirit in the Tree (Scene).mp3-3e99860e463b7c30f47eb7678b27fd02.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://lpgfr75kf7wh" path="res://assets/art/_PNG/_PNG/SET1_decorative_obj.png" id="1_4iejd"]
 [ext_resource type="Texture2D" uid="uid://dluusarnjxhgj" path="res://assets/art/_PNG/_PNG/SET1_Main_bckgrdlev_build.png" id="2_a0yum"]
-[ext_resource type="Texture2D" uid="uid://bq3wx665cuk3o" path="res://assets/art/tilemaps/groundTilemap_64px.png" id="3_sfl7d"]
+[ext_resource type="Texture2D" uid="uid://bq3wx665cuk3o" path="res://assets/art/tilemaps/Stage2/Level1/groundTilemap_64px.png" id="3_sfl7d"]
 [ext_resource type="Texture2D" uid="uid://b6e6fy0cfvcm" path="res://assets/art/_PNG/_PNG/SET1_Mainlev_build.png" id="4_fv73g"]
-[ext_resource type="Texture2D" uid="uid://cxd5724m1qoo2" path="res://stage_2/tilemaps/Level1/coverbg.png" id="5_nyfc6"]
+[ext_resource type="Texture2D" uid="uid://cxd5724m1qoo2" path="res://assets/art/tilemaps/Stage2/Level1/coverbg.png" id="5_nyfc6"]
 [ext_resource type="Texture2D" uid="uid://bx037tbvu6swd" path="res://assets/art/_PNG/_PNG/SET1_bakcground_day1.png" id="8_b5r20"]
 [ext_resource type="Texture2D" uid="uid://b182co7kje3r7" path="res://assets/art/_PNG/_PNG/SET1_bakcground_day2.png" id="9_y481p"]
 [ext_resource type="Texture2D" uid="uid://dtydhph2ji66k" path="res://assets/art/_PNG/_PNG/SET1_bakcground_day3.png" id="10_18ihu"]

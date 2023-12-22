@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cght81di7oy5h"
+path="res://.godot/imported/1-10 162-A - Pre-Boss Battle Tension (Loop).mp3-5afb1e834192cc0f881bbb4a4101af8a.mp3str"
+
+[deps]
+
+source_file="res://bg_music/1-10 162-A - Pre-Boss Battle Tension (Loop).mp3"
+dest_files=["res://.godot/imported/1-10 162-A - Pre-Boss Battle Tension (Loop).mp3-5afb1e834192cc0f881bbb4a4101af8a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

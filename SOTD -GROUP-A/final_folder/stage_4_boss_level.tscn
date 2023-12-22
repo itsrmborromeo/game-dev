@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://da1j8t7hmieij"]
+[gd_scene load_steps=4 format=3 uid="uid://da1j8t7hmieij"]
 
 [ext_resource type="PackedScene" uid="uid://dcg5l2p2en81m" path="res://assets/art/Jeralyn Files/ROOMS/room_4.tscn" id="1_ikcjy"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_is0my"]
+[ext_resource type="AudioStream" uid="uid://dunvjo887g402" path="res://bg_music/1-11 162-B - Boss Battle (Loop).mp3" id="3_80nud"]
 
 [node name="stage_4_boss_level" type="Node2D"]
 
 [node name="Room4" parent="." instance=ExtResource("1_ikcjy")]
 
 [node name="HUD" parent="." instance=ExtResource("2_is0my")]
+
+[node name="bg_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_80nud")
+autoplay = true
+max_distance = 2700.0
