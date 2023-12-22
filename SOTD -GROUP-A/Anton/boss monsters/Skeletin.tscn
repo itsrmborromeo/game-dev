@@ -1,157 +1,154 @@
-[gd_scene load_steps=61 format=3 uid="uid://4fbchwpygiah"]
+[gd_scene load_steps=58 format=3 uid="uid://7yhi3fajnhvn"]
 
-[ext_resource type="PackedScene" uid="uid://2aqap7ryfr86" path="res://assets/art/Jeralyn Files/ROOMS/room_2.tscn" id="1_hmjna"]
-[ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_xqm1y"]
-[ext_resource type="Script" path="res://Anton/boss monsters/MELEE BOSS.gd" id="3_epk7n"]
-[ext_resource type="Texture2D" uid="uid://wjnhedfc1dgl" path="res://assets/art/mobs/skeleton_warrior/Attack_1.png" id="4_h3vh2"]
-[ext_resource type="Texture2D" uid="uid://bpmpk1eco2vpt" path="res://assets/art/mobs/skeleton_warrior/Attack_2.png" id="5_ofpyh"]
-[ext_resource type="Texture2D" uid="uid://c44x8licpb4r5" path="res://assets/art/mobs/skeleton_warrior/Attack_3.png" id="6_2mvpr"]
-[ext_resource type="Texture2D" uid="uid://cg3ufjfuc0lm2" path="res://assets/art/mobs/skeleton_warrior/Dead.png" id="7_au4e4"]
-[ext_resource type="Texture2D" uid="uid://b8dhq4582yoty" path="res://assets/art/mobs/skeleton_warrior/Idle.png" id="8_xuhua"]
-[ext_resource type="Texture2D" uid="uid://c66xbci7xp3nu" path="res://assets/art/mobs/skeleton_warrior/Walk.png" id="9_8iye7"]
-[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attacks.gd" id="10_54tmf"]
-[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/gravity.gd" id="11_3l3fy"]
-[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/state machines/node_finite_state_machine.gd" id="12_6ivlb"]
-[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/idlestate.gd" id="13_2mc6f"]
-[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/chasestate.gd" id="14_upq8a"]
-[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attack_state.gd" id="15_y1eks"]
-[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/dead_state.gd" id="16_rpfjf"]
-[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="17_0ammu"]
-[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="18_6wdgh"]
-[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="19_ndu36"]
-[ext_resource type="FontFile" uid="uid://d1dj56543jr3o" path="res://Health bar/njnaruto.ttf" id="20_02khc"]
-[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="21_dtvx5"]
+[ext_resource type="Script" path="res://Anton/boss monsters/MELEE BOSS.gd" id="1_1fa2e"]
+[ext_resource type="Texture2D" uid="uid://wjnhedfc1dgl" path="res://Anton/final mobs and scripts/mobs and resources/skeleton_warrior/Attack_1.png" id="2_o8ptm"]
+[ext_resource type="Texture2D" uid="uid://bpmpk1eco2vpt" path="res://Anton/final mobs and scripts/mobs and resources/skeleton_warrior/Attack_2.png" id="3_7b7i8"]
+[ext_resource type="Texture2D" uid="uid://c44x8licpb4r5" path="res://Anton/final mobs and scripts/mobs and resources/skeleton_warrior/Attack_3.png" id="4_ob0is"]
+[ext_resource type="Texture2D" uid="uid://cg3ufjfuc0lm2" path="res://Anton/final mobs and scripts/mobs and resources/skeleton_warrior/Dead.png" id="5_2kxvw"]
+[ext_resource type="Texture2D" uid="uid://b8dhq4582yoty" path="res://Anton/final mobs and scripts/mobs and resources/skeleton_warrior/Idle.png" id="6_q4k3g"]
+[ext_resource type="Texture2D" uid="uid://c66xbci7xp3nu" path="res://Anton/final mobs and scripts/mobs and resources/skeleton_warrior/Walk.png" id="7_bfr6r"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attacks.gd" id="8_n48hj"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/gravity.gd" id="9_yfgbr"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/state machines/node_finite_state_machine.gd" id="10_m15m3"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/idlestate.gd" id="11_0gbk1"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/chasestate.gd" id="12_tobcq"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/melee_attack_state.gd" id="13_lk0yx"]
+[ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/dead_state.gd" id="14_3qj2v"]
+[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="15_ayqt2"]
+[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="16_q6pt1"]
+[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="17_vfsur"]
+[ext_resource type="FontFile" uid="uid://d1dj56543jr3o" path="res://Health bar/njnaruto.ttf" id="18_yuvvn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwp1u"]
-atlas = ExtResource("4_h3vh2")
+atlas = ExtResource("2_o8ptm")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j7qn1"]
-atlas = ExtResource("4_h3vh2")
+atlas = ExtResource("2_o8ptm")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0wqx"]
-atlas = ExtResource("4_h3vh2")
+atlas = ExtResource("2_o8ptm")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_syw5w"]
-atlas = ExtResource("4_h3vh2")
+atlas = ExtResource("2_o8ptm")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4qyat"]
-atlas = ExtResource("4_h3vh2")
+atlas = ExtResource("2_o8ptm")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gj6c4"]
-atlas = ExtResource("5_ofpyh")
+atlas = ExtResource("3_7b7i8")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ey0nr"]
-atlas = ExtResource("5_ofpyh")
+atlas = ExtResource("3_7b7i8")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t7ptr"]
-atlas = ExtResource("5_ofpyh")
+atlas = ExtResource("3_7b7i8")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdajd"]
-atlas = ExtResource("5_ofpyh")
+atlas = ExtResource("3_7b7i8")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rp6j0"]
-atlas = ExtResource("5_ofpyh")
+atlas = ExtResource("3_7b7i8")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8ah0"]
-atlas = ExtResource("5_ofpyh")
+atlas = ExtResource("3_7b7i8")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bvime"]
-atlas = ExtResource("6_2mvpr")
+atlas = ExtResource("4_ob0is")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1cpn"]
-atlas = ExtResource("6_2mvpr")
+atlas = ExtResource("4_ob0is")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfp5c"]
-atlas = ExtResource("6_2mvpr")
+atlas = ExtResource("4_ob0is")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n277n"]
-atlas = ExtResource("6_2mvpr")
+atlas = ExtResource("4_ob0is")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rbxmd"]
-atlas = ExtResource("7_au4e4")
+atlas = ExtResource("5_2kxvw")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8cdu"]
-atlas = ExtResource("7_au4e4")
+atlas = ExtResource("5_2kxvw")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4w6y5"]
-atlas = ExtResource("7_au4e4")
+atlas = ExtResource("5_2kxvw")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcwk8"]
-atlas = ExtResource("7_au4e4")
+atlas = ExtResource("5_2kxvw")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3xmc"]
-atlas = ExtResource("8_xuhua")
+atlas = ExtResource("6_q4k3g")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oewmd"]
-atlas = ExtResource("8_xuhua")
+atlas = ExtResource("6_q4k3g")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vrk5"]
-atlas = ExtResource("8_xuhua")
+atlas = ExtResource("6_q4k3g")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mf5kg"]
-atlas = ExtResource("8_xuhua")
+atlas = ExtResource("6_q4k3g")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rene3"]
-atlas = ExtResource("8_xuhua")
+atlas = ExtResource("6_q4k3g")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ex0rw"]
-atlas = ExtResource("8_xuhua")
+atlas = ExtResource("6_q4k3g")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vph2y"]
-atlas = ExtResource("8_xuhua")
+atlas = ExtResource("6_q4k3g")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3map"]
-atlas = ExtResource("9_8iye7")
+atlas = ExtResource("7_bfr6r")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kv5g0"]
-atlas = ExtResource("9_8iye7")
+atlas = ExtResource("7_bfr6r")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_728ec"]
-atlas = ExtResource("9_8iye7")
+atlas = ExtResource("7_bfr6r")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwphv"]
-atlas = ExtResource("9_8iye7")
+atlas = ExtResource("7_bfr6r")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ga1ha"]
-atlas = ExtResource("9_8iye7")
+atlas = ExtResource("7_bfr6r")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjmvc"]
-atlas = ExtResource("9_8iye7")
+atlas = ExtResource("7_bfr6r")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyd1n"]
-atlas = ExtResource("9_8iye7")
+atlas = ExtResource("7_bfr6r")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1fe54"]
@@ -303,118 +300,110 @@ radius = 609.013
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jr1sc"]
 size = Vector2(60, 66)
 
-[node name="stage_2_boss_level" type="Node2D"]
-
-[node name="room_1" parent="." instance=ExtResource("1_hmjna")]
-
-[node name="HUD" parent="." instance=ExtResource("2_xqm1y")]
-
-[node name="Skelitin" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown", "portal_spawn")]
-position = Vector2(1396, 1212)
+[node name="Skelitin" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "attack_cooldown")]
 collision_layer = 4
-script = ExtResource("3_epk7n")
+script = ExtResource("1_1fa2e")
 state_machine = NodePath("state machine")
 attack_cooldown = NodePath("Timer")
 Max_HP = 100
 DangerColor = Color(1, 0, 0, 1)
 CautionColor = Color(1, 1, 0, 1)
 HealthyColor = Color(0, 1, 0, 1)
-portal_spawn = NodePath("../Marker2D")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skelitin"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(5, -32)
 sprite_frames = SubResource("SpriteFrames_1fe54")
 animation = &"walk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Skelitin"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CapsuleShape2D_qw0jk")
 
-[node name="hurt box" type="Area2D" parent="Skelitin"]
+[node name="hurt box" type="Area2D" parent="."]
 visible = false
 collision_layer = 96
 collision_mask = 96
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Skelitin/hurt box"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt box"]
 visible = false
 shape = SubResource("CapsuleShape2D_kly01")
 debug_color = Color(0.980392, 0, 0, 0.419608)
 
-[node name="strike" type="Area2D" parent="Skelitin" groups=["Enemy"]]
+[node name="strike" type="Area2D" parent="." groups=["Enemy"]]
 collision_layer = 96
 collision_mask = 96
-script = ExtResource("10_54tmf")
+script = ExtResource("8_n48hj")
 damage_amount = 20
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Skelitin/strike"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="strike"]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_5axr1")
 
-[node name="sight" type="Area2D" parent="Skelitin"]
+[node name="sight" type="Area2D" parent="."]
 visible = false
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Skelitin/sight"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sight"]
 shape = SubResource("CircleShape2D_3ydfv")
 debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
 
-[node name="RayCast2D" type="RayCast2D" parent="Skelitin"]
+[node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 38)
 
-[node name="attack range" type="Area2D" parent="Skelitin"]
+[node name="attack range" type="Area2D" parent="."]
 visible = false
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Skelitin/attack range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack range"]
 shape = SubResource("RectangleShape2D_jr1sc")
 
-[node name="Timer" type="Timer" parent="Skelitin"]
+[node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
-[node name="gravity" type="Node" parent="Skelitin" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
-script = ExtResource("11_3l3fy")
+[node name="gravity" type="Node" parent="." node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("9_yfgbr")
 character_body_2d = NodePath("..")
 animated_sprite_2d = NodePath("../AnimatedSprite2D")
 
-[node name="state machine" type="Node" parent="Skelitin" node_paths=PackedStringArray("initial_node_state")]
-script = ExtResource("12_6ivlb")
+[node name="state machine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("10_m15m3")
 initial_node_state = NodePath("idle")
 
-[node name="idle" type="Node" parent="Skelitin/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
-script = ExtResource("13_2mc6f")
+[node name="idle" type="Node" parent="state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("11_0gbk1")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="chase" type="Node" parent="Skelitin/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
-script = ExtResource("14_upq8a")
+[node name="chase" type="Node" parent="state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "ray_cast_2d")]
+script = ExtResource("12_tobcq")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 ray_cast_2d = NodePath("../../RayCast2D")
 speed = 30
 size = 19
 
-[node name="attack" type="Node" parent="Skelitin/state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
-script = ExtResource("15_y1eks")
+[node name="attack" type="Node" parent="state machine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "strike_zone", "strike", "hit_zone")]
+script = ExtResource("13_lk0yx")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 strike_zone = NodePath("../../strike")
 strike = NodePath("../../strike/CollisionShape2D")
 hit_zone = NodePath("../../strike loc")
 
-[node name="patrol" type="Node" parent="Skelitin/state machine"]
+[node name="patrol" type="Node" parent="state machine"]
 
-[node name="dead" type="Node" parent="Skelitin/state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
-script = ExtResource("16_rpfjf")
+[node name="dead" type="Node" parent="state machine" node_paths=PackedStringArray("character_body_2d", "animated_body_2d")]
+script = ExtResource("14_3qj2v")
 character_body_2d = NodePath("../..")
 animated_body_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="strike loc" type="Marker2D" parent="Skelitin"]
+[node name="strike loc" type="Marker2D" parent="."]
 
-[node name="health" type="TextureProgressBar" parent="Skelitin"]
+[node name="health" type="TextureProgressBar" parent="."]
 texture_filter = 1
 offset_left = -30.0
 offset_top = -74.0
@@ -425,31 +414,25 @@ stretch_margin_left = 3
 stretch_margin_top = 3
 stretch_margin_right = 3
 stretch_margin_bottom = 3
-texture_under = ExtResource("17_0ammu")
-texture_over = ExtResource("18_6wdgh")
-texture_progress = ExtResource("19_ndu36")
+texture_under = ExtResource("15_ayqt2")
+texture_over = ExtResource("16_q6pt1")
+texture_progress = ExtResource("17_vfsur")
 
-[node name="Label" type="Label" parent="Skelitin"]
+[node name="Label" type="Label" parent="."]
 offset_left = -61.0
 offset_top = -99.0
 offset_right = 60.0
 offset_bottom = -73.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("20_02khc")
+theme_override_fonts/font = ExtResource("18_yuvvn")
 text = "👑SKELETIN👑"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(2688, 1170)
-
-[node name="Jinbei" parent="." instance=ExtResource("21_dtvx5")]
-position = Vector2(62, 1209)
-
-[connection signal="animation_finished" from="Skelitin/AnimatedSprite2D" to="Skelitin" method="_on_animated_sprite_2d_animation_finished" flags=18]
-[connection signal="area_entered" from="Skelitin/hurt box" to="Skelitin" method="_on_hurt_box_area_entered" flags=18]
-[connection signal="body_entered" from="Skelitin/sight" to="Skelitin" method="_on_sight_body_entered" flags=18]
-[connection signal="body_exited" from="Skelitin/sight" to="Skelitin" method="_on_sight_body_exited" flags=18]
-[connection signal="body_entered" from="Skelitin/attack range" to="Skelitin" method="_on_attack_range_body_entered" flags=18]
-[connection signal="body_exited" from="Skelitin/attack range" to="Skelitin" method="_on_attack_range_body_exited" flags=18]
-[connection signal="timeout" from="Skelitin/Timer" to="Skelitin" method="_on_timer_timeout" flags=18]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="hurt box" to="." method="_on_hurt_box_area_entered"]
+[connection signal="body_entered" from="sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="sight" to="." method="_on_sight_body_exited"]
+[connection signal="body_entered" from="attack range" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="attack range" to="." method="_on_attack_range_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

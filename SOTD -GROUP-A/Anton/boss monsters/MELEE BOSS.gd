@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var HealthyColor : Color
 @onready var player = get_parent().get_node("Jinbei")
 @onready var hp = Max_HP
+var sC = false
 @export var portal_spawn : Marker2D
 var portal = preload("res://portal.tscn")
 var alive = true
@@ -79,7 +80,6 @@ func _on_attack_range_body_exited(body):
 func _on_animated_sprite_2d_animation_finished():
 	attacking = false
 	if need_to_clear:
-		KillManager.add_kill(1)
 		var portal_instance = portal.instantiate()as Node2D
 		portal_instance.global_position = portal_spawn.global_position
 		get_parent().add_child(portal_instance)
@@ -92,6 +92,9 @@ func _on_hurt_box_area_entered(area):
 		hp = hp - area.damage_amount
 	if hp <= 0:
 		alive = false
+		if !sC:
+			sC = true
+			KillManager.add_kill(1)
 	hbUpdater()
 #health bar
 func hbUpdater():

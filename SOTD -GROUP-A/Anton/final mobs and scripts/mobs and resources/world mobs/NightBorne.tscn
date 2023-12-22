@@ -655,6 +655,7 @@ shape = SubResource("CircleShape2D_3ydfv")
 debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = false
 target_position = Vector2(0, 38)
 
 [node name="attack range" type="Area2D" parent="."]

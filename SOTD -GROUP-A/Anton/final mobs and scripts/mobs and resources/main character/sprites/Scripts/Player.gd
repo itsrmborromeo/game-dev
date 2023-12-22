@@ -15,6 +15,8 @@ func _ready():
 	HealthManager.set_health(100)
 	HealthManager.on_health_change.connect(updater)
 func _process(delta):
+	if Input.is_action_just_pressed("debug mode"):
+		ProgressManager.progress(1)
 	if is_on_floor():
 		grounded = true
 		can_double_jump = true

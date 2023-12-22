@@ -2,11 +2,14 @@ extends CharacterBody2D
 @export var state_machine : NodeFiniteStateMachine
 @export var attack_cooldown : Timer
 @export var Max_HP : int
+@export var portal_spawn =Marker2D
 @export var DangerColor : Color
 @export var CautionColor : Color
 @export var HealthyColor : Color
 @onready var player = get_parent().get_node("Jinbei")
 @onready var hp = Max_HP
+var sc = false
+var portal = preload("res://portal.tscn")
 var alive = true
 var can_attack = true
 var attacking = false
@@ -87,8 +90,11 @@ func _on_attack_range_body_exited(body):
 func _on_animated_sprite_2d_animation_finished():
 	attacking = false
 	if need_to_clear:
-		KillManager.add_kill(1)
+		var portal_instance = portal.instantiate()as Node2D
+		portal_instance.global_position = portal_spawn.global_position
+		get_parent().add_child(portal_instance)
 		queue_free()
+		
 func _on_timer_2_timeout():
 	can_shoot = true
 #Attack#
@@ -99,6 +105,9 @@ func _on_hurt_box_area_entered(area):
 		hp = hp - area.damage_amount
 	if hp <= 0:
 		alive = false
+		if !sc:
+			sc =true
+			KillManager.add_kill(1)
 	hbUpdater()
 #health bar
 func hbUpdater():

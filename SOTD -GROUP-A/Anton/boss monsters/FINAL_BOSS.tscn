@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://wpqs61pxbrf8"]
+[gd_scene load_steps=58 format=3 uid="uid://wpqs61pxbrf8"]
 
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/scripts/Range AI.gd" id="1_dxiuj"]
 [ext_resource type="Texture2D" uid="uid://b5yclkj5qodnc" path="res://Anton/boss monsters/Stage 3 Boss/sprites/Attack_1.png" id="2_wq4wb"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="15_q1f2c"]
 [ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="16_4b0x4"]
 [ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="17_6586x"]
+[ext_resource type="FontFile" uid="uid://d1dj56543jr3o" path="res://Health bar/njnaruto.ttf" id="18_i65t0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhkw4"]
 atlas = ExtResource("2_wq4wb")
@@ -294,7 +295,7 @@ height = 64.0
 size = Vector2(20, 59)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ydfv"]
-radius = 116.211
+radius = 2037.63
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jr1sc"]
 size = Vector2(60, 66)
@@ -345,6 +346,7 @@ shape = SubResource("CircleShape2D_3ydfv")
 debug_color = Color(0.211765, 0.631373, 0.333333, 0.419608)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = false
 target_position = Vector2(0, 38)
 
 [node name="attack range" type="Area2D" parent="."]
@@ -409,10 +411,10 @@ animated_body_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="health" type="TextureProgressBar" parent="."]
 texture_filter = 1
-offset_left = -30.0
-offset_top = -74.0
+offset_left = -32.0
+offset_top = -47.0
 offset_right = 32.0
-offset_bottom = -68.0
+offset_bottom = -41.0
 nine_patch_stretch = true
 stretch_margin_left = 3
 stretch_margin_top = 3
@@ -421,6 +423,15 @@ stretch_margin_bottom = 3
 texture_under = ExtResource("15_q1f2c")
 texture_over = ExtResource("16_4b0x4")
 texture_progress = ExtResource("17_6586x")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -55.0
+offset_top = -77.0
+offset_right = 56.0
+offset_bottom = -54.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("18_i65t0")
+text = "👑BALANAR👑"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="hurt box" to="." method="_on_hurt_box_area_entered"]

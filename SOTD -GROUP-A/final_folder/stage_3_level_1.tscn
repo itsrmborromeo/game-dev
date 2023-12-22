@@ -3340,7 +3340,7 @@ position = Vector2(4689, 632)
 position = Vector2(5412, 617)
 collision_layer = 4
 script = ExtResource("4_biayi")
-state_machine = NodePath("../Skeleton Warrior4/state machine")
+state_machine = NodePath("state machine")
 attack_cooldown = NodePath("../Skeleton Warrior4/Timer")
 Max_HP = 40
 DangerColor = Color(1, 0, 0, 1)
@@ -4641,7 +4641,7 @@ autoplay = true
 max_distance = 17000.0
 
 [node name="Fallzone" parent="." instance=ExtResource("92_1pxim")]
-position = Vector2(13106, 1039)
+position = Vector2(13133, 1326)
 
 [connection signal="animation_finished" from="Skeleton Warrior2/AnimatedSprite2D" to="Skeleton Warrior2" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skeleton Warrior2/hurt box" to="Skeleton Warrior2" method="_on_hurt_box_area_entered" flags=18]

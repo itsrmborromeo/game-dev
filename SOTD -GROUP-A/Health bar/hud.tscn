@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Health bar/hud.gd" id="1_6n28x"]
 [ext_resource type="Texture2D" uid="uid://bys8olem17c2x" path="res://Health bar/tile_0044.png" id="1_yebji"]
-[ext_resource type="Texture2D" uid="uid://di5r6jgo77j8s" path="res://Health bar/bar-under.png" id="2_f5j81"]
-[ext_resource type="Texture2D" uid="uid://dtj18xila74fn" path="res://Health bar/bar-over.png" id="3_k8nsk"]
-[ext_resource type="Texture2D" uid="uid://dy7xuhtfofg8j" path="res://Health bar/bar-progress.png" id="4_c6078"]
+[ext_resource type="Texture2D" uid="uid://oxcgpa0gy6dk" path="res://Health bar/progress_under.png" id="2_jx6sp"]
+[ext_resource type="Texture2D" uid="uid://b7412gdrlpt4s" path="res://Health bar/health_over.png" id="3_rqo86"]
+[ext_resource type="Texture2D" uid="uid://df8wv85pe8b1m" path="res://Health bar/progress_prod.png" id="4_da0bt"]
 [ext_resource type="FontFile" uid="uid://d1dj56543jr3o" path="res://Health bar/njnaruto.ttf" id="5_7vd8f"]
 [ext_resource type="Texture2D" uid="uid://e1pgphd1f7l1" path="res://Health bar/pause_icon.png" id="7_e5fcc"]
-[ext_resource type="Texture2D" uid="uid://da4hmfx54smv5" path="res://Health bar/skull2.png" id="7_w5efc"]
+[ext_resource type="Texture2D" uid="uid://brddgibsw18yw" path="res://ui/skull_icon.png" id="8_hg5mh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jas1e"]
 bg_color = Color(0, 0, 0, 0)
@@ -28,34 +28,31 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jas1e")
 
 [node name="OverHealthBar" type="TextureProgressBar" parent="."]
 texture_filter = 1
-offset_left = 78.0
-offset_top = 13.0
-offset_right = 402.0
-offset_bottom = 42.0
-value = 100.0
+offset_left = 79.0
+offset_top = 1.0
+offset_right = 3179.0
+offset_bottom = 431.0
+scale = Vector2(0.2, 0.2)
+value = 90.0
 nine_patch_stretch = true
-stretch_margin_left = 3
-stretch_margin_top = 3
-stretch_margin_right = 3
-stretch_margin_bottom = 3
-texture_under = ExtResource("2_f5j81")
-texture_over = ExtResource("3_k8nsk")
-texture_progress = ExtResource("4_c6078")
-tint_over = Color(0.360784, 0.0901961, 0, 1)
+texture_under = ExtResource("2_jx6sp")
+texture_over = ExtResource("3_rqo86")
+texture_progress = ExtResource("4_da0bt")
 tint_progress = Color(0, 1, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_top = -10.0
-offset_right = 80.0
-offset_bottom = 76.0
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 81.0
+offset_bottom = 96.0
 texture = ExtResource("1_yebji")
 
 [node name="Lives" type="Label" parent="."]
-offset_left = 22.0
-offset_top = 22.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = 23.0
+offset_top = 39.0
+offset_right = 65.0
+offset_bottom = 81.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_7vd8f")
 theme_override_font_sizes/font_size = 34
@@ -86,20 +83,20 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_ml5aq")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = 15.0
-offset_top = 75.0
-offset_right = 57.0
-offset_bottom = 120.0
-texture = ExtResource("7_w5efc")
-flip_h = true
+offset_left = 10.0
+offset_top = 90.0
+offset_right = 81.0
+offset_bottom = 151.0
+texture = ExtResource("8_hg5mh")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="TextureRect2"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 44.0
-offset_top = -8.0
-offset_right = 172.0
-offset_bottom = 18.0
+offset_left = 73.0
+offset_top = -4.0
+offset_right = 201.0
+offset_bottom = 22.0
 theme_override_fonts/font = ExtResource("5_7vd8f")
 theme_override_font_sizes/font_size = 18
 text = "Kill Counter"
@@ -109,10 +106,10 @@ vertical_alignment = 1
 [node name="Kills" type="Label" parent="TextureRect2"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 87.0
-offset_top = 16.0
-offset_right = 155.0
-offset_bottom = 52.0
+offset_left = 112.0
+offset_top = 26.0
+offset_right = 180.0
+offset_bottom = 62.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_7vd8f")
 theme_override_font_sizes/font_size = 20
@@ -122,10 +119,10 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="TextureRect2"]
 layout_mode = 0
-offset_left = 57.0
-offset_top = 18.0
-offset_right = 97.0
-offset_bottom = 41.0
+offset_left = 72.0
+offset_top = 28.0
+offset_right = 112.0
+offset_bottom = 66.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_7vd8f")
 theme_override_font_sizes/font_size = 30

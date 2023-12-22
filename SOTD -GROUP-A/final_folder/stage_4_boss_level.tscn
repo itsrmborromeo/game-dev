@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://da1j8t7hmieij"]
+[gd_scene load_steps=6 format=3 uid="uid://da1j8t7hmieij"]
 
 [ext_resource type="PackedScene" uid="uid://dcg5l2p2en81m" path="res://assets/art/Jeralyn Files/ROOMS/room_4.tscn" id="1_ikcjy"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_is0my"]
 [ext_resource type="AudioStream" uid="uid://dunvjo887g402" path="res://bg_music/1-11 162-B - Boss Battle (Loop).mp3" id="3_80nud"]
+[ext_resource type="PackedScene" uid="uid://wpqs61pxbrf8" path="res://Anton/boss monsters/FINAL_BOSS.tscn" id="4_g5sbw"]
+[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="5_vljac"]
 
 [node name="stage_4_boss_level" type="Node2D"]
 
@@ -14,3 +16,13 @@
 stream = ExtResource("3_80nud")
 autoplay = true
 max_distance = 2700.0
+
+[node name="Fire wizrd" parent="." node_paths=PackedStringArray("portal_spawn") instance=ExtResource("4_g5sbw")]
+position = Vector2(1438, 1168)
+portal_spawn = NodePath("../Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1406, 1164)
+
+[node name="Jinbei" parent="." instance=ExtResource("5_vljac")]
+position = Vector2(81, 1182)

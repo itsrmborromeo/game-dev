@@ -1,10 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://r2i83lwvsmlm"]
+[gd_scene load_steps=5 format=3 uid="uid://r2i83lwvsmlm"]
 
 [ext_resource type="PackedScene" uid="uid://5irwpnh7j63a" path="res://assets/art/Jeralyn Files/ROOMS/room_3.tscn" id="1_5bdul"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_vfwfd"]
+[ext_resource type="PackedScene" uid="uid://b46yl7jbsxllu" path="res://Anton/boss monsters/Kelvinot.tscn" id="3_h22xi"]
+[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="4_8mgsn"]
 
 [node name="stage_3_boss_level" type="Node2D"]
 
 [node name="room_3" parent="." instance=ExtResource("1_5bdul")]
 
 [node name="HUD" parent="." instance=ExtResource("2_vfwfd")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(2676, 1150)
+
+[node name="Kelvinot" parent="." node_paths=PackedStringArray("portal_spawn") instance=ExtResource("3_h22xi")]
+position = Vector2(1549, 1185)
+portal_spawn = NodePath("../Marker2D")
+
+[node name="Jinbei" parent="." instance=ExtResource("4_8mgsn")]
+position = Vector2(104, 1185)
