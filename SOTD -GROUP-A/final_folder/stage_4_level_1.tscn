@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bac3rqe20kdgb"]
+[gd_scene load_steps=7 format=3 uid="uid://bac3rqe20kdgb"]
 
 [ext_resource type="PackedScene" uid="uid://d0152isvb6kce" path="res://assets/art/Jeralyn Files/FINAL STAGE.tscn" id="1_tfow6"]
 [ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="2_e6mai"]
 [ext_resource type="PackedScene" uid="uid://j20p18xo4vpf" path="res://Anton/final mobs and scripts/mobs and resources/world mobs/bluesamurai.tscn" id="2_ww2wa"]
 [ext_resource type="PackedScene" uid="uid://sc36m5rox1t1" path="res://portal.tscn" id="4_8ak4g"]
+[ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="6_vfrkl"]
 [ext_resource type="PackedScene" uid="uid://bi7oghhaludxw" path="res://fallzone.tscn" id="22_m4lnm"]
 
 [node name="stage_4_level_1" type="Node2D"]
@@ -158,6 +159,8 @@ position = Vector2(14858, 430)
 
 [node name="Jinbei" parent="." instance=ExtResource("2_e6mai")]
 position = Vector2(34.4678, 476.762)
+
+[node name="HUD" parent="." instance=ExtResource("6_vfrkl")]
 
 [editable path="Blue samurai1"]
 [editable path="Blue samurai2"]

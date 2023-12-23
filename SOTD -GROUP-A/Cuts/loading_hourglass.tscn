@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://eyia8vw6y1m2"]
 
 [ext_resource type="Script" path="res://Cuts/Loading hourglass.gd" id="1_axb13"]
-[ext_resource type="Texture2D" uid="uid://4uqsiiagjl0q" path="res://Cuts/загузка.png" id="2_ivgax"]
+[ext_resource type="Texture2D" uid="uid://4uqsiiagjl0q" path="res://Cuts/saaaandddddddd glass.png" id="2_ivgax"]
 
 [sub_resource type="Animation" id="Animation_3qxgv"]
 length = 0.001

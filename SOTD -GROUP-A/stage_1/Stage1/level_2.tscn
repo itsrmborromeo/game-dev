@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://daccb2kxmxdji"]
 
+[ext_resource type="PackedScene" uid="uid://h2tpb4651b4s" path="res://stage_1/Stage1/parallax_background.tscn" id="1_y1icn"]
 [ext_resource type="Texture2D" uid="uid://dlaimkn3gt3cs" path="res://stage_1/tilemap/TX Village Props.png" id="2_ibsrv"]
 [ext_resource type="Texture2D" uid="uid://ckk7foodibk4n" path="res://stage_1/tilemap/tileset.png" id="3_joeln"]
-[ext_resource type="PackedScene" uid="uid://h2tpb4651b4s" path="res://stage_1/Stage1/parallax_background.tscn" id="3_pouke"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sa7f"]
 texture = ExtResource("2_ibsrv")
@@ -8830,6 +8830,8 @@ size = Vector2(648.017, 16.0228)
 
 [node name="level2" type="Node2D"]
 
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_y1icn")]
+
 [node name="inner" type="TileMap" parent="."]
 position = Vector2(4, -37)
 tile_set = SubResource("TileSet_rs4td")
@@ -8885,5 +8887,3 @@ position = Vector2(6027.54, -65.7484)
 rotation = 1.57479
 shape = SubResource("RectangleShape2D_rdkci")
 debug_color = Color(0.682353, 0.501961, 0, 0.419608)
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("3_pouke")]
