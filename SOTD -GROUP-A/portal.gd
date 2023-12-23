@@ -1,4 +1,5 @@
 extends Node2D
+var load =preload("res://Cuts/loading_screen.tscn")
 func _ready():
 	$Area2D/AnimatedSprite2D.play("portal")
 
@@ -9,4 +10,4 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
-		ProgressManager.progress(1)
+		GameManager.transition_to_scene(load.resource_path)

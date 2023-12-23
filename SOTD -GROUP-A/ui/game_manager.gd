@@ -3,6 +3,7 @@ extends Node
 var main_menu_screen = preload("res://ui/main_menu.tscn")
 var startlvl = preload("res://stage_1/Stage1/level1.tscn")
 var pause_menu =  preload("res://ui/pause_menu.tscn")
+var loading =preload("res://Cuts/loading_screen.tscn")
 
 func _ready():
 	RenderingServer.set_default_clear_color(Color(0,0,0,0))
@@ -12,7 +13,7 @@ func start_game():
 	if get_tree().paused:
 		resume_game()
 		return
-	ProgressManager.progress(1)
+	transition_to_scene(loading.resource_path)
 	
 #pause function	
 func pause_game():
