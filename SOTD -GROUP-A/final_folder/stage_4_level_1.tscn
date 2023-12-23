@@ -1,7 +1,171 @@
-[gd_scene load_steps=2 format=3 uid="uid://bac3rqe20kdgb"]
+[gd_scene load_steps=6 format=3 uid="uid://bac3rqe20kdgb"]
 
 [ext_resource type="PackedScene" uid="uid://d0152isvb6kce" path="res://assets/art/Jeralyn Files/FINAL STAGE.tscn" id="1_tfow6"]
+[ext_resource type="PackedScene" uid="uid://dq8uh7vhsw3ib" path="res://Anton/final mobs and scripts/mobs and resources/main character/jinbei.tscn" id="2_e6mai"]
+[ext_resource type="PackedScene" uid="uid://j20p18xo4vpf" path="res://Anton/final mobs and scripts/mobs and resources/world mobs/bluesamurai.tscn" id="2_ww2wa"]
+[ext_resource type="PackedScene" uid="uid://sc36m5rox1t1" path="res://portal.tscn" id="4_8ak4g"]
+[ext_resource type="PackedScene" uid="uid://bi7oghhaludxw" path="res://fallzone.tscn" id="22_m4lnm"]
 
 [node name="stage_4_level_1" type="Node2D"]
 
 [node name="FINAL STAGE" parent="." instance=ExtResource("1_tfow6")]
+
+[node name="Fallzone" parent="." instance=ExtResource("22_m4lnm")]
+position = Vector2(10938, 1031)
+
+[node name="Blue samurai1" parent="." instance=ExtResource("2_ww2wa")]
+position = Vector2(528, 479)
+
+[node name="patrol" parent="Blue samurai1/state machine" index="3" node_paths=PackedStringArray("patrol_points")]
+patrol_points = NodePath("../../1")
+
+[node name="1" type="Node" parent="Blue samurai1"]
+
+[node name="Marker2D" type="Marker2D" parent="Blue samurai1/1"]
+position = Vector2(893, 501)
+
+[node name="Marker2D2" type="Marker2D" parent="Blue samurai1/1"]
+position = Vector2(526, 499)
+
+[node name="Blue samurai2" parent="." instance=ExtResource("2_ww2wa")]
+position = Vector2(1560, 476)
+
+[node name="patrol" parent="Blue samurai2/state machine" index="3" node_paths=PackedStringArray("patrol_points")]
+patrol_points = NodePath("../../2")
+
+[node name="2" type="Node" parent="Blue samurai2"]
+
+[node name="Marker2D" type="Marker2D" parent="Blue samurai2/2"]
+position = Vector2(1873, 506)
+
+[node name="Marker2D2" type="Marker2D" parent="Blue samurai2/2"]
+position = Vector2(1032, 505)
+
+[node name="Blue samurai" parent="." instance=ExtResource("2_ww2wa")]
+position = Vector2(3082, 442)
+
+[node name="patrol" parent="Blue samurai/state machine" index="3" node_paths=PackedStringArray("patrol_points")]
+patrol_points = NodePath("../../3")
+
+[node name="3" type="Node" parent="Blue samurai"]
+
+[node name="Marker2D" type="Marker2D" parent="Blue samurai/3"]
+position = Vector2(3796, 506)
+
+[node name="Marker2D2" type="Marker2D" parent="Blue samurai/3"]
+position = Vector2(2834, 506)
+
+[node name="Blue samurai3" parent="." instance=ExtResource("2_ww2wa")]
+position = Vector2(4739, 427)
+
+[node name="patrol" parent="Blue samurai3/state machine" index="3" node_paths=PackedStringArray("patrol_points")]
+patrol_points = NodePath("../../4")
+
+[node name="4" type="Node" parent="Blue samurai3"]
+
+[node name="Marker2D" type="Marker2D" parent="Blue samurai3/4"]
+position = Vector2(5616, 502)
+
+[node name="Marker2D2" type="Marker2D" parent="Blue samurai3/4"]
+position = Vector2(3873, 508)
+
+[node name="Blue samurai4" parent="." instance=ExtResource("2_ww2wa")]
+position = Vector2(6066, 406)
+
+[node name="patrol" parent="Blue samurai4/state machine" index="3" node_paths=PackedStringArray("patrol_points")]
+patrol_points = NodePath("../../5")
+
+[node name="5" type="Node" parent="Blue samurai4"]
+
+[node name="Marker2D" type="Marker2D" parent="Blue samurai4/5"]
+position = Vector2(7090, 499)
+
+[node name="Marker2D2" type="Marker2D" parent="Blue samurai4/5"]
+position = Vector2(5649, 500)
+
+[node name="Blue samurai5" parent="." instance=ExtResource("2_ww2wa")]
+position = Vector2(9315, 458)
+
+[node name="patrol" parent="Blue samurai5/state machine" index="3" node_paths=PackedStringArray("patrol_points")]
+patrol_points = NodePath("../../6")
+
+[node name="6" type="Node" parent="Blue samurai5"]
+
+[node name="Marker2D" type="Marker2D" parent="Blue samurai5/6"]
+position = Vector2(9649, 498)
+
+[node name="Marker2D2" type="Marker2D" parent="Blue samurai5/6"]
+position = Vector2(8895, 496)
+
+[node name="Blue samurai6" parent="." instance=ExtResource("2_ww2wa")]
+position = Vector2(10267, 441)
+
+[node name="patrol" parent="Blue samurai6/state machine" index="3" node_paths=PackedStringArray("patrol_points")]
+patrol_points = NodePath("../../7")
+
+[node name="7" type="Node" parent="Blue samurai6"]
+
+[node name="Marker2D" type="Marker2D" parent="Blue samurai6/7"]
+position = Vector2(9727, 495)
+
+[node name="Marker2D2" type="Marker2D" parent="Blue samurai6/7"]
+position = Vector2(10403, 504)
+
+[node name="Blue samurai7" parent="." instance=ExtResource("2_ww2wa")]
+position = Vector2(11155, 396)
+
+[node name="patrol" parent="Blue samurai7/state machine" index="3" node_paths=PackedStringArray("patrol_points")]
+patrol_points = NodePath("../../8")
+
+[node name="8" type="Node" parent="Blue samurai7"]
+
+[node name="Marker2D" type="Marker2D" parent="Blue samurai7/8"]
+position = Vector2(11683, 504)
+
+[node name="Marker2D2" type="Marker2D" parent="Blue samurai7/8"]
+position = Vector2(10646, 504)
+
+[node name="Blue samurai8" parent="." instance=ExtResource("2_ww2wa")]
+position = Vector2(12261, 446)
+
+[node name="patrol" parent="Blue samurai8/state machine" index="3" node_paths=PackedStringArray("patrol_points")]
+patrol_points = NodePath("../../9")
+
+[node name="9" type="Node" parent="Blue samurai8"]
+
+[node name="Marker2D" type="Marker2D" parent="Blue samurai8/9"]
+position = Vector2(12693, 498)
+
+[node name="Marker2D2" type="Marker2D" parent="Blue samurai8/9"]
+position = Vector2(11762, 503)
+
+[node name="Blue samurai9" parent="." instance=ExtResource("2_ww2wa")]
+position = Vector2(13404, 473)
+
+[node name="patrol" parent="Blue samurai9/state machine" index="3" node_paths=PackedStringArray("patrol_points")]
+patrol_points = NodePath("../../10")
+
+[node name="10" type="Node" parent="Blue samurai9"]
+
+[node name="Marker2D" type="Marker2D" parent="Blue samurai9/10"]
+position = Vector2(12765, 496)
+
+[node name="Marker2D2" type="Marker2D" parent="Blue samurai9/10"]
+position = Vector2(13901, 496)
+
+[node name="portal" parent="." instance=ExtResource("4_8ak4g")]
+position = Vector2(14858, 430)
+
+[node name="Jinbei" parent="." instance=ExtResource("2_e6mai")]
+position = Vector2(34.4678, 476.762)
+
+[editable path="Blue samurai1"]
+[editable path="Blue samurai2"]
+[editable path="Blue samurai"]
+[editable path="Blue samurai3"]
+[editable path="Blue samurai4"]
+[editable path="Blue samurai5"]
+[editable path="Blue samurai6"]
+[editable path="Blue samurai7"]
+[editable path="Blue samurai8"]
+[editable path="Blue samurai9"]

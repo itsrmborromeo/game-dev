@@ -12,7 +12,8 @@ var levels : Array =[
 	preload("res://final_folder/stage_3_boss_level.tscn"),
 	preload("res://final_folder/stage_4_level_1.tscn"),
 	preload("res://final_folder/stage_4_level_2.tscn"),
-	preload("res://final_folder/stage_4_boss_level.tscn")
+	preload("res://final_folder/stage_4_boss_level.tscn"),
+	preload("res://ui/game_completed_screen.tscn")
 ]
 func progress(val):
 	current_level += val

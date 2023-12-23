@@ -823,9 +823,9 @@ size = Vector2(7385, 20)
 
 [node name="Stage1_level1" type="Node2D"]
 
-[node name="level1" parent="." instance=ExtResource("1_1pvjg")]
-
 [node name="HUD" parent="." instance=ExtResource("3_64st3")]
+
+[node name="level1" parent="." instance=ExtResource("1_1pvjg")]
 
 [node name="Skeleton Warrior" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
 position = Vector2(1096, 338)

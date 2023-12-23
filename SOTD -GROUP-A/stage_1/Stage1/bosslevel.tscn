@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://celx2t2m8pt1c"]
+[gd_scene load_steps=14 format=3 uid="uid://celx2t2m8pt1c"]
 
-[ext_resource type="PackedScene" uid="uid://h2tpb4651b4s" path="res://stage_1/Stage1/parallax_background.tscn" id="1_42qhi"]
 [ext_resource type="Texture2D" uid="uid://ckk7foodibk4n" path="res://stage_1/tilemap/tileset.png" id="2_cxvo5"]
 [ext_resource type="Texture2D" uid="uid://dlaimkn3gt3cs" path="res://stage_1/tilemap/TX Village Props.png" id="3_3p0gn"]
+[ext_resource type="PackedScene" uid="uid://h2tpb4651b4s" path="res://scenes/Stage1/parallax_background.tscn" id="4_30rie"]
+[ext_resource type="PackedScene" uid="uid://h2tpb4651b4s" path="res://stage_1/Stage1/parallax_background.tscn" id="4_p4glb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfivj"]
 texture = ExtResource("2_cxvo5")
@@ -4686,7 +4687,7 @@ size = Vector2(20, 477)
 
 [node name="bosslevel" type="Node2D"]
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("1_42qhi")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_p4glb")]
 
 [node name="innerwall" type="TileMap" parent="."]
 position = Vector2(-17, -69)
@@ -4722,3 +4723,5 @@ shape = SubResource("RectangleShape2D_p4m31")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundaryB"]
 position = Vector2(1344, 231)
 shape = SubResource("RectangleShape2D_p4m31")
+
+[node name="ParallaxBackground2" parent="." instance=ExtResource("4_30rie")]

@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=3 uid="uid://dl8x1e4vvur15"]
+
+[ext_resource type="FontFile" uid="uid://0gmwwfxv5ois" path="res://ui/font/Serpentine-yw3n3.ttf" id="1_fak28"]
+[ext_resource type="Script" path="res://ui/game_completed_screen.gd" id="1_fgnyb"]
+[ext_resource type="Texture2D" uid="uid://rt2lmdcwc876" path="res://ui/reload_icon.png" id="2_b0g6f"]
+[ext_resource type="Texture2D" uid="uid://b40aao8wyigy5" path="res://ui/quit_icon.png" id="4_6b8oo"]
+[ext_resource type="Texture2D" uid="uid://vqmyjhkhkp23" path="res://ui/rating.png" id="5_rctjo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt8fk"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2r43x"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ao6j"]
+bg_color = Color(0.433594, 0.09375, 0.0625, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yyjnx"]
+
+[sub_resource type="Theme" id="Theme_hbd6h"]
+Button/font_sizes/font_size = 19
+Button/styles/focus = SubResource("StyleBoxFlat_0ao6j")
+Button/styles/normal = SubResource("StyleBoxTexture_yyjnx")
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_fgnyb")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -205.0
+offset_right = 199.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yt8fk")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 113.0
+offset_right = 352.0
+offset_bottom = 145.0
+theme_override_fonts/font = ExtResource("1_fak28")
+theme_override_font_sizes/font_size = 39
+text = "Game Completed"
+
+[node name="score" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 158.0
+offset_right = 229.0
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_fak28")
+theme_override_font_sizes/font_size = 21
+text = "Score:"
+
+[node name="Scoreboard" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 198.0
+offset_right = 280.0
+offset_bottom = 232.0
+theme_override_fonts/font = ExtResource("1_fak28")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_2r43x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RetryButton" type="TextureButton" parent="Panel"]
+layout_mode = 2
+offset_left = 133.725
+offset_top = 262.0
+offset_right = 165.725
+offset_bottom = 294.0
+theme = SubResource("Theme_hbd6h")
+texture_normal = ExtResource("2_b0g6f")
+
+[node name="MainMenuButton" type="TextureButton" parent="Panel"]
+layout_mode = 2
+offset_left = 235.185
+offset_top = 262.0
+offset_right = 267.185
+offset_bottom = 296.0
+texture_normal = ExtResource("4_6b8oo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(201, 68)
+scale = Vector2(0.671875, 0.519531)
+texture = ExtResource("5_rctjo")
+
+[connection signal="pressed" from="Panel/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Panel/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

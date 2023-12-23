@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://ba818o2hgrd1w"]
+[gd_scene load_steps=16 format=3 uid="uid://ba818o2hgrd1w"]
 
 [ext_resource type="Texture2D" uid="uid://b6e6fy0cfvcm" path="res://assets/art/_PNG/_PNG/SET1_Mainlev_build.png" id="1_ek508"]
 [ext_resource type="Texture2D" uid="uid://dtsluj2e7im7g" path="res://assets/art/_PNG/_PNG/SET1_background_obj.png" id="1_sucaf"]
-[ext_resource type="Texture2D" uid="uid://bq3wx665cuk3o" path="res://assets/art/tilemaps/Stage2/Level1/groundTilemap_64px.png" id="2_dtt2l"]
+[ext_resource type="Texture2D" uid="uid://bq3wx665cuk3o" path="res://assets/art/tilemaps/groundTilemap_64px.png" id="2_dtt2l"]
 [ext_resource type="Texture2D" uid="uid://bqtgrpncm0ug7" path="res://stage_2/tilemaps/level2/Tiles.png" id="4_o37hp"]
+[ext_resource type="PackedScene" uid="uid://biq6axdkjhxip" path="res://forestparallax_background.tscn" id="5_ckpeo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qwjbp"]
 texture = ExtResource("4_o37hp")
@@ -14488,10 +14489,6 @@ size = Vector2(51, 414.5)
 [node name="level2" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-offset = Vector2(0, -100)
-transform = Transform2D(1, 0, 0, 1, 0, -100)
-
 [node name="Inner" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_24qqj")
 format = 2
@@ -14543,3 +14540,5 @@ shape = SubResource("RectangleShape2D_h1mke")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundary2"]
 position = Vector2(11878, -168)
 shape = SubResource("RectangleShape2D_h1mke")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_ckpeo")]
