@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4uqsiiagjl0q"
-path="res://.godot/imported/загузка.png-07d5596b16396b84ee0e43c73ec35b0e.ctex"
+uid="uid://ce7cfog0ro6bo"
+path="res://.godot/imported/download.png-0fe1829d5b45fcf42c18266423ed01d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cuts/загузка.png"
-dest_files=["res://.godot/imported/загузка.png-07d5596b16396b84ee0e43c73ec35b0e.ctex"]
+source_file="res://download.png"
+dest_files=["res://.godot/imported/download.png-0fe1829d5b45fcf42c18266423ed01d8.ctex"]
 
 [params]
 
