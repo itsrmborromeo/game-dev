@@ -14542,3 +14542,6 @@ position = Vector2(11878, -168)
 shape = SubResource("RectangleShape2D_h1mke")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_ckpeo")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.886275, 0.87451, 1, 1)

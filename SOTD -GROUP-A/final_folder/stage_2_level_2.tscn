@@ -1,4 +1,4 @@
-[gd_scene load_steps=206 format=3 uid="uid://buhovgkbto3nu"]
+[gd_scene load_steps=207 format=3 uid="uid://buhovgkbto3nu"]
 
 [ext_resource type="PackedScene" uid="uid://ba818o2hgrd1w" path="res://stage_2/scenes/level_2.tscn" id="1_mr2wp"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_fiw3e"]
@@ -86,6 +86,7 @@
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/double_jump.gd" id="82_8vn8m"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/idle_state.gd" id="83_8oeue"]
 [ext_resource type="AudioStream" uid="uid://bh7fgd18ple0a" path="res://bg_music/1-08 159 - Ambrosia Beach (Loop).mp3" id="86_xetra"]
+[ext_resource type="PackedScene" uid="uid://cfri7jor2tyt4" path="res://stage_2/level2_bg.tscn" id="87_u8cyy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6v6g"]
 atlas = ExtResource("5_etuad")
@@ -2787,6 +2788,8 @@ position = Vector2(9716, 547)
 stream = ExtResource("86_xetra")
 autoplay = true
 max_distance = 17000.0
+
+[node name="level2_bg" parent="." instance=ExtResource("87_u8cyy")]
 
 [connection signal="animation_finished" from="Skeleton Warrior/AnimatedSprite2D" to="Skeleton Warrior" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skeleton Warrior/hurt box" to="Skeleton Warrior" method="_on_hurt_box_area_entered" flags=18]

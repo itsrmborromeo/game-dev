@@ -22,7 +22,7 @@ texture = ExtResource("1_oa27m")
 stretch_mode = 1
 
 [node name="clouds" type="ParallaxLayer" parent="."]
-position = Vector2(0, 50)
+position = Vector2(5, 43)
 motion_scale = Vector2(0.3, 0)
 motion_mirroring = Vector2(1088, 0)
 
@@ -36,6 +36,7 @@ texture = ExtResource("2_ck2oi")
 stretch_mode = 1
 
 [node name="sea" type="ParallaxLayer" parent="."]
+position = Vector2(2, 82)
 motion_scale = Vector2(0.4, 1)
 motion_mirroring = Vector2(1120, 0)
 
@@ -53,9 +54,10 @@ motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(1232, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ground"]
-offset_top = 411.0
-offset_right = 1120.0
-offset_bottom = 521.0
+offset_left = -11.0
+offset_top = 489.0
+offset_right = 1109.0
+offset_bottom = 599.0
 scale = Vector2(2, 2)
 texture = ExtResource("4_j85v8")
 stretch_mode = 1

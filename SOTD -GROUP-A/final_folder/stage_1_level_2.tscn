@@ -1,4 +1,4 @@
-[gd_scene load_steps=241 format=3 uid="uid://bu80wyuigng6w"]
+[gd_scene load_steps=244 format=3 uid="uid://bu80wyuigng6w"]
 
 [ext_resource type="PackedScene" uid="uid://daccb2kxmxdji" path="res://stage_1/Stage1/level_2.tscn" id="1_q5p3n"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="2_jgksl"]
@@ -85,6 +85,8 @@
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/double_jump.gd" id="82_sqfxd"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/idle_state.gd" id="83_qk4hd"]
 [ext_resource type="AudioStream" uid="uid://cpcsv7w62xxgr" path="res://bg_music/1-02 110-B - Rest Beneath the Tree (Scene).mp3" id="85_idajk"]
+[ext_resource type="PackedScene" uid="uid://h2tpb4651b4s" path="res://scenes/Stage1/parallax_background.tscn" id="86_kw7q5"]
+[ext_resource type="Script" path="res://fallzone.gd" id="87_s3m2n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2h6v"]
 atlas = ExtResource("4_7hxlr")
@@ -1354,6 +1356,9 @@ height = 78.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5csln"]
 size = Vector2(19.5, 67.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu1vf"]
+size = Vector2(14581, 327)
 
 [node name="Stage1_level2" type="Node2D"]
 metadata/_edit_vertical_guides_ = []
@@ -2782,6 +2787,24 @@ stream = ExtResource("85_idajk")
 autoplay = true
 max_distance = 7000.0
 
+[node name="ParallaxBackground" parent="." instance=ExtResource("86_kw7q5")]
+
+[node name="Fallzone" type="Node2D" parent="."]
+position = Vector2(15425, 868)
+script = ExtResource("87_s3m2n")
+
+[node name="Area2D" type="Area2D" parent="Fallzone"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fallzone/Area2D"]
+position = Vector2(-3394, -212)
+shape = SubResource("RectangleShape2D_lu1vf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fallzone/Area2D"]
+position = Vector2(-3036, -316)
+shape = SubResource("RectangleShape2D_lu1vf")
+
 [connection signal="animation_finished" from="Skeleton Spear/AnimatedSprite2D" to="Skeleton Spear" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skeleton Spear/hurt box" to="Skeleton Spear" method="_on_hurt_box_area_entered" flags=18]
 [connection signal="body_entered" from="Skeleton Spear/sight" to="Skeleton Spear" method="_on_sight_body_entered" flags=18]
@@ -2856,3 +2879,4 @@ max_distance = 7000.0
 [connection signal="area_entered" from="Jinbei/hurtbox" to="Jinbei" method="_on_hurtbox_area_entered" flags=18]
 [connection signal="timeout" from="Jinbei/Regen" to="Jinbei" method="_on_regen_timeout" flags=18]
 [connection signal="timeout" from="Jinbei/Dead reset" to="Jinbei" method="_on_dead_reset_timeout" flags=18]
+[connection signal="body_entered" from="Fallzone/Area2D" to="Fallzone" method="_on_area_2d_body_entered" flags=18]

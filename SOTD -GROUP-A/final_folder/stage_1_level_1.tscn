@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=3 uid="uid://br3yrn7yieunt"]
+[gd_scene load_steps=160 format=3 uid="uid://br3yrn7yieunt"]
 
 [ext_resource type="PackedScene" uid="uid://brp2pqlpwk0ml" path="res://stage_1/Stage1/level_1.tscn" id="1_1pvjg"]
 [ext_resource type="PackedScene" uid="uid://o8afkcucsej" path="res://Health bar/hud.tscn" id="3_64st3"]
@@ -75,6 +75,7 @@
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/double_jump.gd" id="71_fuue7"]
 [ext_resource type="Script" path="res://Anton/final mobs and scripts/mobs and resources/main character/sprites/Scripts/idle_state.gd" id="72_bhhlr"]
 [ext_resource type="AudioStream" uid="uid://t46mcjcckqqf" path="res://bg_music/1-01 110-A - Malevolent Spirit in the Tree (Scene).mp3" id="75_dpsgh"]
+[ext_resource type="PackedScene" uid="uid://h2tpb4651b4s" path="res://scenes/Stage1/parallax_background.tscn" id="76_y78hb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6v6g"]
 atlas = ExtResource("4_2iawh")
@@ -819,13 +820,15 @@ height = 78.0
 size = Vector2(19.5, 67.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu1vf"]
-size = Vector2(7385, 20)
+size = Vector2(7507.5, 199)
 
 [node name="Stage1_level1" type="Node2D"]
 
-[node name="HUD" parent="." instance=ExtResource("3_64st3")]
-
 [node name="level1" parent="." instance=ExtResource("1_1pvjg")]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("76_y78hb")]
+
+[node name="HUD" parent="." instance=ExtResource("3_64st3")]
 
 [node name="Skeleton Warrior" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "attack_cooldown")]
 position = Vector2(1096, 338)
@@ -2248,7 +2251,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fallzone/Area2D"]
-position = Vector2(3682.5, 0)
+position = Vector2(3312, -157)
 shape = SubResource("RectangleShape2D_lu1vf")
 
 [node name="portal" parent="." instance=ExtResource("23_x5n4v")]
