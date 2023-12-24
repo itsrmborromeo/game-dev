@@ -444,7 +444,7 @@ vertical_alignment = 1
 position = Vector2(2688, 1170)
 
 [node name="Jinbei" parent="." instance=ExtResource("21_dtvx5")]
-position = Vector2(62, 1209)
+position = Vector2(572, 1194)
 
 [connection signal="animation_finished" from="Skelitin/AnimatedSprite2D" to="Skelitin" method="_on_animated_sprite_2d_animation_finished" flags=18]
 [connection signal="area_entered" from="Skelitin/hurt box" to="Skelitin" method="_on_hurt_box_area_entered" flags=18]
